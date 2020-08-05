@@ -2,7 +2,7 @@
 
 
 @import './styles/_partial/sections';
-
+@import "styles/_partial/mixins/responsive.mixin";
 .img-selected{
 
 }
@@ -31,5 +31,29 @@ app-cloud{
   img{
     width: 17px;
     margin-top: -5px;
+  }
+}
+
+.desktop{
+  display:block;
+}
+.mobile{
+  display:none;
+}
+
+@include for-table-very-small{
+  .desktop{
+    display:block;
+  }
+  .mobile{
+    display:none;
+  }
+}
+@include for-mobile-very-small{
+  .mobile{
+    display:block;
+  }
+  .desktop{
+    display:none;
   }
 }

@@ -38,14 +38,25 @@
   <div class="container mobile">
     <div>
       <div class="d-flex justify-content-between bd-highlight mb-3 font-style-1">
-        <div class="p-3 bd-highlight click logo-section" (click)="onHome()">
-          <img [src]="'/assets/images/icons/logo-complet.svg'" class="logo d-block">
+        <div class="p-3 bd-highlight click logo-section" >
+          <div class="section-menu">
+            <div *ngIf="!isOpen; else open" (click)="onClickMenu()">
+              <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block" >
+            </div>
+            <div>
+              <img [src]="'/assets/images/icons/chall-logo.svg'" class="logo d-block">
+            </div>
+          </div>
         </div>
-        <div class="p-3 bd-highlight click logo-section click" *ngIf="!isOpen; else open" (click)="onClickMenu()">
-          <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block">
+        <div class="p-3 bd-highlight click logo-section click" >
+          <div>
+            <app-button-type-template [template]="'header'">
+              VIEW CHALLERS
+            </app-button-type-template>
+          </div>
         </div>
         <ng-template #open>
-          <div class="p-3 bd-highlight click logo-section click" (click)="onClickMenu()">
+          <div class="p-3 bd-highlight click logo-section click float-right-close" (click)="onClickMenu()">
             <img [src]="'/assets/images/icons/close.svg'" class="menu-icon d-block">
           </div>
         </ng-template>
@@ -55,18 +66,59 @@
 
   <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen">
     <div class="d-flex flex-column bd-highlight mb-3">
-      <div class="p-3 bd-highlight click animated bounceInLeft" (click)="onHome()"  [ngClass]="{'font-style-4': router.url === '/'}">
-        <img [src]="'/assets/images/icons/home.svg'" class="icon-home d-block">
+      <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onHome()"  [ngClass]="{'font-style-4': router.url === '/'}">
+        <div class="menu-items">
+          <div class="icon">
+            <img [src]="'/assets/images/icons/home.svg'" class="icon-home d-block">
+          </div>
+          <div class="text">
+            Home
+          </div>
+        </div>
       </div>
       <div class="p-2 bd-highlight click mt-3 animated bounceInRight" (click)="onAbout()"  [ngClass]="{'font-style-4': router.url === '/about-us'}">
-        About us
+        <div class="menu-items">
+          <div class="icon">
+            <img src="/assets/images/components/header/group.svg" class="icon-home d-block">
+          </div>
+          <div class="text">
+            About us
+          </div>
+        </div>
+      </div>
+      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft">
+        <div class="menu-items">
+          <div class="icon">
+            <img src="/assets/images/components/header/eye.svg" class="icon-home d-block">
+          </div>
+          <div class="text">
+            Vision
+          </div>
+        </div>
       </div>
       <div class="p-2 bd-highlight click mt-3 animated bounceInRight">
-        Kickstarter Project
+        <div class="menu-items">
+          <div class="icon">
+            <img src="/assets/images/components/header/graph.svg" class="icon-home d-block">
+          </div>
+          <div class="text">
+            Challer for Business
+          </div>
+        </div>
       </div>
-      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
+      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft">
+        <div class="menu-items">
+          <div class="icon">
+            <img [src]="'/assets/images/icons/home.svg'" class="icon-home d-block">
+          </div>
+          <div class="text">
+            Contact US
+          </div>
+        </div>
+      </div>
+      <!--<div class="p-2 bd-highlight click mt-3 animated bounceInLeft" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
         Legal
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
