@@ -1,0 +1,32 @@
+.font-style-1{
+  font-weight: bold;
+  font-size: 14px;
+}
+.font-style-2{
+  color: var(--white);
+  font-size: 45px;
+}
+.font-style-3{
+  color: var(--white);
+  font-size: 16px;
+  &.bold{
+    font-weight: bold;
+  }
+}
+.font-style-3-1{
+  color: var(--white);
+  font-size: 18px;
+  &.bold{
+    font-weight: bold;
+  }
+}
+.font-style-4{
+  color: lighten(#02ffbb, 20%);
+  font-size: 17px;
+  text-shadow: 0 0 5px #000, 0 0 10px #7d7d7d, 0 0 15px #FFF, 0 0 20px #000000, 0 0 30px #525252, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+.font-style-5{
+  color: #FFFFFF;
+  font-weight: normal;
+}

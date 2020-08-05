@@ -1,0 +1,81 @@
+<div class="principal-background height-infinite home">
+  <app-cloud>
+    Check our app in the Appstore
+    <img src="assets/images/components/cloud/apple.svg">
+    y Google Play
+    <img src="assets/images/components/cloud/playstore.svg">
+  </app-cloud>
+  <div class="container mt-5 desktop">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="section">
+          <img [src]="'/assets/images/icons/logo-complet.svg'" class="w-75 d-block">
+        </div>
+        <div class="section text-1 pt-5">
+            <div class="font-style-2 text-left">
+              What is Challer?
+            </div>
+            <div class="font-style-3 text-left">
+              Challer is a platform to show your abilities challenging others. If you like to show what you are good at and defy your friends, then Challer is for you. Download it, challenge, vote, look at challenges and connect with others. Can you do it better?
+            </div>
+            <div class="font-style-3 text-left pt-2">
+              <strong>SHOW YOUR MAGIC WITH CHALLER!!!</strong>
+            </div>
+            <div class="font-style-3 text-left pl-3 pt-2">
+              Coming soon to:
+            </div>
+        </div>
+        <div class="section pt-2">
+          <div class="d-flex justify-content-center bd-highlight mb-3 font-style-1">
+            <div class="p-3 bd-highlight">
+              <img [src]="'/assets/images/icons/5a902db97f96951c82922874@2x.png'" class="w-75 button-icon right-section">
+            </div>
+            <div class="p-3 bd-highlight click" (click)="toGoogle()">
+              <img [src]="'/assets/images/icons/5a902dbf7f96951c82922875@2x.png'" class="w-75 button-icon google left-section">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="section animated fadeInRight">
+          <img [src]="'/assets/images/cell@3x.png'" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 mobile">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="section animated fadeInUp">
+          <img [src]="'/assets/images/cell@3x.png'" class="w-100">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="section text-1 pt-2">
+          <div class="font-style-2 text-center">
+            What is Challer?
+          </div>
+          <div class="font-style-3 text-center">
+            Challer is a platform to show your abilities challenging others. If you like to show what you are good at and defy your friends, then Challer is for you. Download it, challenge, vote, look at challenges and connect with others. Can you do it better?
+          </div>
+          <div class="font-style-3 text-center pt-2">
+            <strong>SHOW YOUR MAGIC WITH CHALLER!!!</strong>
+          </div>
+          <div class="font-style-3 text-center pt-3">
+            Coming soon to:
+          </div>
+        </div>
+        <div class="section pt-2">
+          <div class="row">
+            <div class="col-sm-6 p-2 click" (click)="toGoogle()">
+              <img [src]="'/assets/images/icons/5a902dbf7f96951c82922875@2x.png'" class="w-50 left-section">
+            </div>
+            <div class="col-sm-6 p-2">
+              <img [src]="'/assets/images/icons/5a902db97f96951c82922874@2x.png'" class="w-50 right-section">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

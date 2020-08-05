@@ -1,0 +1,101 @@
+@import "../../../styles/_partial/mixins/responsive.mixin";
+.header{
+  height: 66px;
+  color: var(--grin-color);
+  background: var(--header-green);
+  width: 100%;
+  margin-top: 0;
+
+  .height-section{
+    height: 25px;
+  }
+
+  .desktop{
+    display:block;
+  }
+  .mobile{
+    display:none;
+  }
+
+  @include for-table-very-small{
+    .desktop{
+      display:block;
+    }
+    .mobile{
+      display:none;
+    }
+  }
+  @include for-mobile-very-small{
+    .mobile{
+      display:block;
+    }
+    .desktop{
+      display:none;
+    }
+  }
+  .logo-section{
+    padding: 0!important;
+    padding-top: 10px!important;
+    .logo{
+      width: 120px;
+    }
+    .menu-icon{
+      width: 32px;
+    }
+  }
+
+  .menu-float{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.65);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 54px;
+    z-index: 1;
+    font-weight: bold;
+  }
+
+  .c-flex{
+    display: flex;
+  }
+  .bd-highlight{
+    text-align: center;
+  }
+
+  .icon-home{
+    width: 44px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    fill: var(--grin-color);
+  }
+  .icon-home-desktop{
+    width: 142px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    fill: var(--grin-color);
+    margin-top: -4px;
+  }
+
+  .icon-eye{
+    width:34px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    fill: var(--grin-color);
+    margin-top: -6px;
+  }
+
+  .icon-group{
+    width: 35px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    fill: var(--grin-color);
+    margin-top: -6px;
+  }
+
+}
+
+

@@ -1,0 +1,3 @@
+[submodule "src/app/component"]
+	path = src/app/component
+	url = https://github.com/sportypro/component.git

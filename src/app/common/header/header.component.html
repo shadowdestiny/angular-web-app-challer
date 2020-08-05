@@ -1,0 +1,72 @@
+<div class="header">
+  <div class="container desktop">
+    <div>
+      <div class="d-flex bd-highlight mb-3 font-style-1">
+        <div class="p-3 mr-auto bd-highlight click" (click)="onHome()" [ngClass]="{'img-selected': router.url === '/'}">
+          <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
+        </div>
+        <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}">
+          <div class="height-section">
+            <img [src]="'/assets/images/components/header/group.svg'" class="icon-group d-block">
+          </div>
+          <div class="font-style-5">
+            About Us
+          </div>
+        </div>
+        <div class="p-3 bd-highlight click">
+          <div class="height-section">
+            <img [src]="'/assets/images/components/header/eye.svg'" class="icon-eye d-block">
+          </div>
+          <div class="font-style-5">
+            Visión
+          </div>
+        </div>
+        <div class="p-3 bd-highlight click">
+          <div>
+            <app-button-type-template [template]="'header'">
+              VIEW CHALLERS
+            </app-button-type-template>
+          </div>
+        </div>
+        <!--<div class="p-3 bd-highlight click" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
+          Legal
+        </div>-->
+      </div>
+    </div>
+  </div>
+
+  <div class="container mobile">
+    <div>
+      <div class="d-flex justify-content-between bd-highlight mb-3 font-style-1">
+        <div class="p-3 bd-highlight click logo-section" (click)="onHome()">
+          <img [src]="'/assets/images/icons/logo-complet.svg'" class="logo d-block">
+        </div>
+        <div class="p-3 bd-highlight click logo-section click" *ngIf="!isOpen; else open" (click)="onClickMenu()">
+          <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block">
+        </div>
+        <ng-template #open>
+          <div class="p-3 bd-highlight click logo-section click" (click)="onClickMenu()">
+            <img [src]="'/assets/images/icons/close.svg'" class="menu-icon d-block">
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen">
+    <div class="d-flex flex-column bd-highlight mb-3">
+      <div class="p-3 bd-highlight click animated bounceInLeft" (click)="onHome()"  [ngClass]="{'font-style-4': router.url === '/'}">
+        <img [src]="'/assets/images/icons/home.svg'" class="icon-home d-block">
+      </div>
+      <div class="p-2 bd-highlight click mt-3 animated bounceInRight" (click)="onAbout()"  [ngClass]="{'font-style-4': router.url === '/about-us'}">
+        About us
+      </div>
+      <div class="p-2 bd-highlight click mt-3 animated bounceInRight">
+        Kickstarter Project
+      </div>
+      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
+        Legal
+      </div>
+    </div>
+  </div>
+</div>
