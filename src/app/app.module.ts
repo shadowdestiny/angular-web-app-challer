@@ -9,6 +9,7 @@ import { AboutusComponent } from './common/aboutus/aboutus.component';
 import { PolicyComponent } from './common/policy/policy.component';
 import {ButtonTypeTemplateComponent} from "./component/button-type-template/button-type-template.component";
 import {CloudComponent} from "./component/cloud/cloud.component";
+import {DownloadAppComponent} from "./component/download-app/download-app.component";
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import {CloudComponent} from "./component/cloud/cloud.component";
     // components
     ButtonTypeTemplateComponent,
     CloudComponent,
+    DownloadAppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
