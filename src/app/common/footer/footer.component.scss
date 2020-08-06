@@ -1,0 +1,62 @@
+.footer-component{
+  border: 1px solid #3B5768;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #3B5768;
+  .padding-footer{
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  .section-text{
+    color: #FFFFFF;
+    >div{
+      padding-left: 10px;
+    }
+    &.about-icon{
+      background: url(/assets/images/components/footer/t.svg) no-repeat;
+      background-position-x: 4px;
+      background-position-y: 4px;
+      background-size: 18px;
+      padding-left: 38px;
+    }
+    &.information-icon{
+      background: url(/assets/images/components/footer/information.svg) no-repeat;
+      background-position-x: 4px;
+      background-position-y: 4px;
+      background-size: 18px;
+      padding-left: 38px;
+    }
+    &.links-icon{
+      background: url(/assets/images/components/footer/employee.svg) no-repeat;
+      background-position-x: 4px;
+      background-position-y: 4px;
+      background-size: 18px;
+      padding-left: 38px;
+    }
+    &.traz-icon{
+      background: url(/assets/images/components/footer/traz.svg) no-repeat;
+      background-position-x: 4px;
+      background-position-y: 4px;
+      background-size: 18px;
+      padding-left: 38px;
+    }
+  }
+  .logo-section{
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+
+    img{
+      width: 100px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .contact{
+    img{
+      width: 30px;
+      margin-top: -3px;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { PolicyComponent } from './common/policy/policy.component';
 import {ButtonTypeTemplateComponent} from "./component/button-type-template/button-type-template.component";
 import {CloudComponent} from "./component/cloud/cloud.component";
 import {DownloadAppComponent} from "./component/download-app/download-app.component";
+import { FooterComponent } from './common/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {DownloadAppComponent} from "./component/download-app/download-app.compon
     ButtonTypeTemplateComponent,
     CloudComponent,
     DownloadAppComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

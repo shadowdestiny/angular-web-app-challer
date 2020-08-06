@@ -57,3 +57,10 @@ app-cloud{
     display:none;
   }
 }
+
+.button-icon{
+  min-width: 162px;
+  &.google{
+    min-width: 182px;
+  }
+}

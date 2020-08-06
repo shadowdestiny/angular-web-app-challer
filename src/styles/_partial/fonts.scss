@@ -36,3 +36,23 @@
   font-size: 20px;
   font-weight: bold;
 }
+.subtitle-footer{
+  font-size: 20px;
+  color: #FFFFFF;
+  &.follow{
+    font-weight: 100;
+    font-stretch: normal;
+    font-style: normal;
+    color: var(--follow-color);
+  }
+}
+.font-follow-style{
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: var(--follow-color)
+}
+.social{
+  width: 22px;
+  margin-top: 5px
+}
