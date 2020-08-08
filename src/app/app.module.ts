@@ -11,6 +11,9 @@ import {ButtonTypeTemplateComponent} from "./component/button-type-template/butt
 import {CloudComponent} from "./component/cloud/cloud.component";
 import {DownloadAppComponent} from "./component/download-app/download-app.component";
 import { FooterComponent } from './common/footer/footer.component';
+import { BusinessComponent } from './common/business/business.component';
+import { VisionComponent } from './common/vision/vision.component';
+import { ContactComponent } from './common/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { FooterComponent } from './common/footer/footer.component';
     CloudComponent,
     DownloadAppComponent,
     FooterComponent,
+    BusinessComponent,
+    VisionComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

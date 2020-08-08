@@ -64,3 +64,71 @@ app-cloud{
     min-width: 182px;
   }
 }
+
+.section-text{
+  color: #FFFFFF;
+  >div{
+    padding-left: 10px;
+  }
+  &.about-icon{
+    background: url(/assets/images/components/footer/t.svg) no-repeat;
+    background-position-x: 4px;
+    background-position-y: 4px;
+    background-size: 18px;
+    padding-left: 38px;
+    &.griss{
+      color: #000000;
+      background: url(/assets/images/components/footer/t_g.svg) no-repeat;
+      background-size: 18px;
+    }
+  }
+  &.information-icon{
+    background: url(/assets/images/components/footer/information.svg) no-repeat;
+    background-position-x: 4px;
+    background-position-y: 4px;
+    background-size: 18px;
+    padding-left: 38px;
+    &.griss{
+      color: #000000;
+      background: url(/assets/images/components/footer/information_g.svg) no-repeat;
+      background-size: 18px;
+    }
+
+  }
+  &.links-icon{
+    background: url(/assets/images/components/footer/employee.svg) no-repeat;
+    background-position-x: 4px;
+    background-position-y: 4px;
+    background-size: 18px;
+    padding-left: 38px;
+  }
+  &.traz-icon{
+    background: url(/assets/images/components/footer/traz.svg) no-repeat;
+    background-position-x: 4px;
+    background-position-y: 4px;
+    background-size: 18px;
+    padding-left: 38px;
+  }
+}
+
+form.template-designer{
+  input[type='text'],input[type='password'],input[type='email'],select,textarea{
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid var(--border-form-input);
+  }
+  textarea{
+    background: var(--textarea-form-input);
+    border: 1px solid var(--border-form-input);
+    height: 160px;
+  }
+  select{
+    border: 1px solid var(--border-form-input);
+  }
+  span{
+    color:red;
+  }
+  label{
+    font-weight: bold;
+  }
+}
