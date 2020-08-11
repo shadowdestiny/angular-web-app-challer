@@ -1,0 +1,93 @@
+$height-button: 45px;
+.login-button{
+  ion-button{
+    --ion-color-primary: var(--tangerine-yellow);
+    height: $height-button;
+  }
+}
+.alert-button{
+    --background: var(radical-red)!important; 
+    height: $height-button;
+    --ion-color-contrast: var(--white) !important; 
+    --ion-color-primary: var(--radical-red);
+  ion-button{
+    --background: var(radical-red)!important; 
+    --ion-color-primary: var(--radical-red);
+    height: $height-button;
+    --ion-color-contrast: var(--white) !important; 
+  }
+}
+
+.succesx-button{
+  --background: var(--spring-green)!important; 
+  height: $height-button;
+  --ion-color-contrast: var(--dark-green) !important; 
+  ion-button{
+    --background: var(--spring-green)!important; 
+    --ion-color-primary: var(--spring-green);
+    height: $height-button;
+    --ion-color-contrast: var(--dark-green) !important; 
+  }
+  ion-text{ 
+    color: var(--dark-green) !important; 
+  } 
+}
+
+.cancel-button{
+  --background: transparent!important; 
+  height: $height-button;
+  --ion-color-contrast: var(--spring-green) !important; 
+  --color: var(--spring-green) !important; 
+  color: var(--spring-green) !important; 
+  --border-color: var(--spring-green) !important; 
+  border-radius: 4px !important; 
+  border-style: solid;
+  ion-text{ 
+    color: var(--spring-green) !important; 
+  } 
+}
+
+.succes-link-button{
+  --background: transparent!important;  
+  --background-activated: transparent!important; 
+  --color: var(--spring-green) !important; 
+  color: var(--spring-green) !important; 
+  height: $height-button;
+  text-decoration: underline;
+  ion-text{ 
+    color: var(--spring-green) !important; 
+  }
+}
+
+
+.transparent-button{
+  ion-button{
+    --ion-color-primary: none;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    color: var(--white);
+    height: $height-button;
+  }
+}
+.remenberme-button{
+  ion-button{
+    margin-left: 0;
+  }
+  ion-checkbox{
+    --ion-color-primary: var(--white);
+    --background:none;
+    margin-right: 10px;
+    margin-left: -12px;
+    border: 1px solid var(--white);
+    --border-style: var(--white);
+    padding-left: 0;
+  }
+}
+.forgot-password{
+  margin-right: -12px;
+  margin-left: auto;
+  display: table;
+  ion-button{
+  }
+}
+

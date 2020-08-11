@@ -1,0 +1,33 @@
+@mixin pulseAnimation($class, $width: 70px, $height: 70px, $color: red, $sizeAnimation: 250px, $borderAnimation: 10px){
+  .#{$class} {
+    width: $width;
+    height: $height;
+    /*background: green;*/
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+  }
+
+  .#{$class}::before, .#{$class}::after {
+    content:"";
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: $width;
+    height: $height;
+    border: $borderAnimation solid $color;
+    border-radius:100%;
+    animation: #{'latido_'+$class} linear 3s infinite;
+  }
+
+  .#{$class}::after {
+    animation-delay: -1.5s;
+  }
+
+  @keyframes #{'latido_'+$class} {
+    0% { width:$width; height:$height; border:$borderAnimation solid $color; }
+    100% { width:$sizeAnimation; height:$sizeAnimation; border:$borderAnimation solid transparent; }
+  }
+}

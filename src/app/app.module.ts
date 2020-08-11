@@ -14,6 +14,19 @@ import { FooterComponent } from './common/footer/footer.component';
 import { BusinessComponent } from './common/business/business.component';
 import { VisionComponent } from './common/vision/vision.component';
 import { ContactComponent } from './common/contact/contact.component';
+import {NgxUsefulSwiperModule} from "ngx-useful-swiper";
+import { HomeChallerComponent } from './common/home-challer/home-challer.component';
+import {ChallerSlideListComponent} from "./component/challer-slide-list/challer-slide-list.component";
+import {ChallerSlideComponent} from "./component/challer-slide/challer-slide.component";
+import {VideoChallerComponent} from "./component/video-challer/video-challer.component";
+import {FixImageUrlPipe} from "./pipes/fix-image-url.pipe";
+import {HttpClientModule} from "@angular/common/http";
+import {NgxWebstorageModule} from "ngx-webstorage";
+import {httpInterceptorProviders} from "./interceptors";
+import {ImageRadiusComponent} from "./component/modal-sections/image-radius/image-radius.component";
+import {TagsWebComponent} from "./component/tags-web/tags-web.component";
+import {SelectorSiteComponent} from "./component/selector-site/selector-site.component";
+import {SlideBannersComponent} from "./component/slide-banners/slide-banners.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +36,10 @@ import { ContactComponent } from './common/contact/contact.component';
     HomeComponent,
     AboutusComponent,
     PolicyComponent,
+    HomeChallerComponent,
+
+    // pipes
+    FixImageUrlPipe,
 
     // components
     ButtonTypeTemplateComponent,
@@ -32,12 +49,22 @@ import { ContactComponent } from './common/contact/contact.component';
     BusinessComponent,
     VisionComponent,
     ContactComponent,
+    ChallerSlideListComponent,
+    ChallerSlideComponent,
+    VideoChallerComponent,
+    ImageRadiusComponent,
+    TagsWebComponent,
+    SelectorSiteComponent,
+    SlideBannersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxUsefulSwiperModule,
+    HttpClientModule,
+    NgxWebstorageModule.forRoot(),
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

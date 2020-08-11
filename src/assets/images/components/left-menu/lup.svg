@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76.075" height="87" viewBox="0 0 76.075 87">
+  <g id="Component_107_4" data-name="Component 107 – 4" opacity="0.7">
+    <g id="Group_3753" data-name="Group 3753">
+      <rect id="Rectangle_535" data-name="Rectangle 535" width="23.408" height="49.741" rx="2" transform="translate(26.334 37.259)" fill="#103247"/>
+      <rect id="Rectangle_536" data-name="Rectangle 536" width="23.408" height="38.037" rx="2" transform="translate(0 48.963)" fill="#103247"/>
+      <rect id="Rectangle_537" data-name="Rectangle 537" width="23.408" height="32.185" rx="2" transform="translate(52.667 54.815)" fill="#103247"/>
+      <path id="star" d="M34.891,12.363a1.837,1.837,0,0,0-1.6-1.2l-10.1-.859L19.2,1.554a1.912,1.912,0,0,0-3.421,0L11.79,10.308l-10.1.859a1.842,1.842,0,0,0-1.6,1.2,1.674,1.674,0,0,0,.542,1.852l7.634,6.271L6.016,29.772a1.688,1.688,0,0,0,.723,1.8,1.96,1.96,0,0,0,2.044.085l8.708-4.878L26.2,31.656a1.963,1.963,0,0,0,2.045-.085,1.688,1.688,0,0,0,.723-1.8l-2.251-9.287,7.634-6.271a1.674,1.674,0,0,0,.542-1.852ZM17.659,26.684" transform="translate(19.286 -0.496)" fill="#103247"/>
+    </g>
+    <g id="Group_3797" data-name="Group 3797" opacity="0.7">
+      <rect id="Rectangle_535-2" data-name="Rectangle 535" width="23.408" height="49.741" rx="2" transform="translate(26.334 37.259)" fill="#1c2438" opacity="0.7"/>
+      <rect id="Rectangle_536-2" data-name="Rectangle 536" width="23.408" height="38.037" rx="2" transform="translate(0 48.963)" fill="#1c2438" opacity="0.7"/>
+      <rect id="Rectangle_537-2" data-name="Rectangle 537" width="23.408" height="32.185" rx="2" transform="translate(52.667 54.815)" fill="#1c2438" opacity="0.7"/>
+      <path id="star-2" data-name="star" d="M34.891,12.363a1.837,1.837,0,0,0-1.6-1.2l-10.1-.859L19.2,1.554a1.912,1.912,0,0,0-3.421,0L11.79,10.308l-10.1.859a1.842,1.842,0,0,0-1.6,1.2,1.674,1.674,0,0,0,.542,1.852l7.634,6.271L6.016,29.772a1.688,1.688,0,0,0,.723,1.8,1.96,1.96,0,0,0,2.044.085l8.708-4.878L26.2,31.656a1.963,1.963,0,0,0,2.045-.085,1.688,1.688,0,0,0,.723-1.8l-2.251-9.287,7.634-6.271a1.674,1.674,0,0,0,.542-1.852ZM17.659,26.684" transform="translate(19.286 -0.496)" fill="#1c2438" opacity="0.7"/>
+    </g>
+  </g>
+</svg>

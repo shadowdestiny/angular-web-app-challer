@@ -5,10 +5,10 @@
         <div class="desktop desktop-logo">
           <img src="assets/images/icons/logo.svg" >
         </div>
-        <div class="subtitle-footer">
+        <div class="subtitle-footer click" (click)="onAbout()">
           About Us
         </div>
-        <div class="mt-2">
+        <div class="mt-2 click" (click)="onContact()">
           <app-button-type-template [template]="'footer'">
             <div class="d-flex bd-highlight font-style-1 height-60">
               <div class="bd-highlight contact">
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="subtitle-footer">
+        <div class="subtitle-footer click" (click)="onBusiness()">
           Business
         </div>
         <div class="section-text traz-icon mt-2">
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="section-text font-follow-style text-left mt-5 pl-5">
-          <div class="pt-1">
+          <div class="pt-1 click" (click)="onCondition()">
             Terms & Conditions
           </div>
           <div class="pt-1">

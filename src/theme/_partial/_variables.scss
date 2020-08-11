@@ -1,0 +1,76 @@
+/*font size*/
+$size-font-normal: 13px;
+$size-font-mini: 11px;
+$size-font-default: 14px;
+$size-font-grant: 20px;
+$size-font-grant-2: 28px;
+
+/*color*/
+$color-clear: #8f8f8f;
+$color-clear-2: #a8a8a8;
+$line-color-clear: #acacac;
+$line-color-clear-2: lighten($line-color-clear, 20%);
+$line-color-separation: #97b1ef;
+$color-light: #ffffff;
+$color-gris: darken(#f8f8f8, 2%);
+
+/*header color*/
+$color-header-title: #676767;
+$color-header-title-selected:#FAFAFA;
+$color-header-border:#e2e2e2;
+$color-header-title-window:#5e6369;
+$color-header-to-window:#006dff;
+
+
+/* title or text */
+$title-color: #1656cc;
+$title-color-dark: black;
+$title-color-light: $color-light;
+
+/* border color*/
+$border-color: #acb0b4;
+
+/*validation*/
+$color-error: #b88b19;
+
+/*form*/
+$color-border-form: $color-light;
+$color-font-form: $color-light;
+$color-placeholder: darken($color-font-form,20%);
+$color-button-sing:#2a56c6;
+
+/* chat */
+$color-chat-background-right: #d8e5fc;
+$color-chat-background-left: $color-light;
+
+/*text remark*/
+$font-color-remark: #006dff;
+$font-color-remark-0: #48bbff;
+$font-color-remark-2: #f50057;
+$font-color-remark-3: #ffe203;
+$font-color-remark-4: #04afff;
+$font-color-remark-5: #919191;
+$font-color-remark-6: black;
+$font-color-remark-7: #264457;
+$font-color-remark-8: #F79D07;
+
+/* text subtitle challenge*/
+$font-color-challenge: #959595;
+$font-color-challenge-blue: #006dff;
+$font-color-challenge-red: #ff003b;
+
+$gris-color: #7c7c7c;
+$gris-color-2: #919191;
+$yellow-color: #ffe203;
+$grin-color: #7cdb00;
+
+/* time */
+$time-border: $color-light;
+$time-format-dark: black;
+$time-format-ending: red;
+$time-background: white;
+$time-format-text: $grin-color;
+$time-format-celeste: #1ebbc1;
+
+/*background opacity*/
+$background-opacity: #000000b8;

@@ -2,6 +2,7 @@
 
 
 @import './styles/_partial/sections';
+@import './styles/libs/swiper';
 @import "styles/_partial/mixins/responsive.mixin";
 .img-selected{
 
@@ -62,6 +63,10 @@ app-cloud{
   min-width: 162px;
   &.google{
     min-width: 182px;
+  }
+  &.apple{
+    width: 183px !important;
+    height: 54px;
   }
 }
 

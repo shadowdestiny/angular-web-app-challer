@@ -1,0 +1,33 @@
+.video-challer{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+.menu-left{
+  position: fixed;
+  top: 195px;
+  left:40px;
+}
+.section-right{
+  margin-top: 9px;
+}
+.menu-bottom{
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+  width: 317px;
+  z-index: 10;
+  >div{
+    text-align: center;
+    >div{
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}
+.download-now{
+  width: 400px;
+}
+

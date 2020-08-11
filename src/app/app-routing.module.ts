@@ -6,6 +6,7 @@ import {PolicyComponent} from './common/policy/policy.component';
 import {BusinessComponent} from "./common/business/business.component";
 import {VisionComponent} from "./common/vision/vision.component";
 import {ContactComponent} from "./common/contact/contact.component";
+import {HomeChallerComponent} from "./common/home-challer/home-challer.component";
 
 
 const routes: Routes = [
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'contact', pathMatch: 'full', component: ContactComponent,
+  },
+  {
+    path: 'home-challer', pathMatch: 'full', component: HomeChallerComponent,
   },
 ];
 

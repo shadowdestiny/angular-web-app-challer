@@ -1,0 +1,45 @@
+@mixin for-table-long{
+  @media only screen and (max-width: #{1200px - 1px}) {
+    @content;
+  }
+}
+@mixin for-tablet{
+  @media only screen and (max-width: #{992px - 1px}) {
+    @content;
+  }
+}
+@mixin for-tablet-small {
+  @media only screen and (max-width: #{782px - 1px}) {
+    @content;
+  }
+}
+@mixin for-table-very-small{
+  @media only screen and (max-width: #{768px - 1px}) {
+    @content;
+  }
+}
+@mixin for-mobile{
+  @media only screen and (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-mobile-small{
+  @media only screen and (max-width: 589px) {
+    @content;
+  }
+}
+@mixin for-mobile-very-small{
+  @media only screen and (max-width: 549px) {
+    @content;
+  }
+}
+@mixin for-mobile-very-small-2{
+  @media only screen and (max-width: 412px) {
+    @content;
+  }
+}
+@mixin for-mobile-very-small-3{
+  @media only screen and (max-width: 382px) {
+    @content;
+  }
+}

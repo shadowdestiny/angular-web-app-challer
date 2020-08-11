@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
     this.isOpen = false;
     this.router.navigate(['/vision']);
   }
+  onViewChaller() {
+    this.isOpen = false;
+    this.router.navigate(['/home-challer']);
+  }
   onPolicy() {
     this.isOpen = false;
     this.router.navigate(['/policy']);

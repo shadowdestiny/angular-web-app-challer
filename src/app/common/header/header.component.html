@@ -13,7 +13,7 @@
             About Us
           </div>
         </div>
-        <div class="p-3 bd-highlight click">
+        <div class="p-3 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/vision'}">
           <div class="height-section">
             <img [src]="'/assets/images/components/header/eye.svg'"  (click)="onVision()" class="icon-eye d-block">
           </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="p-3 bd-highlight click">
           <div>
-            <app-button-type-template [template]="'header'">
+            <app-button-type-template [template]="'header'" (click)="onViewChaller()">
               VIEW CHALLERS
             </app-button-type-template>
           </div>
