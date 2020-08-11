@@ -31,6 +31,10 @@ export class HeaderComponent implements OnInit {
     this.isOpen = false;
     this.router.navigate(['/about-us']);
   }
+  onContact() {
+    this.isOpen = false;
+    this.router.navigate(['/contact']);
+  }
   onVision() {
     this.isOpen = false;
     this.router.navigate(['/vision']);
@@ -42,6 +46,10 @@ export class HeaderComponent implements OnInit {
   onPolicy() {
     this.isOpen = false;
     this.router.navigate(['/policy']);
+  }
+  onBusiness(){
+    this.isOpen = false;
+    this.router.navigate(['/business']);
   }
 
 }

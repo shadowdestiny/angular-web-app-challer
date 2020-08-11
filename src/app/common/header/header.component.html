@@ -43,7 +43,7 @@
             <div *ngIf="!isOpen; else open" (click)="onClickMenu()">
               <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block" >
             </div>
-            <div>
+            <div (click)="onHome()" class="click">
               <img [src]="'/assets/images/icons/chall-logo.svg'" class="logo d-block">
             </div>
           </div>
@@ -86,7 +86,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft click" (click)="onVision()">
+      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft click" (click)="onVision()" [ngClass]="{'font-style-4': router.url === '/vision'}">
         <div class="menu-items">
           <div class="icon">
             <img src="/assets/images/components/header/eye.svg" class="icon-home d-block">
@@ -96,7 +96,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click mt-3 animated bounceInRight">
+      <div class="p-2 bd-highlight click mt-3 animated bounceInRight" (click)="onBusiness()" [ngClass]="{'font-style-4': router.url === '/business'}">
         <div class="menu-items">
           <div class="icon">
             <img src="/assets/images/components/header/graph.svg" class="icon-home d-block">
@@ -106,12 +106,12 @@
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft">
+      <div class="p-2 bd-highlight click mt-3 animated bounceInLeft" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/contact'}">
         <div class="menu-items">
           <div class="icon">
             <img src="/assets/images/components/header/information.svg" class="icon-home d-block">
           </div>
-          <div class="text click" (click)="onAbout()" >
+          <div class="text click" (click)="onContact()" >
             Contact US
           </div>
         </div>
@@ -121,7 +121,7 @@
       </div>-->
     </div>
     <app-button-type-template [template]="'green'">
-      <div class="text-center">
+      <div class="text-center click" (click)="onViewChaller()">
         VIEW CHALLENGES
       </div>
     </app-button-type-template>
