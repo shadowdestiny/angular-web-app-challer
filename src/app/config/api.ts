@@ -4,4 +4,5 @@ export const API = {
   CHALLENGE: environment.CHALLENGE,
   CONFIGURATION: environment.CONFIGURATION,
   CDN_BUCKET: environment.CDN_BUCKET,
+  ADVERTISING: environment.ADVERTISING,
 };

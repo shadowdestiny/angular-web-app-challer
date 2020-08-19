@@ -32,6 +32,7 @@ import {StoreModule} from "@ngrx/store";
 import {modalReducer} from "./store/reducers/modal.reducer";
 import {scrollReducer} from "./store/reducers/scroll.reducer";
 import {videoReducer} from "./store/reducers/video.reducer";
+import {CloudNotificationComponent} from "./component/component/cloud-notification/cloud-notification.component";
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import {videoReducer} from "./store/reducers/video.reducer";
     SlideBannersComponent,
     ClickAngular,
     clickIOS,
+    CloudNotificationComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,11 @@
   width: 100%;
   margin-top: 0;
 
+  &.home-challer{
+    background: var(--follow-color);
+    border-bottom: 1px solid black;
+  }
+
   .height-section{
     height: 25px;
   }

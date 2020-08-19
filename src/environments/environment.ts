@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   CHALLENGE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:id/challer?mac=`,
   CONFIGURATION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/system/config`,
+  ADVERTISING: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/advertising`,
 
   CDN_BUCKET:`https://storage.googleapis.com/challer-multimedia-bucket`
 };
