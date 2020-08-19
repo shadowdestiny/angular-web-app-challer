@@ -27,6 +27,11 @@ import {ImageRadiusComponent} from "./component/modal-sections/image-radius/imag
 import {TagsWebComponent} from "./component/tags-web/tags-web.component";
 import {SelectorSiteComponent} from "./component/selector-site/selector-site.component";
 import {SlideBannersComponent} from "./component/slide-banners/slide-banners.component";
+import {ClickAngular, clickIOS} from "./directives/app-store.directive";
+import {StoreModule} from "@ngrx/store";
+import {modalReducer} from "./store/reducers/modal.reducer";
+import {scrollReducer} from "./store/reducers/scroll.reducer";
+import {videoReducer} from "./store/reducers/video.reducer";
 
 @NgModule({
   declarations: [
@@ -56,6 +61,8 @@ import {SlideBannersComponent} from "./component/slide-banners/slide-banners.com
     TagsWebComponent,
     SelectorSiteComponent,
     SlideBannersComponent,
+    ClickAngular,
+    clickIOS,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +70,11 @@ import {SlideBannersComponent} from "./component/slide-banners/slide-banners.com
     NgxUsefulSwiperModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
+    StoreModule.forRoot({
+      modalLoginMessage: modalReducer,
+      scrolling: scrollReducer,
+      video: videoReducer
+    }),
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

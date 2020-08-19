@@ -1,10 +1,5 @@
-<div class="principal-background height-infinite home">
-  <app-cloud>
-    Check our app in the Appstore
-    <img src="assets/images/components/cloud/apple.svg">
-    y Google Play
-    <img src="assets/images/components/cloud/playstore.svg">
-  </app-cloud>
+<div class="home">
+
   <div class="menu-left">
     <app-selector-site></app-selector-site>
   </div>
@@ -26,12 +21,14 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="section-right">
-          <app-slide-banners></app-slide-banners>
-        </div>
-        <div class="download mt-5 d-flex justify-content-center">
-          <div class="download-now">
-            <app-download-app [template]="'right-section'"></app-download-app>
+        <div class="banners-float-sections">
+          <div class="section-right">
+            <app-slide-banners></app-slide-banners>
+          </div>
+          <div class="download mt-5 d-flex justify-content-center">
+            <div class="download-now">
+              <app-download-app [template]="'right-section'"></app-download-app>
+            </div>
           </div>
         </div>
       </div>

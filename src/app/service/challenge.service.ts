@@ -17,7 +17,7 @@ export class ChallengeService {
   public getChallenges(page=0, items=50) {
     let url = `${API.CHALLENGE}`;
     url = this.utils.settingParameter(url, 'id', '0');
-    const chunk = `${'&page='+page+'&items='+page}`;
+    const chunk = `${'&page='+page+'&items='+items}`;
     console.log(url + chunk);
     return this.http.get(url + chunk);
   }

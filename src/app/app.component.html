@@ -1,2 +1,7 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud"></app-cloud>
+<div class="principal-background height-infinite" [ngClass]="{'noCloud': !isShowCloud}"
+     #scrollMe (scroll)="onScroll($event,scrollMe)"
+>
+  <router-outlet></router-outlet>
+</div>

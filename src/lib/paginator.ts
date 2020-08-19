@@ -13,8 +13,8 @@ export class Paginator {
 
     constructor(
         page: 0,
-        limitByPage = 20,
-        initTopScroll = 0
+        limitByPage: number = 20,
+        initTopScroll: number = 0
     ) {
         this.page = page;
         this.limitByPage = limitByPage;

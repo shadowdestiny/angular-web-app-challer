@@ -1,8 +1,11 @@
+export interface VideoOption {
+  isPlay: boolean;
+}
 export interface HomeChallerModel {
   "idSeq":number;
   "challengeId":number;
   "nameChallenge":string;
-  "nameVideo":string
+  "nameVideo":string;
   "statusChallenge":string
   "userprofileOwnerChallengeId":number;
   "userprofileInvitedChallengeId":number;
@@ -11,17 +14,17 @@ export interface HomeChallerModel {
   "qtyLikes":number;
   "qtyComments":number;
   "userchallengeshowId":number;
-  "showLikesComments":boolean,
+  "showLikesComments":boolean;
   "imageCategoryUrl":string;
   "imageSelectedUrl":string;
   "imagePreviewUrl":string;
   "tutorialVideo":string;
   "invitedVideo":string; // null
   "imagePreviewTutorial":string;
-  "imagePreviewInvited":string
-  "likedByMe":boolean
-  "imageUserCreator":string,
-  "imageUserInvited":string,
+  "imagePreviewInvited":string;
+  "likedByMe":boolean;
+  "imageUserCreator":string;
+  "imageUserInvited":string;
   "timer":{
     "timeSystem":string;
     "timeEnd":string;
@@ -36,4 +39,5 @@ export interface HomeChallerModel {
   "qtyvotesOwnerChallenge":number;
   "qtyvotesInvitedChallenge":number;
   "showVotes":boolean;
+  "videoOption"?: Array<VideoOption>
 }
