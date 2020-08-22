@@ -1,4 +1,10 @@
-<div class="header" [ngClass]="{'home-challer': router.url === '/home-challer'}">
+<div class="header"
+     [ngClass]="
+     {
+        'home-challer': router.url === '/home-challer',
+        'home-challer-mobile': isShowMobile
+     }"
+     [hidden]="(isMobile && router.url === '/home-challer') && !isShowMobile">
   <div class="container desktop">
     <div [hidden]="router.url !== '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
@@ -62,14 +68,22 @@
             <div *ngIf="!isOpen; else open" (click)="onClickMenu()">
               <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block" >
             </div>
-            <div (click)="onHome()" class="click">
+            <div (click)="onHome()" class="click" *ngIf="!isShowMobile">
               <img [src]="'/assets/images/icons/chall-logo.svg'" class="logo d-block">
             </div>
           </div>
         </div>
-        <div class="p-3 bd-highlight click logo-section" >
+        <div class="bd-highlight logo-home-mobile">
+          <div (click)="onHome()" class="click" *ngIf="isShowMobile">
+            <img [src]="'/assets/images/icons/chall-logo.svg'" class="logo d-block">
+          </div>
+        </div>
+        <div class="p-3 bd-highlight">
+          &nbsp;
+        </div>
+        <div class="p-3 bd-highlight click logo-section" *ngIf="!isShowMobile">
           <div>
-            <app-button-type-template [template]="'header'">
+            <app-button-type-template [template]="'header'" (click)="onViewChaller()">
               VIEW CHALLERS
             </app-button-type-template>
           </div>

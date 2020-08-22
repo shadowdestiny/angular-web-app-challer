@@ -1,0 +1,10 @@
+<svg id="Component_107_127" data-name="Component 107 – 127" xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45">
+  <g id="Rectangle_540" data-name="Rectangle 540" fill="#36efa5" stroke="#36efa5" stroke-width="1">
+    <rect width="44" height="45" rx="18" stroke="none"/>
+    <rect x="0.5" y="0.5" width="43" height="44" rx="17.5" fill="none"/>
+  </g>
+  <g id="Union_1" data-name="Union 1" transform="translate(12 13)" fill="none">
+    <path d="M8.751,20V11.667H0V8.334H8.751V0h3.5V8.334H21v3.333H12.251V20Z" stroke="none"/>
+    <path d="M 12.25065994262695 20 L 8.750920295715332 20 L 8.750920295715332 11.66728973388672 L 0 11.66728973388672 L 0 8.334210395812988 L 8.750920295715332 8.334210395812988 L 8.750920295715332 0 L 12.25065994262695 0 L 12.25065994262695 8.334210395812988 L 21 8.334210395812988 L 21 11.66728973388672 L 12.25065994262695 11.66728973388672 L 12.25065994262695 20 Z" stroke="none" fill="#1c2438"/>
+  </g>
+</svg>

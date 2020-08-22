@@ -4,8 +4,9 @@ import {Observable} from "rxjs";
 import {ScrollState} from "../store/interfaces/scroll.state";
 import {VideoState} from "../store/interfaces/video.state";
 import {Scroll, ScrollAction} from "../store/actions/scroll.actions";
-import {ScrollConstants} from "../store/constants/scroll.constants";
 import {Video, VideoAction} from "../store/actions/video.action";
+import {ResizeState} from "../store/reducers/resize.reducer";
+import {Resize} from "../store/actions/resize.action";
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,15 @@ export class StoreService {
 
   private scrollContent$: Observable<string>;
   private videoContent$: Observable<string>;
+  private resizeContent$: Observable<string>;
   constructor(
     private scrollStateStore: Store<ScrollState>,
     private videoStateStore: Store<VideoState>,
+    private resizeStateStore: Store<ResizeState>,
   ) {
     this.scrollContent$ = this.scrollStateStore.select('scrolling');
     this.videoContent$ = this.videoStateStore.select('video');
+    this.resizeContent$ = this.resizeStateStore.select('resize');
   }
 
   setScrollStore(type: string, {scrollHeight, clientHeight, scrollTop}:
@@ -47,6 +51,30 @@ export class StoreService {
     return this.scrollContent$;
   }
 
+  setResizeStore(type: string, {width, height, isMobile, isIos, isAndroid}:
+    {width: number, height: number, isMobile: boolean, isIos: boolean, isAndroid: boolean}
+    =
+    {width : 0, height: 0, isMobile: false, isIos: false, isAndroid: false}) {
+    const resizeAction = ({resize, type}: {resize: Resize,  type: string}) => ({
+      type: type,
+      resize: resize
+    });
+    this.scrollStateStore.dispatch(resizeAction({
+      type: type,
+      resize: {
+        width: width,
+        height: height,
+        isMobile: isMobile,
+        isIos: isIos,
+        isAndroid: isAndroid,
+      }
+    }));
+  }
+
+  getResizeStore(){
+    return this.resizeContent$;
+  }
+
   setVideoStore(type: string, param = null) {
     const videoAction = ({video, type}: {video: Video,  type: string}) => ({
       type: type,
@@ -55,10 +83,10 @@ export class StoreService {
       }
     });
     this.videoStateStore.dispatch(videoAction({
+      type: type,
       video: {
         param
-      },
-      type: type,
+      }
     }));
   }
 

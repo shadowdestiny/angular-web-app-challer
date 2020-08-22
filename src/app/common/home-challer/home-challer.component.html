@@ -1,37 +1,43 @@
-<div class="home">
-
-  <div class="menu-left">
-    <app-selector-site></app-selector-site>
-  </div>
-  <div class="menu-bottom">
-    <div class="">
-      <div class="font-style-7 click" (click)="onAbout()">About Us</div>
-      <div class="font-style-7 click" (click)="onVision()">Vision</div>
-      <div class="font-style-7 click" (click)="onBusiness()">Business</div>
-      <div class="font-style-7 click" (click)="onCondition()">Terms & Conditions</div>
+<ng-container #vc></ng-container>
+<ng-template #tpl>
+  <div class="home" *ngIf="!isMobile">
+    <div class="menu-left">
+      <app-selector-site></app-selector-site>
     </div>
-  </div>
-  <div class="container-fluid mt-5 desktop">
-    <div class="row">
-      <div class="col-md-3">
+    <div class="menu-bottom">
+      <div class="">
+        <div class="font-style-7 click" (click)="onAbout()">About Us</div>
+        <div class="font-style-7 click" (click)="onVision()">Vision</div>
+        <div class="font-style-7 click" (click)="onBusiness()">Business</div>
+        <div class="font-style-7 click" (click)="onCondition()">Terms & Conditions</div>
       </div>
-      <div class="col-md-5">
-        <div *ngFor="let challenge of challenges" class="video-challer">
-          <app-challer-slide-list [challenge]="challenge"></app-challer-slide-list>
+    </div>
+    <div class="container-fluid mt-5 desktop">
+      <div class="row">
+        <div class="col-md-3">
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="banners-float-sections">
-          <div class="section-right">
-            <app-slide-banners></app-slide-banners>
+        <div class="col-md-5">
+          <div *ngFor="let challenge of challenges" class="video-challer">
+            <app-challer-slide-list [challenge]="challenge"></app-challer-slide-list>
           </div>
-          <div class="download mt-5 d-flex justify-content-center">
-            <div class="download-now">
-              <app-download-app [template]="'right-section'"></app-download-app>
+        </div>
+        <div class="col-md-4">
+          <div class="banners-float-sections">
+            <div class="section-right">
+              <app-slide-banners></app-slide-banners>
+            </div>
+            <div class="download mt-5 d-flex justify-content-center">
+              <div class="download-now">
+                <app-download-app [template]="'right-section'"></app-download-app>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="home" *ngIf="isMobile">
+    <app-challer-vertical-slide [challenges] = challenges [height]="innerHeight" [width]="innerWidth" ></app-challer-vertical-slide>
+  </div>
+
+</ng-template>

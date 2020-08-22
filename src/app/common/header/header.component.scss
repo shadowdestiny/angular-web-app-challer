@@ -10,6 +10,10 @@
     background: var(--follow-color);
     border-bottom: 1px solid black;
   }
+  &.home-challer-mobile{
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
 
   .height-section{
     height: 25px;
@@ -131,6 +135,15 @@
       margin-left: 18px;
       width: 100%;
       text-align: left;
+    }
+  }
+
+  .logo-home-mobile{
+    .click{
+      margin-top: 12px;
+    }
+    img{
+      width: 90px;
     }
   }
 

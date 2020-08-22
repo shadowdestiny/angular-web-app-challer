@@ -33,6 +33,9 @@ import {modalReducer} from "./store/reducers/modal.reducer";
 import {scrollReducer} from "./store/reducers/scroll.reducer";
 import {videoReducer} from "./store/reducers/video.reducer";
 import {CloudNotificationComponent} from "./component/component/cloud-notification/cloud-notification.component";
+import {resizeReducer} from "./store/reducers/resize.reducer";
+import {ChallerVerticalSlideComponent} from "./component/component/challer-vertical-slide/challer-vertical-slide.component";
+import {MenuBottomComponent} from "./component/component/menu-bottom/menu-bottom.component";
 
 @NgModule({
   declarations: [
@@ -64,7 +67,9 @@ import {CloudNotificationComponent} from "./component/component/cloud-notificati
     SlideBannersComponent,
     ClickAngular,
     clickIOS,
-    CloudNotificationComponent
+    CloudNotificationComponent,
+    ChallerVerticalSlideComponent,
+    MenuBottomComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,10 +80,15 @@ import {CloudNotificationComponent} from "./component/component/cloud-notificati
     StoreModule.forRoot({
       modalLoginMessage: modalReducer,
       scrolling: scrollReducer,
-      video: videoReducer
+      video: videoReducer,
+      resize: resizeReducer,
     }),
   ],
   providers: [httpInterceptorProviders],
+  exports: [
+    clickIOS,
+    ClickAngular
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

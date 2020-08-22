@@ -31,6 +31,9 @@
   &.noCloud{
     height: calc(100% - 65px);
   }
+  &.autoHeight{
+    height: 100%;
+  }
 }
 app-cloud{
   img{

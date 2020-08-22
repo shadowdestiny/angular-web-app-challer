@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {StoreService} from "./service/store.service";
 import {ScrollConstants} from "./store/constants/scroll.constants";
+import {ResizeConstants} from "./store/constants/resize.constants";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,11 +12,48 @@ import {ScrollConstants} from "./store/constants/scroll.constants";
 export class AppComponent implements OnInit{
   title = 'challer';
   isShowCloud = true;
+  isMobileValue = false;
+  urlActive = '';
 
   constructor(
-    private store: StoreService
+    private store: StoreService,
+    public route: Router
   ) {
 
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.setResizeEvent();
+  }
+
+  isMobile(): boolean{
+    const ua = navigator.userAgent;
+    return this.isMobileValue = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua));
+  }
+
+  isIOS(): boolean{
+    const ua = navigator.userAgent;
+    return  /iPhone|iPad|iPod/i.test(ua);
+  }
+
+  isAndroid(): boolean{
+    const ua = navigator.userAgent;
+    return  /Android/i.test(ua);
+  }
+
+  ngOnInit(): void {
+    this.setResizeEvent();
+  }
+
+  setResizeEvent(){
+    this.store.setResizeStore(ResizeConstants.START,
+      { width: window.innerWidth,
+        height: window.innerHeight,
+        isMobile: this.isMobile(),
+        isIos: this.isIOS(),
+        isAndroid: this.isAndroid(),
+      });
   }
 
   onVisual(isShow = true){
@@ -28,10 +67,6 @@ export class AppComponent implements OnInit{
     }
     this.store.setScrollStore(ScrollConstants.ALL_SCROLLING,
       {scrollHeight: scrollMe.scrollHeight, clientHeight: scrollMe.clientHeight, scrollTop: scrollMe.scrollTop});
-  }
-
-  ngOnInit(): void {
-
   }
 
 }

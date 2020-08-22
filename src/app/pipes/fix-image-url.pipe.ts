@@ -13,7 +13,7 @@ export class FixImageUrlPipe implements PipeTransform {
   }
 
   transform(value: any, ...args: any[]): any {
-    console.log(`${this.config.getConfiguration('HTTP_CDN_GOOGLE')}${value}`);
+    // console.log(`${this.config.getConfiguration('HTTP_CDN_GOOGLE')}${value}`);
     return `${this.config.getConfiguration('HTTP_CDN_GOOGLE')}${value}`;
     // return `${API.CDN_BUCKET}`;
   }

@@ -1,21 +1,42 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
+import {StoreService} from "../../service/store.service";
+import {ResizeConstants} from "../../store/constants/resize.constants";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
   isOpen = false;
+  isMobile = false;
+  @Output() urlRouter = new EventEmitter<string>();
+  @Input() isShowMobile = false;
 
   constructor(
-    public router: Router
+    public router: Router,
+    private store: StoreService
   ) {
   }
 
   ngOnInit(): void {
+    this.init()
+  }
+
+  init(){
+    this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START){
+        this.isMobile = data.resize.isMobile;
+      }
+    });
+  }
+
+  pushUrlRouter(){
+    // setTimeout(() => {
+      this.urlRouter.emit(this.router.url);
+    // }, 1000)
   }
 
   onClickMenu() {
@@ -50,6 +71,10 @@ export class HeaderComponent implements OnInit {
   onBusiness(){
     this.isOpen = false;
     this.router.navigate(['/business']);
+  }
+
+  ngAfterViewInit(): void {
+    this.pushUrlRouter();
   }
 
 }

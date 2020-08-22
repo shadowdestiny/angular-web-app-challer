@@ -39,5 +39,5 @@ export interface HomeChallerModel {
   "qtyvotesOwnerChallenge":number;
   "qtyvotesInvitedChallenge":number;
   "showVotes":boolean;
-  "videoOption"?: Array<VideoOption>
+  "videoOptions": VideoOption;
 }

@@ -24,6 +24,9 @@
   &.blue{
     color: var(--blue-color);
   }
+  &.big{
+    font-size: 18px;
+  }
 }
 .font-style-3-1{
   color: var(--black-color);
@@ -79,4 +82,16 @@
   font-style: normal;
   text-align: justify;
   font-size: 17px;
+  &.font-big{
+    font-size: 21px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    color: #3c3c3b;
+  }
+}
+.font-footer-menu{
+  font-size: 10px;
+  margin-top: 2px;
+  color: #36efa5;
 }
