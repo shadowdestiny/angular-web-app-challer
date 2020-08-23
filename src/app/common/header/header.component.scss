@@ -57,6 +57,9 @@
       top: 58px;
       z-index: 10;
     }
+    &.isMobileNative{
+      top:10px;
+    }
   }
 
   .menu-float{
@@ -70,6 +73,10 @@
     font-weight: bold;
     padding-left: 5%;
     padding-right: 5%;
+    &.isMobileNative{
+      top:0;
+      margin-top: 50px;
+    }
   }
 
   .c-flex{

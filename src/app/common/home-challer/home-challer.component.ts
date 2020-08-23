@@ -24,6 +24,7 @@ export class HomeChallerComponent implements OnInit {
   innerHeight;
   isMobile = false;
   isFirst = true;
+  top = 0;
 
   @ViewChild('vc', {read: ViewContainerRef, static: true}) vc: ViewContainerRef;
   @ViewChild('tpl', {read: TemplateRef, static: true}) tpl: TemplateRef<any>;
@@ -43,6 +44,7 @@ export class HomeChallerComponent implements OnInit {
       this.getChallenges(0, this.limit);
     })
     this.getResize();
+    this.getScroll();
 
   }
 
@@ -60,6 +62,16 @@ export class HomeChallerComponent implements OnInit {
     this.insertChildView();
   }
 
+  getScroll(){
+    this.store.getScrollStore().subscribe((data: any) => {
+      if (data.status === ScrollConstants.ALL_SCROLLING){
+        setTimeout(() => {
+          this.top = data.scroll.scroll.scrollTop;
+        }, 600);
+      }
+    });
+  }
+
   getResize(){
     this.store.getResizeStore().subscribe((data: any)=> {
       if (data.status === ResizeConstants.START){
@@ -71,9 +83,9 @@ export class HomeChallerComponent implements OnInit {
         }
         this.isFirst = false;
         this.isMobile = data.resize.isMobile;
-        this.resetView();
       }
-    })
+    });
+    this.resetView();
   }
 
   getChallenges(page: number, items: number){

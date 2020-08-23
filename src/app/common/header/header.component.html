@@ -89,7 +89,7 @@
           </div>
         </div>
         <ng-template #open>
-          <div class="p-3 bd-highlight click logo-section click float-right-close" (click)="onClickMenu()">
+          <div class="p-3 bd-highlight click logo-section click float-right-close" (click)="onClickMenu()" [ngClass]="{'isMobileNative':isShowMobile}">
             <img [src]="'/assets/images/icons/close.svg'" class="menu-icon d-block">
           </div>
         </ng-template>
@@ -97,7 +97,7 @@
     </div>
   </div>
 
-  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen">
+  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}" >
     <div class="d-flex flex-column bd-highlight mb-3">
       <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onHome()"  [ngClass]="{'font-style-4': router.url === '/'}">
         <div class="menu-items">
