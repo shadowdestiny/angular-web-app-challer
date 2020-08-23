@@ -7,6 +7,7 @@ import {BusinessComponent} from "./common/business/business.component";
 import {VisionComponent} from "./common/vision/vision.component";
 import {ContactComponent} from "./common/contact/contact.component";
 import {HomeChallerComponent} from "./common/home-challer/home-challer.component";
+import {ContactCvComponent} from "./component/component/contact-cv/contact-cv.component";
 
 
 const routes: Routes = [
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'contact', pathMatch: 'full', component: ContactComponent,
+  },
+  {
+    path: 'contact-cv', pathMatch: 'full', component: ContactCvComponent,
   },
   {
     path: 'home-challer', pathMatch: 'full', component: HomeChallerComponent,

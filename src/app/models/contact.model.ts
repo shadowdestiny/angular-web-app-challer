@@ -3,5 +3,7 @@ export interface ContactModel{
   email: string;
   subject: string;
   description: string;
-  file?: string;
+  document?: string;
+  typeDocument?: string;
+  documentName?: string;
 }

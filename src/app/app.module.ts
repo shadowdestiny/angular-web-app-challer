@@ -39,6 +39,7 @@ import {MenuBottomComponent} from "./component/component/menu-bottom/menu-bottom
 import {cloudReducer} from "./store/reducers/cloud.reducer";
 import { ClickOutsideModule } from 'ng-click-outside';
 import {ReactiveFormsModule} from "@angular/forms";
+import {ContactCvComponent} from "./component/component/contact-cv/contact-cv.component";
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     CloudNotificationComponent,
     ChallerVerticalSlideComponent,
     MenuBottomComponent,
+    ContactCvComponent
   ],
   imports: [
     BrowserModule,

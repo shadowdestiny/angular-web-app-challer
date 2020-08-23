@@ -18,4 +18,9 @@ export class ContactService {
     let url = `${API.CONTACT}`;
     return this.http.post( url , body);
   }
+
+  public setContactCv(body: ContactModel) {
+    let url = `${API.CONTACT_CV}`;
+    return this.http.post( url , body);
+  }
 }
