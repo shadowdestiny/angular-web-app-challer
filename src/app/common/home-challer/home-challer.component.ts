@@ -1,4 +1,13 @@
-import {Component, HostListener, OnInit, TemplateRef, ViewChild, ViewContainerRef, ViewRef} from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnDestroy,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
+  ViewRef
+} from '@angular/core';
 import {ChallengeService} from "../../service/challenge.service";
 import {HomeChallerModel} from "../../models/home.challer.model";
 import {ConfigurationService} from "../../service/configuration.service";
@@ -8,13 +17,14 @@ import {StoreService} from "../../service/store.service";
 import {ScrollConstants} from "../../store/constants/scroll.constants";
 import {ResizeConstants} from "../../store/constants/resize.constants";
 import {VideoConstants} from "../../store/constants/video.constants";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-home-challer',
   templateUrl: './home-challer.component.html',
   styleUrls: ['./home-challer.component.scss']
 })
-export class HomeChallerComponent implements OnInit {
+export class HomeChallerComponent implements OnInit, OnDestroy {
 
   challenges: Array<HomeChallerModel> = [];
   paginator: Paginator;
@@ -25,6 +35,8 @@ export class HomeChallerComponent implements OnInit {
   isMobile = false;
   isFirst = true;
   top = 0;
+
+  subscribes: Subscription[] = [];
 
   @ViewChild('vc', {read: ViewContainerRef, static: true}) vc: ViewContainerRef;
   @ViewChild('tpl', {read: TemplateRef, static: true}) tpl: TemplateRef<any>;
@@ -63,17 +75,17 @@ export class HomeChallerComponent implements OnInit {
   }
 
   getScroll(){
-    this.store.getScrollStore().subscribe((data: any) => {
+    this.subscribes.push(this.store.getScrollStore().subscribe((data: any) => {
       if (data.status === ScrollConstants.ALL_SCROLLING){
         setTimeout(() => {
           this.top = data.scroll.scroll.scrollTop;
         }, 600);
       }
-    });
+    }));
   }
 
   getResize(){
-    this.store.getResizeStore().subscribe((data: any)=> {
+    this.subscribes.push(this.store.getResizeStore().subscribe((data: any)=> {
       if (data.status === ResizeConstants.START){
         this.innerHeight = data.resize.height - 60;
         this.innerWidth = data.resize.width;
@@ -84,7 +96,7 @@ export class HomeChallerComponent implements OnInit {
         this.isFirst = false;
         this.isMobile = data.resize.isMobile;
       }
-    });
+    }));
     this.resetView();
   }
 
@@ -108,6 +120,12 @@ export class HomeChallerComponent implements OnInit {
           this.getChallenges(page, items)
         })
       }
+    })
+  }
+
+  ngOnDestroy() {
+    this.subscribes.forEach((e: Subscription) => {
+      e.unsubscribe();
     })
   }
 
