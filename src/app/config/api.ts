@@ -5,4 +5,5 @@ export const API = {
   CONFIGURATION: environment.CONFIGURATION,
   CDN_BUCKET: environment.CDN_BUCKET,
   ADVERTISING: environment.ADVERTISING,
+  CONTACT: environment.CONTACT,
 };

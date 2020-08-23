@@ -21,32 +21,54 @@
         </div>
       </div>
       <div class="col-md-8">
-        <form class="template-designer">
+        <form [formGroup]="contactForm"  class="template-designer">
           <div class="form-group">
             <label for="fullname">Full Name <span>*</span></label>
-            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+                   formControlName="firstName"
+            >
           </div>
           <div class="form-group">
             <label for="email">Email <span>*</span></label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   formControlName="email"
+            >
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <select class="form-control" id="subject">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="form-control" id="subject" formControlName="support">
+              <option selected>Support</option>
             </select>
           </div>
           <div class="form-group">
             <label for="validationTextarea"></label>
-            <textarea class="form-control" id="validationTextarea"></textarea>
+            <textarea class="form-control" id="validationTextarea" formControlName="comment"></textarea>
+          </div>
+          <div class="form-group" *ngIf="status === 'ok'">
+            <div class="alert alert-primary" role="alert">
+              Email send!
+            </div>
+          </div>
+          <div class="form-group" *ngIf="status === 'error'">
+            <div class="alert alert-warning" role="alert">
+              {{message}}
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="help-block"
+                  *ngIf="contactForm.get('firstName').hasError('required')
+                  || contactForm.get('email').hasError('required')
+                  || contactForm.get('email').hasError('email')
+                  || contactForm.get('support').hasError('required')
+                  || contactForm.get('comment').hasError('required')
+                "
+            >
+              <strong>Los Campos con (*) son requeridos</strong> <!--{{error}}-->
+            </span>
           </div>
           <div class="form-group">
             <div class="button-submit">
-              <app-button-type-template [template]="'form'" >
+              <app-button-type-template [template]="'form'" [disabled] = !contactForm.valid (onClickButton)="submit()" >
                 <div class="text-center font-weight-bold">
                   SUBMIT
                 </div>

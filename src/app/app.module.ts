@@ -38,6 +38,7 @@ import {ChallerVerticalSlideComponent} from "./component/component/challer-verti
 import {MenuBottomComponent} from "./component/component/menu-bottom/menu-bottom.component";
 import {cloudReducer} from "./store/reducers/cloud.reducer";
 import { ClickOutsideModule } from 'ng-click-outside';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
       resize: resizeReducer,
       cloud: cloudReducer,
     }),
+    ReactiveFormsModule,
   ],
   providers: [httpInterceptorProviders],
   exports: [
