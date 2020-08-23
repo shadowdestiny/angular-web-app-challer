@@ -36,6 +36,8 @@ import {CloudNotificationComponent} from "./component/component/cloud-notificati
 import {resizeReducer} from "./store/reducers/resize.reducer";
 import {ChallerVerticalSlideComponent} from "./component/component/challer-vertical-slide/challer-vertical-slide.component";
 import {MenuBottomComponent} from "./component/component/menu-bottom/menu-bottom.component";
+import {cloudReducer} from "./store/reducers/cloud.reducer";
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -76,12 +78,14 @@ import {MenuBottomComponent} from "./component/component/menu-bottom/menu-bottom
     AppRoutingModule,
     NgxUsefulSwiperModule,
     HttpClientModule,
+    ClickOutsideModule,
     NgxWebstorageModule.forRoot(),
     StoreModule.forRoot({
       modalLoginMessage: modalReducer,
       scrolling: scrollReducer,
       video: videoReducer,
       resize: resizeReducer,
+      cloud: cloudReducer,
     }),
   ],
   providers: [httpInterceptorProviders],

@@ -7,6 +7,8 @@ import {Scroll, ScrollAction} from "../store/actions/scroll.actions";
 import {Video, VideoAction} from "../store/actions/video.action";
 import {ResizeState} from "../store/reducers/resize.reducer";
 import {Resize} from "../store/actions/resize.action";
+import {CloudState} from "../store/reducers/cloud.reducer";
+import {Cloud} from "../store/actions/cloud.action";
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +18,17 @@ export class StoreService {
   private scrollContent$: Observable<string>;
   private videoContent$: Observable<string>;
   private resizeContent$: Observable<string>;
+  private cloudContent$: Observable<string>;
   constructor(
     private scrollStateStore: Store<ScrollState>,
     private videoStateStore: Store<VideoState>,
     private resizeStateStore: Store<ResizeState>,
+    private cloudStateStore: Store<CloudState>,
   ) {
     this.scrollContent$ = this.scrollStateStore.select('scrolling');
     this.videoContent$ = this.videoStateStore.select('video');
     this.resizeContent$ = this.resizeStateStore.select('resize');
+    this.cloudContent$ = this.cloudStateStore.select('cloud');
   }
 
   setScrollStore(type: string, {scrollHeight, clientHeight, scrollTop}:
@@ -92,6 +97,21 @@ export class StoreService {
 
   getVideoStore(){
     return this.videoContent$;
+  }
+
+  setCloudStore(type: string) {
+    const cloudAction = ({cloud, type}: {cloud: Cloud,  type: string}) => ({
+      type: type,
+      cloud: cloud
+    });
+    this.cloudStateStore.dispatch(cloudAction({
+      type: type,
+      cloud: null
+    }));
+  }
+
+  getCloudStore(){
+    return this.cloudContent$;
   }
 
 }
