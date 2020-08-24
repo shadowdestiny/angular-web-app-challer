@@ -1,6 +1,14 @@
 export interface VideoOption {
   isPlay: boolean;
 }
+export interface AbilitiesModel {
+  abilityCode: string;
+  challengeId: number;
+  createDate: string;
+  id: number;
+  name: string;
+  userId: number;
+}
 export interface HomeChallerModel {
   "idSeq":number;
   "challengeId":number;
@@ -40,4 +48,5 @@ export interface HomeChallerModel {
   "qtyvotesInvitedChallenge":number;
   "showVotes":boolean;
   "videoOptions": VideoOption;
+  "abilities": Array<AbilitiesModel>
 }
