@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="home" *ngIf="isMobile">
-    <app-challer-vertical-slide [challenges] = challenges [height]="innerHeight" [width]="innerWidth" ></app-challer-vertical-slide>
+    <app-challer-vertical-slide [challenges] = challenges [height]="innerHeight" [width]="innerWidth" (nextPagination) = nextPagination()></app-challer-vertical-slide>
   </div>
 
 </ng-template>

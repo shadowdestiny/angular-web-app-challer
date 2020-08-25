@@ -28,7 +28,7 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
 
   challenges: Array<HomeChallerModel> = [];
   paginator: Paginator;
-  limit = 5;
+  limit = 3;
 
   innerWidth;
   innerHeight;
@@ -81,7 +81,16 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
           this.top = data.scroll.scroll.scrollTop;
         }, 600);
       }
+      if (data.status === ScrollConstants.SCROLLING_DOWN){
+        this.nextPagination();
+      }
     }));
+  }
+
+  nextPagination(){
+    this.paginator.paginateDownFromLibrary((page, items) => {
+      this.getChallenges(page, items)
+    })
   }
 
   getResize(){
@@ -110,16 +119,6 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
       })];
       this.challenges = [...this.challenges, ...challenges];
       this.paginator.setTotalRowFromService(Number(data.total_items_challerhome));
-    })
-  }
-
-  onDownScroll(){
-    this.store.getScrollStore().subscribe((data: any) => {
-      if (data.status === ScrollConstants.SCROLLING_DOWN){
-        this.paginator.paginateDownFromLibrary((page, items) => {
-          this.getChallenges(page, items)
-        })
-      }
     })
   }
 
