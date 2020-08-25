@@ -28,7 +28,7 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
 
   challenges: Array<HomeChallerModel> = [];
   paginator: Paginator;
-  limit = 3;
+  limit = 5;
 
   innerWidth;
   innerHeight;

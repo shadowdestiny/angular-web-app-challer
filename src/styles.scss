@@ -72,8 +72,12 @@ app-cloud{
     min-width: 182px;
   }
   &.apple{
-    width: 183px !important;
+    width: 183px;
     height: 54px;
+  }
+  &.right{
+    min-width: 100px;
+    height: 43px;
   }
 }
 
