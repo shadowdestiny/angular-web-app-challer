@@ -55,7 +55,7 @@
       position: absolute;
       right: 10px;
       top: 58px;
-      z-index: 10;
+      z-index: 100;
     }
     &.isMobileNative{
       top:10px;
@@ -75,7 +75,6 @@
     padding-right: 5%;
     &.isMobileNative{
       top:0;
-      margin-top: 50px;
     }
   }
 
