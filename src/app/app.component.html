@@ -2,7 +2,7 @@
 <app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud && !isMobileValue"></app-cloud>
 <div class="principal-background height-infinite" [ngClass]="{
 'noCloud': !isShowCloud,
-'autoHeight': isMobileValue && route.url === '/home-challer'
+'autoHeight': isMobileValue
 }"
      #scrollMe (scroll)="onScroll($event,scrollMe)"
 >
