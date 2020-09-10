@@ -1,93 +1,84 @@
 <div class="container-fluid footer-component">
   <div class="padding-footer">
     <div class="row">
-      <div class="col-md-3">
-        <div class="desktop desktop-logo">
-          <img src="assets/images/icons/logo.svg" >
+      <div class="col-md-2">
+        <div class="mobile text-center ml-auto mb-4 mr-auto mobile-download">
+          <app-donwload-buttoms></app-donwload-buttoms>
         </div>
-        <div class="subtitle-footer click" (click)="onAbout()">
+        <div class="footer-logo">
+          <img src="assets/images/icons/logo.svg" class="text-md-left text-center d-block ml-auto mr-auto">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="font-style-5 bold text-md-left text-center mt-4 mt-md-0 mt-sm-4">
+          CHALLER
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
           About Us
         </div>
-        <div class="mt-2 click" (click)="onContact()">
-          <app-button-type-template [template]="'footer'">
-            <div class="d-flex bd-highlight font-style-1 height-60">
-              <div class="bd-highlight contact">
-                <img src="assets/images/icons/contact-phone.svg">
-              </div>
-              <div class="bd-highlight pl-2">
-                Contact Us
+        <div class="font-style-8 text-md-left text-center ">
+          Our Mission
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Our Story
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="font-style-5 bold text-md-left text-center mt-4 mt-md-0 mt-sm-4">
+          QUESTIONS?
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Terms & Conditions
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Policy policy
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Cookies policy
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="font-style-5 bold text-md-left text-center mt-4 mt-md-0 mt-sm-4">
+          CONTACT UPS
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Join our team
+        </div>
+        <div class="font-style-8 text-md-left text-center ">
+          Challer for Business
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="font-style-5 bold text-center text-md-center text-sm-center  mt-4 mt-md-0 mt-sm-4">
+          FOLLOW US
+        </div>
+        <div>
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-fill bd-highlight">
+              <div class="instagram">
+                <img src="assets/images/components/footer/instagram.svg">
               </div>
             </div>
+            <div class="p-2 flex-fill bd-highlight">
+              <div>
+                <img src="assets/images/components/footer/twitter.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2">
+          <app-button-type-template [template]="'red'">
+            <div class="font-weight-bold text-center">CONTACT US</div>
           </app-button-type-template>
         </div>
-        <div class="section-text about-icon mt-2">
-          Address:
-          <div>
-            Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet
-          </div>
-        </div>
-        <div class="section-text information-icon mt-2">
-          Have my Questions?:
-          <div>
-            Loremmip@challer.app
-          </div>
-        </div>
       </div>
-      <div class="col-md-3">
-        <div class="subtitle-footer">
-          Cares
-        </div>
-        <div class="section-text links-icon mt-2">
-          Be part of Cchaller team sent your CV to:
-          <div>
-            talent@challer.app
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="subtitle-footer click" (click)="onBusiness()">
-          Business
-        </div>
-        <div class="section-text traz-icon mt-2">
-          Loren Ipsum
-          <div>
 
-          </div>
+      <div class="col-md-2">
+        <div class="desktop download-section">
+          <app-donwload-buttoms></app-donwload-buttoms>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="">
-          <div class="d-flex justify-content-center bd-highlight font-style-1 height-60">
-            <div class="bd-highlight subtitle-footer follow">
-              Follow us in
-            </div>
-            <div class="ml-2 bd-highlight click margin-top-button">
-              <img [src]="'/assets/images/icons/instagram.svg'" class="social">
-            </div>
-            <div class="ml-2 bd-highlight click margin-top-button">
-              <img [src]="'/assets/images/icons/twitter.svg'" class="social">
-            </div>
-          </div>
-        </div>
-        <div class="section-text font-follow-style text-left mt-5 pl-5">
-          <div class="pt-1 click" (click)="onCondition()">
-            Terms & Conditions
-          </div>
-          <div class="pt-1">
-            Privacy policy
-          </div>
-          <div class="pt-1">
-            Cookies policy
-          </div>
-        </div>
-
-        <div class="mobile logo-section">
-          <div class="text-center">
-            <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
-          </div>
-        </div>
-
       </div>
     </div>
   </div>

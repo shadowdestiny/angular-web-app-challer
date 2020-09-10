@@ -8,16 +8,16 @@ import {
   ViewContainerRef,
   ViewRef
 } from '@angular/core';
-import {ChallengeService} from "../../service/challenge.service";
-import {HomeChallerModel} from "../../models/home.challer.model";
-import {ConfigurationService} from "../../service/configuration.service";
-import {Router} from "@angular/router";
-import {Paginator} from "../../../lib/paginator";
-import {StoreService} from "../../service/store.service";
-import {ScrollConstants} from "../../store/constants/scroll.constants";
-import {ResizeConstants} from "../../store/constants/resize.constants";
-import {VideoConstants} from "../../store/constants/video.constants";
-import {Subscription} from "rxjs";
+import {ChallengeService} from '../../service/challenge.service';
+import {HomeChallerModel} from '../../models/home.challer.model';
+import {ConfigurationService} from '../../service/configuration.service';
+import {Router} from '@angular/router';
+import {Paginator} from '../../../lib/paginator';
+import {StoreService} from '../../service/store.service';
+import {ScrollConstants} from '../../store/constants/scroll.constants';
+import {ResizeConstants} from '../../store/constants/resize.constants';
+import {VideoConstants} from '../../store/constants/video.constants';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-home-challer',
@@ -54,7 +54,7 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.configurationService.refreshConfiguration(() => {
       this.getChallenges(0, this.limit);
-    })
+    });
     this.getResize();
     this.getScroll();
 
@@ -74,31 +74,31 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
     this.insertChildView();
   }
 
-  getScroll(){
+  getScroll() {
     this.subscribes.push(this.store.getScrollStore().subscribe((data: any) => {
-      if (data.status === ScrollConstants.ALL_SCROLLING){
+      if (data.status === ScrollConstants.ALL_SCROLLING) {
         setTimeout(() => {
           this.top = data.scroll.scroll.scrollTop;
         }, 600);
       }
-      if (data.status === ScrollConstants.SCROLLING_DOWN){
+      if (data.status === ScrollConstants.SCROLLING_DOWN) {
         this.nextPagination();
       }
     }));
   }
 
-  nextPagination(){
+  nextPagination() {
     this.paginator.paginateDownFromLibrary((page, items) => {
-      this.getChallenges(page, items)
-    })
+      this.getChallenges(page, items);
+    });
   }
 
-  getResize(){
-    this.subscribes.push(this.store.getResizeStore().subscribe((data: any)=> {
-      if (data.status === ResizeConstants.START){
+  getResize() {
+    this.subscribes.push(this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START) {
         this.innerHeight = data.resize.height - 60;
         this.innerWidth = data.resize.width;
-        if (!this.isFirst && this.isMobile !== data.resize.isMobile){
+        if (!this.isFirst && this.isMobile !== data.resize.isMobile) {
           this.store.setVideoStore(VideoConstants.PAUSE_ALL);
           window.location.href = window.location.href;
         }
@@ -109,35 +109,38 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
     this.resetView();
   }
 
-  getChallenges(page: number, items: number){
+  getChallenges(page: number, items: number) {
     this.challengeService.getChallenges(page, items).subscribe((data: any) => {
       const challenges = [...data.challerHome.map((x: HomeChallerModel) => {
         return x.videoOptions = {
           ...x,
-          isPlay : false
-        }
+          isPlay: false
+        };
       })];
       this.challenges = [...this.challenges, ...challenges];
       this.paginator.setTotalRowFromService(Number(data.total_items_challerhome));
-    })
+    });
   }
 
   ngOnDestroy() {
     this.subscribes.forEach((e: Subscription) => {
       e.unsubscribe();
-    })
+    });
   }
 
-  onAbout(){
+  onAbout() {
     this.router.navigate(['/about-us']);
   }
-  onVision(){
+
+  onVision() {
     this.router.navigate(['/vision']);
   }
-  onBusiness(){
+
+  onBusiness() {
     this.router.navigate(['/business']);
   }
-  onCondition(){
+
+  onCondition() {
     this.router.navigate(['/policy']);
   }
 }

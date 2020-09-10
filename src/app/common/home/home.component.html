@@ -1,78 +1,32 @@
-<div class="home">
-  <div class="container mt-5 desktop">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="section">
-          <img [src]="'/assets/images/icons/logo-complet.svg'" class="w-75 d-block">
-        </div>
-        <div class="section text-1 pt-5">
-            <div class="font-style-2 text-left">
-              What is Challer?
-            </div>
-            <div class="font-style-3 text-left">
-              Challer is a platform to show your abilities challenging others. If you like to show what you are good at and defy your friends, then Challer is for you. Download it, challenge, vote, look at challenges and connect with others. Can you do it better?
-            </div>
-            <div class="font-style-3 text-left pt-2">
-              <strong>SHOW YOUR MAGIC WITH CHALLER!!!</strong>
-            </div>
-            <div class="font-style-3 text-left pl-3 pt-2">
-              Coming soon to:
-            </div>
-        </div>
-        <!--<div class="section pt-2">
-          <div class="d-flex justify-content-center bd-highlight mb-3 font-style-1">
-            <div class="p-3 bd-highlight">
-              <img [src]="'/assets/images/icons/5a902db97f96951c82922874@2x.png'" class="w-75 button-icon right-section">
-            </div>
-            <div class="p-3 bd-highlight click" (click)="toGoogle()">
-              <img [src]="'/assets/images/icons/5a902dbf7f96951c82922875@2x.png'" class="w-75 button-icon google left-section">
-            </div>
-          </div>
-        </div>-->
-      </div>
-      <div class="col-sm-6">
-        <div class="section animated fadeInRight">
-          <img [src]="'/assets/images/cell@3x.png'" class="w-100">
-        </div>
-      </div>
-    </div>
+<div class="home position-relative spacing-top-default animated fadeInRight dynamic-height">
+
+  <div class="float-section w-100 ">
+    <div class="diagonal diagonal-width"></div>
   </div>
-  <div class="container mt-5 mobile">
+
+  <div class="container mt-5 pb-5">
     <div class="row">
-      <div class="col-sm-6">
-        <div class="section animated fadeInUp">
-          <img [src]="'/assets/images/cell@3x.png'" class="w-100">
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="section text-1 pt-2">
-          <div class="font-style-2 text-center">
-            What is Challer?
+      <div class="col-sm-4">
+        <div class="section text-1 pt-0 pt-md-5 font-weight-bold">
+          <div class="font-style-2 white text-left">
+            Show Your
           </div>
-          <div class="font-style-3 text-center">
-            Challer is a platform to show your abilities challenging others. If you like to show what you are good at and defy your friends, then Challer is for you. Download it, challenge, vote, look at challenges and connect with others. Can you do it better?
+          <div class="font-style-2 white text-left">
+            Magic!
           </div>
-          <div class="font-style-3 text-center pt-2">
-            <strong>SHOW YOUR MAGIC WITH CHALLER!!!</strong>
+          <div class="font-style-3 white text-left">
+            <span class="font-style-11">CHALLENGE. </span>
+            <span class="font-style-11 white">VOTE. WIN</span>
           </div>
-          <div class="font-style-3 text-center pt-3">
-            Coming soon to:
-          </div>
-        </div>
-        <div class="section pt-2">
-          <div class="row">
-            <div class="col-sm-6 p-2 click" (click)="toGoogle()">
-              <img [src]="'/assets/images/icons/5a902dbf7f96951c82922875@2x.png'" class="w-50 left-section">
-            </div>
-            <div class="col-sm-6 p-2">
-              <img [src]="'/assets/images/icons/5a902db97f96951c82922874@2x.png'" class="w-50 right-section">
-            </div>
+          <div class="button-challers mt-5 mb-5 desktop">
+            <app-button-type-template [template]="'green-2'" ToChallers>
+              WATCH CHALLENGES
+            </app-button-type-template>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <app-download-app></app-download-app>
-  <app-footer></app-footer>
 </div>
+<app-footer></app-footer>
 

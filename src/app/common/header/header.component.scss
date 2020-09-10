@@ -64,15 +64,16 @@
 
   .menu-float{
     position: fixed;
-    background: rgba(0, 0, 0, 0.85);
     left: 0;
-    right: 0;
+    right: 46px;
     bottom: 0;
     top: 66px;
     z-index: 1;
     font-weight: bold;
     padding-left: 5%;
     padding-right: 5%;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12);
+    background-image: linear-gradient(to bottom, #0f2f44, #03182a);
     &.isMobileNative{
       top:0;
     }
@@ -134,10 +135,10 @@
     }
     .text{
       font-weight: normal;
-      color: var(--grin-color);
+      color: var(--white);
       border-bottom: 1px solid grey;
-      padding-bottom: 10px;
-      margin-bottom: 2px;
+      padding-bottom: 26px;
+      margin-bottom: 10px;
       margin-left: 18px;
       width: 100%;
       text-align: left;
@@ -151,6 +152,10 @@
     img{
       width: 90px;
     }
+  }
+
+  .button-top{
+    margin-top: 11px;
   }
 
 }

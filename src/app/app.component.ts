@@ -1,19 +1,21 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {StoreService} from "./service/store.service";
-import {ScrollConstants} from "./store/constants/scroll.constants";
-import {ResizeConstants} from "./store/constants/resize.constants";
-import {Route, Router} from "@angular/router";
+import {StoreService} from './service/store.service';
+import {ScrollConstants} from './store/constants/scroll.constants';
+import {ResizeConstants} from './store/constants/resize.constants';
+import {Route, Router} from '@angular/router';
+import {CloudConstants} from './store/constants/cloud.constants';
+import {BodyConstants} from './store/constants/body.constants';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'challer';
   isShowCloud = true;
   isMobileValue = false;
-  urlActive = '';
+  colorBackground = 'blue';
 
   constructor(
     private store: StoreService,
@@ -27,28 +29,40 @@ export class AppComponent implements OnInit{
     this.setResizeEvent();
   }
 
-  isMobile(): boolean{
+  isMobile(): boolean {
     const ua = navigator.userAgent;
     return this.isMobileValue = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua));
   }
 
-  isIOS(): boolean{
+  isIOS(): boolean {
     const ua = navigator.userAgent;
-    return  /iPhone|iPad|iPod/i.test(ua);
+    return /iPhone|iPad|iPod/i.test(ua);
   }
 
-  isAndroid(): boolean{
+  isAndroid(): boolean {
     const ua = navigator.userAgent;
-    return  /Android/i.test(ua);
+    return /Android/i.test(ua);
   }
 
   ngOnInit(): void {
     this.setResizeEvent();
+    this.getBodyStatus();
+    this.getBackground();
   }
 
-  setResizeEvent(){
+  getBackground() {
+    /*if (this.route.url === 'home-challer') {
+      this.colorBackground = 'default';
+      alert(this.colorBackground);
+    } else if (this.route.url === 'business'){
+      this.colorBackground = 'default';
+    }*/
+  }
+
+  setResizeEvent() {
     this.store.setResizeStore(ResizeConstants.START,
-      { width: window.innerWidth,
+      {
+        width: window.innerWidth,
         height: window.innerHeight,
         isMobile: this.isMobile(),
         isIos: this.isIOS(),
@@ -56,7 +70,26 @@ export class AppComponent implements OnInit{
       });
   }
 
-  onVisual(isShow = true){
+  getBodyStatus() {
+    this.store.getBodyStore().subscribe((data: any) => {
+      setTimeout(() => {
+        if (data.status === BodyConstants.DEFAULT) {
+          this.colorBackground = 'default';
+        } else if (data.status === 'blue') {
+          this.colorBackground = 'blue';
+        }
+      }, 0);
+    });
+    this.route.events.subscribe((data: any) => {
+      if (this.route.url === '/business' || this.route.url === '/mision') {
+        this.colorBackground = 'default';
+      } else {
+        this.colorBackground = 'blue';
+      }
+    });
+  }
+
+  onVisual(isShow = true) {
     this.isShowCloud = isShow;
   }
 

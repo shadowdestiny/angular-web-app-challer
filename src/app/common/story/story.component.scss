@@ -1,0 +1,112 @@
+@import "../../../styles/_partial/mixins/responsive.mixin";
+
+.home {
+
+  .col-sm-6 {
+    padding-left: 0;
+    padding-right: 0;
+    @include for-mobile-small {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .text-left {
+
+  }
+
+  .section {
+    display: table;
+    text-align: center;
+    margin-left: 0;
+    margin-right: auto;
+
+    &.text-1 {
+      width: 100%;
+    }
+
+    @include for-mobile-small {
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .right-section {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+  }
+
+  .left-section {
+    margin-right: auto;
+    margin-left: 0;
+    display: block;
+  }
+
+  strong {
+    font-size: 18px;
+  }
+
+  .button-challers {
+    width: 218px;
+  }
+
+  .diagonal {
+    right: 0;
+    top: 0;
+    background: var(--grin-color);
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    bottom: 0;
+  }
+
+  .diagonal:before {
+    content: "";
+    right: 0;
+    top: 0;
+    left: 15px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(/assets/images/background/girl-background.jpg);
+    clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  @include for-table-very-small{
+    .diagonal {
+      clip-path: polygon(102% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
+    }
+    .diagonal:before {
+      left: 0;
+      top: 17px;
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
+    }
+  }
+
+  .float-section{
+
+  }
+}
+.dynamic-height{
+  height: 780px;
+}
+
+@include for-table-very-small{
+  .dynamic-height{
+    height: 1280px;
+  }
+}
+
+.diagonal-width{
+  width: 50%;
+}
+@include for-table-very-small{
+  .diagonal-width{
+    width: 100%;
+    margin-top: 600px;
+  }
+}

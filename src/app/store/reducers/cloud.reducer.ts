@@ -1,5 +1,5 @@
-import {CloudConstants} from "../constants/cloud.constants";
-import {CloudAction} from "../actions/cloud.action";
+import {CloudConstants} from '../constants/cloud.constants';
+import {CloudAction} from '../actions/cloud.action';
 
 export const OPEN = CloudConstants.OPEN;
 export const CLOSE = CloudConstants.CLOSE;
@@ -9,7 +9,7 @@ export const initialState = {
 };
 
 export interface CloudState {
-  cloud : string;
+  cloud: string;
 }
 
 

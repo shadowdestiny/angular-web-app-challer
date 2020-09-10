@@ -1,3 +1,4 @@
+@import "../../styles/_partial/mixins/responsive.mixin";
 .font-style-1{
   font-weight: bold;
   font-size: 14px;
@@ -8,6 +9,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
+  &.white{
+    color: var(--white-color)
+  }
+  @include for-table-very-small{
+    font-size: 36px;
+  }
 }
 .font-style-2-3{
   color: var(--blue-color);
@@ -24,8 +31,20 @@
   &.blue{
     color: var(--blue-color);
   }
+  &.black-2{
+    color: var(--black-color-2);
+  }
+  &.white{
+    color: var(--white);
+  }
+  &.grin-light{
+    color: var(--grin-color);
+  }
   &.big{
     font-size: 18px;
+  }
+  &.gris{
+    color: var(--gris-color);
   }
 }
 .font-style-3-1{
@@ -44,6 +63,36 @@
 .font-style-5{
   color: #FFFFFF;
   font-weight: normal;
+  &.header-text{
+    padding-top: 6px;
+  }
+  &.bold{
+    font-weight: bold;
+  }
+}
+.font-style-8{
+  color:#a7a7a7;
+  padding-top: 8px;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+.font-style-10-download{
+  font-size: 18px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: 0.9px;
+  color: #0b293d;
+}
+
+.font-style-11{
+  color: #02ffbb;
+  &.white{
+    color: var(--white)
+  }
 }
 
 .font-style-6{

@@ -1,8 +1,14 @@
 .footer-component{
-  border: 1px solid #3B5768;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: #3B5768;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  object-fit: contain;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12);
+  background-image: linear-gradient(to bottom, #0f2f44, #03182a);
+  .footer-logo{
+    img{
+      width: 90px;
+    }
+  }
   .padding-footer{
     padding-left: 15%;
     padding-right: 15%;
@@ -33,4 +39,18 @@
   img{
     width: 50px;
   }
+}
+
+.instagram{
+  text-align: right;
+  margin-left: auto;
+  display: block;
+}
+.download-section{
+  position: absolute;
+  bottom: 0;
+}
+.mobile-download{
+  inline-size: min-content;
+  margin-top: -140px;
 }

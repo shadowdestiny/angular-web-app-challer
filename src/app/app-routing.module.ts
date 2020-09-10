@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './common/home/home.component';
 import {AboutusComponent} from './common/aboutus/aboutus.component';
 import {PolicyComponent} from './common/policy/policy.component';
-import {BusinessComponent} from "./common/business/business.component";
-import {VisionComponent} from "./common/vision/vision.component";
-import {ContactComponent} from "./common/contact/contact.component";
-import {HomeChallerComponent} from "./common/home-challer/home-challer.component";
-import {ContactCvComponent} from "./component/component/contact-cv/contact-cv.component";
+import {BusinessComponent} from './common/business/business.component';
+import {VisionComponent} from './common/vision/vision.component';
+import {ContactComponent} from './common/contact/contact.component';
+import {HomeChallerComponent} from './common/home-challer/home-challer.component';
+import {ContactCvComponent} from './component/contact-cv/contact-cv.component';
+import {StoryComponent} from './common/story/story.component';
+import {MisionComponent} from './common/mision/mision.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,12 @@ const routes: Routes = [
   },
   {
     path: 'home-challer', pathMatch: 'full', component: HomeChallerComponent,
+  },
+  {
+    path: 'story', pathMatch: 'full', component: StoryComponent,
+  },
+  {
+    path: 'mision', pathMatch: 'full', component: MisionComponent,
   },
 ];
 

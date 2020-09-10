@@ -1,31 +1,45 @@
-<div class="home">
-  <div class="container mt-5">
+<div class="home position-relative spacing-top-default animated fadeInRight dynamic-height">
+
+  <div class="float-section w-100 ">
+    <div class="diagonal diagonal-width"></div>
+  </div>
+
+  <div class="container mt-5 pb-5">
     <div class="row">
-      <div class="col-md-4">
-        <div class="section animated fadeInRight">
-          <img [src]="'/assets/images/cell@3x.png'" class="w-100">
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="section text-1 pt-5">
-          <div class="font-style-2 text-left">
-            Our History
+      <div class="col-sm-6 col-md-6">
+        <div class="section text-1 pt-0 pt-md-5  text-left">
+          <div class="font-style-3 grin-light font-weight-bold">
+            ABOUT US
           </div>
-          <div class="font-style-3 text-left">
-            Challer is a platform to show your abilities challenging others. If you like to show what you are good at and defy your friends, then Challer is for you. Download it, challenge, vote, look at challenges and connect with others. Can you do it better?
+          <div class="font-style-2 white text-left font-weight-bold">
+            Challenge or
           </div>
-          <div class="font-style-3 text-left pt-2">
-            <strong>SHOW YOUR MAGIC WITH CHALLER!!!</strong>
+          <div class="font-style-2 white text-left font-weight-bold">
+            Be Challenged
           </div>
-          <div class="font-style-3 text-left pl-3 pt-2">
-            Coming soon to:
+          <div class="font-style-3 white text-left">
+            <span class="font-style-3 grin-light">CHALLER</span>
+            <span class="font-style-3 white">
+              is a unique place to connect with people around the world and challenge them in a fun and interactive way.
+            </span>
+          </div>
+          <div class="font-style-3 white">
+              Users can challenge others, vote for their favorites, interactive and become the champion of our ranking where they will ge the chance to win amazing prizes.
+          </div>
+
+          <div class="rectangle mt-4"></div>
+
+          <div class="button-challers mt-5 mb-5 desktop">
+            <app-button-type-template [template]="'green-2'" >
+              <div class="font-weight-bold text-center" clickChallers>
+                WATCH CHALLENGES
+              </div>
+            </app-button-type-template>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <app-download-app></app-download-app>
-  <app-footer></app-footer>
 </div>
+<app-footer></app-footer>
 

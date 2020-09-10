@@ -49,15 +49,17 @@ app-cloud{
   display:none;
 }
 
-@include for-table-very-small{
-  .desktop{
-    display:block;
+
+@include for-tablet-small{
+  .mobile {
+    display: none;
   }
-  .mobile{
-    display:none;
+  .desktop {
+    display: block;
   }
 }
-@include for-mobile-very-small{
+
+@include for-table-very-small{
   .mobile{
     display:block;
   }
@@ -152,4 +154,25 @@ form.template-designer{
 .spacing-cloud{
   height: 66px;
   display: block;
+}
+
+.spacing-top-default{
+  margin-top: -48px;
+}
+
+/*response section diagonal*/
+.diagonal-width{
+  width: 70%;
+}
+@include for-table-very-small{
+  .diagonal-width{
+    width: 100%;
+  }
+}
+/*end respose section diagonal*/
+
+.rectangle{
+  width: 24px;
+  height: 4px;
+  background-color: #02ffbb;
 }

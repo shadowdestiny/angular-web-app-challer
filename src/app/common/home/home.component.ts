@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
   toGoogle(){
     window.location.href = 'https://play.google.com/store/apps/details?id=com.challer';
+  }
+
+  onViewChaller() {
+    this.router.navigate(['/home-challer']);
   }
 
 }

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CloudConstants} from '../../store/constants/cloud.constants';
+import {StoreService} from '../../service/store.service';
+import {BodyConstants} from '../../store/constants/body.constants';
 
 @Component({
   selector: 'app-business',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store: StoreService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.store.setBodyStore(BodyConstants.DEFAULT);
   }
 
 }
