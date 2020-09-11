@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   isShowCloud = true;
   isMobileValue = false;
   colorBackground = 'blue';
+  isHomeChaller = false;
 
   constructor(
     private store: StoreService,
@@ -84,6 +85,7 @@ export class AppComponent implements OnInit {
       if (this.route.url === '/business' || this.route.url === '/mision') {
         this.colorBackground = 'default';
       } else if (this.route.url === '/home-challer'){
+        this.isHomeChaller = true;
         this.colorBackground = 'gris';
       } else {
         this.colorBackground = 'blue';

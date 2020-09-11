@@ -2,8 +2,8 @@
 <app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud"></app-cloud>
 <div [class]="'principal-background height-infinite background-section '+colorBackground" [ngClass]="{
 'noCloud': !isShowCloud,
-'noCloudMobile': !isShowCloud && isMobileValue,
-'cloudMobile': isShowCloud && isMobileValue
+'noCloudMobile': !isShowCloud && isMobileValue && isHomeChaller,
+'cloudMobile': isShowCloud && isMobileValue && isHomeChaller
 }"
      #scrollMe (scroll)="onScroll($event,scrollMe)"
 >

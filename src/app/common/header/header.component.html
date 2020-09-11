@@ -8,20 +8,21 @@
   <div class="container desktop">
     <div [hidden]="router.url !== '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
-        <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()" [ngClass]="{'img-selected': router.url === '/'}">
+        <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
+             [ngClass]="{'img-selected': router.url === '/'}">
           <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
         </div>
         <div class="p-2 bd-highlight click position-relative">
-            <app-cloud-notification [type]="'left'">
-              <!--<div class="click animated">
-                <app-image-radius [type]="'profile-header'"
-                                  [src]="'/assets/images/components/header/profile.svg'">
-                </app-image-radius>
-              </div>-->
-              <app-button-type-template [template]="'green'">
-                  <div class="pl-4 pr-4">SING IN</div>
-              </app-button-type-template>
-            </app-cloud-notification>
+          <app-cloud-notification [type]="'left'">
+            <!--<div class="click animated">
+              <app-image-radius [type]="'profile-header'"
+                                [src]="'/assets/images/components/header/profile.svg'">
+              </app-image-radius>
+            </div>-->
+            <app-button-type-template [template]="'green'">
+              <div class="pl-4 pr-4">SING IN</div>
+            </app-button-type-template>
+          </app-cloud-notification>
         </div>
         <!--<div class="p-3 bd-highlight click" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
           Legal
@@ -30,20 +31,24 @@
     </div>
     <div [hidden]="router.url === '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
-        <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()" [ngClass]="{'img-selected': router.url === '/'}">
+        <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
+             [ngClass]="{'img-selected': router.url === '/'}">
           <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
         </div>
-        <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}" (click)="onAbout()">
+        <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}"
+             (click)="onAbout()">
           <div class="font-style-5 header-text">
             ABOUT US
           </div>
         </div>
-        <div class="p-3 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/mision'}" (click)="onMission()">
+        <div class="p-3 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/mision'}"
+             (click)="onMission()">
           <div class="font-style-5 header-text">
             OUR MISSION
           </div>
         </div>
-        <div class="p-3 pr-5 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/story'}" (click)="onStory()">
+        <div class="p-3 pr-5 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/story'}"
+             (click)="onStory()">
           <div class="font-style-5 header-text">
             OUR STORY
           </div>
@@ -65,10 +70,10 @@
   <div class="container mobile">
     <div>
       <div class="d-flex justify-content-between bd-highlight mb-3 font-style-1">
-        <div class="p-3 bd-highlight click logo-section" >
+        <div class="p-3 bd-highlight click logo-section">
           <div class="section-menu">
             <div *ngIf="!isOpen; else open" (click)="onClickMenu()">
-              <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block" >
+              <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block">
             </div>
             <ng-template #open>
               <div class="bd-highlight click click" (click)="onClickMenu()" [ngClass]="{'isMobileNative':isShowMobile}">
@@ -82,39 +87,47 @@
             <img [src]="'/assets/images/icons/chall-logo.svg'" class="logo d-block">
           </div>
         </div>
-        <div class="p-3 bd-highlight">
-          &nbsp;
+        <div class="bd-highlight pt-1">
+          <div class="to-challenge" *ngIf="router.url !== '/home-challer'">
+                <app-button-type-template [template]="'green'">
+                  <div class="pl-1 pr-1" clickChallers>WHAT CHALLENGES</div>
+                </app-button-type-template>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}" >
+  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}">
     <div class="d-flex flex-column bd-highlight mb-3">
-      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onAbout()"  [ngClass]="{'font-style-4': router.url === '/about-us'}">
+      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onAbout()"
+           [ngClass]="{'font-style-4': router.url === '/about-us'}">
         <div class="menu-items">
           <div class="text">
             ABOUT US
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click  animated bounceInLeft click" (click)="onMission()" [ngClass]="{'font-style-4': router.url === '/mision'}">
+      <div class="p-2 bd-highlight click  animated bounceInLeft click" (click)="onMission()"
+           [ngClass]="{'font-style-4': router.url === '/mision'}">
         <div class="menu-items">
           <div class="text">
             OUR MISION
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onStory()" [ngClass]="{'font-style-4': router.url === '/story'}">
+      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onStory()"
+           [ngClass]="{'font-style-4': router.url === '/story'}">
         <div class="menu-items">
           <div class="text">
             OUR STORY
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onBusiness()" [ngClass]="{'font-style-4': router.url === '/business'}">
+      <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onBusiness()"
+           [ngClass]="{'font-style-4': router.url === '/business'}">
         <div class="menu-items">
-          <div class="text click" (click)="onBusiness()" >
+          <div class="text click" (click)="onBusiness()">
             CHALLER FOR BUSINESS
           </div>
         </div>
