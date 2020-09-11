@@ -31,8 +31,15 @@
   &.noCloud{
     height: calc(100% - 65px);
   }
+  &.noCloudMobile{
+    height: calc(100% - 0px);
+  }
   &.autoHeight{
     height: 100%;
+  }
+  &.cloudMobile{
+    height: calc(100% - 0px);
+    margin-top: -66px;
   }
 }
 app-cloud{
@@ -135,14 +142,19 @@ form.template-designer{
     border: 0;
     border-bottom: 1px solid var(--border-form-input);
   }
+  input[type='text'],input[type='email']{
+    padding: 0;
+  }
   textarea{
     background: var(--textarea-form-input);
     border: 1px solid var(--border-form-input);
     height: 160px;
+    border-radius: 5px;
   }
   select{
     border: 1px solid var(--border-form-input);
     border-radius: 6px;
+    color: red;
   }
   span{
     color:red;
@@ -175,4 +187,41 @@ form.template-designer{
   width: 24px;
   height: 4px;
   background-color: #02ffbb;
+}
+
+.modal-global{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  line-height: 100%;
+  .modal-content-app{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    vertical-align: middle;
+    width: 100%;
+    .modal-section{
+      width: 60%;
+      margin-left: 20%;
+      margin-right: 20%;
+      border-radius: 20px;
+      background: white;
+      padding: 20px;
+      border: 1px solid black;
+
+      /**/
+      @include for-table-very-small{
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+        overflow-y: auto;
+        max-height: 600px;
+      }
+    }
+  }
 }

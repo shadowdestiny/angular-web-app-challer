@@ -60,6 +60,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.isOpen = false;
     this.router.navigate(['/vision']);
   }
+  onMission() {
+    this.isOpen = false;
+    this.router.navigate(['/mision']);
+  }
   onViewChaller() {
     this.isOpen = false;
     this.router.navigate(['/home-challer']);
@@ -71,6 +75,11 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   onBusiness(){
     this.isOpen = false;
     this.router.navigate(['/business']);
+  }
+
+  onStory(){
+    this.isOpen = false;
+    this.router.navigate(['/story']);
   }
 
   ngAfterViewInit(): void {

@@ -18,9 +18,10 @@
 }
 .font-style-2-3{
   color: var(--blue-color);
-  font-size: 25px;
+  font-size: 20px;
   font-stretch: normal;
   font-style: normal;
+  font-weight: bold;
 }
 .font-style-3{
   color: var(--black-color);
@@ -42,6 +43,9 @@
   }
   &.big{
     font-size: 18px;
+  }
+  &.little{
+    font-size: 13px;
   }
   &.gris{
     color: var(--gris-color);

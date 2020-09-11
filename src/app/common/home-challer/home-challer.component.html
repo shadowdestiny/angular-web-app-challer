@@ -1,34 +1,40 @@
 <ng-container #vc></ng-container>
 <ng-template #tpl>
   <div class="home" *ngIf="!isMobile">
-    <div class="menu-left">
+    <div class="menu-left desktop">
       <app-selector-site></app-selector-site>
       <div class="menu-bottom">
         <div class="">
-          <div class="font-style-7 click" (click)="onAbout()">About Us</div>
-          <div class="font-style-7 click" (click)="onVision()">Vision</div>
-          <div class="font-style-7 click" (click)="onBusiness()">Business</div>
-          <div class="font-style-7 click" (click)="onCondition()">Terms & Conditions</div>
+          <div class="font-style-7 click" (click)="onAbout()">ABOUT US</div>
+          <div class="font-style-7 click" (click)="onMision()">OUR MISION</div>
+          <div class="font-style-7 click" (click)="onStory()">OUR STORY</div>
+          <div class="font-style-7 click" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
         </div>
       </div>
     </div>
-    <div class="container-fluid mt-5 desktop">
+    <div class="container-fluid mt-2">
       <div class="row">
-        <div class="col-md-3">
+        <div [ngClass]="{
+        'col-md-4': !isTable,
+        'col-md-6': isTable
+        }">
         </div>
-        <div class="col-md-5">
+        <div [ngClass]="{
+        'col-md-4': !isTable,
+        'col-md-6': isTable
+        }">
           <div *ngFor="let challenge of challenges" class="video-challer">
             <app-challer-slide-list [challenge]="challenge"></app-challer-slide-list>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="banners-float-sections" [style]="'top:'+top+'px' " >
+        <div class="col-md-4" *ngIf="!isTable">
+          <div class="banners-float-sections" [ngClass]="{'dynamic-y': isScrollDownload}"  [style]="'top:'+(top + 32)+'px' " >
             <div class="section-right">
               <app-slide-banners></app-slide-banners>
             </div>
-            <div class="download mt-1 d-flex justify-content-center">
+            <div class="download mt-4">
               <div class="download-now">
-                <app-download-app [template]="'right-section'"></app-download-app>
+                <app-donwload-buttoms [template]="'white'"></app-donwload-buttoms>
               </div>
             </div>
           </div>

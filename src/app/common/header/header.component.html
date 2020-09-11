@@ -9,15 +9,18 @@
     <div [hidden]="router.url !== '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()" [ngClass]="{'img-selected': router.url === '/'}">
-          <img [src]="'/assets/images/icons/chall-logo-black.svg'" class="icon-home-desktop d-block">
+          <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
         </div>
         <div class="p-2 bd-highlight click position-relative">
             <app-cloud-notification [type]="'left'">
-              <div class="click animated">
+              <!--<div class="click animated">
                 <app-image-radius [type]="'profile-header'"
                                   [src]="'/assets/images/components/header/profile.svg'">
                 </app-image-radius>
-              </div>
+              </div>-->
+              <app-button-type-template [template]="'green'">
+                  <div class="pl-4 pr-4">SING IN</div>
+              </app-button-type-template>
             </app-cloud-notification>
         </div>
         <!--<div class="p-3 bd-highlight click" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
@@ -30,24 +33,24 @@
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()" [ngClass]="{'img-selected': router.url === '/'}">
           <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
         </div>
-        <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}">
+        <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}" (click)="onAbout()">
           <div class="font-style-5 header-text">
             ABOUT US
           </div>
         </div>
-        <div class="p-3 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/vision'}">
+        <div class="p-3 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/mision'}" (click)="onMission()">
           <div class="font-style-5 header-text">
             OUR MISSION
           </div>
         </div>
-        <div class="p-3 pr-5 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/vision'}">
+        <div class="p-3 pr-5 bd-highlight click" [ngClass]="{'font-style-4': router.url === '/story'}" (click)="onStory()">
           <div class="font-style-5 header-text">
             OUR STORY
           </div>
         </div>
         <div class="bd-highlight click button-top">
           <div>
-            <app-button-type-template [template]="'green-2'" (click)="onViewChaller()">
+            <app-button-type-template [template]="'green-2'" clickChallers>
               WATCH CHALLENGES
             </app-button-type-template>
           </div>
@@ -95,23 +98,23 @@
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click  animated bounceInLeft click" (click)="onVision()" [ngClass]="{'font-style-4': router.url === '/vision'}">
+      <div class="p-2 bd-highlight click  animated bounceInLeft click" (click)="onMission()" [ngClass]="{'font-style-4': router.url === '/mision'}">
         <div class="menu-items">
           <div class="text">
             OUR MISION
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onBusiness()" [ngClass]="{'font-style-4': router.url === '/business'}">
+      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onStory()" [ngClass]="{'font-style-4': router.url === '/story'}">
         <div class="menu-items">
           <div class="text">
             OUR STORY
           </div>
         </div>
       </div>
-      <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onBusiness()" [ngClass]="{'font-style-4': router.url === '/contact'}">
+      <div class="p-2 bd-highlight click animated bounceInLeft" (click)="onBusiness()" [ngClass]="{'font-style-4': router.url === '/business'}">
         <div class="menu-items">
-          <div class="text click" (click)="onContact()" >
+          <div class="text click" (click)="onBusiness()" >
             CHALLER FOR BUSINESS
           </div>
         </div>
@@ -121,7 +124,7 @@
       </div>-->
     </div>
     <app-button-type-template [template]="'red'">
-      <div class="text-center click" (click)="onContact()">
+      <div class="text-center click" clickModal>
         CONTACT US
       </div>
     </app-button-type-template>

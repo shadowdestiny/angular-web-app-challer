@@ -1,11 +1,13 @@
 <app-header></app-header>
 <app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud"></app-cloud>
 <div [class]="'principal-background height-infinite background-section '+colorBackground" [ngClass]="{
-'noCloud': !isShowCloud
+'noCloud': !isShowCloud,
+'noCloudMobile': !isShowCloud && isMobileValue,
+'cloudMobile': isShowCloud && isMobileValue
 }"
      #scrollMe (scroll)="onScroll($event,scrollMe)"
 >
   <router-outlet></router-outlet>
-  <!--<app-global-modal></app-global-modal>-->
 </div>
+<app-global-modal></app-global-modal>
 <app-cloud-notification [type]="'bottom-global'" [isVisible]=false></app-cloud-notification>

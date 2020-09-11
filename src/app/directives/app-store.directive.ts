@@ -1,5 +1,7 @@
 import { Directive, HostListener } from '@angular/core';
 import {Router} from '@angular/router';
+import {StoreService} from '../service/store.service';
+import {ModalConstants} from '../store/constants/modal.constants';
 
 // tslint:disable-next-line:directive-selector
 @Directive({selector: '[clickAndroid]'})
@@ -50,6 +52,23 @@ export class ToChallers {
 
   toChaller(){
     this.router.navigate(['/home-challer']);
+  }
+
+}
+
+// tslint:disable-next-line:directive-selector
+@Directive({selector: '[clickModal]'})
+// tslint:disable-next-line:directive-class-suffix
+export class ModalDirective {
+  constructor(
+    private store: StoreService
+  ) { }
+  @HostListener('click', ['$event.target']) onClick(id: any) {
+    this.onModal();
+  }
+
+  onModal(){
+    this.store.setModalStore(ModalConstants.OPEN);
   }
 
 }

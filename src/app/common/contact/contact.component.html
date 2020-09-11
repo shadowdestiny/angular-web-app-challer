@@ -1,50 +1,31 @@
 <div class="home">
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-12">
 
-        <div class="mobile font-contact-bold">
-          Challenges Loren
+        <div class="font-contact-bold font-style-3 black-2 text-center">
+          Contact us
         </div>
 
-        <div class="section-text about-icon griss mt-2 desktop">
-          <span class="font-weight-bold">
-            Address:
-          </span>
-          <div>
-            Loremmip@challer.app
-          </div>
-        </div>
-
-        <br>
-
-        <div class="section-text information-icon griss mt-2 desktop">
-          <span class="font-weight-bold">
-            Have my Questions?:
-          </span>
-          <div>
-            Loremmip@challer.app
-          </div>
-        </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-12">
         <form [formGroup]="contactForm"  class="template-designer">
           <div class="form-group">
             <label for="fullname">Full Name <span>*</span></label>
             <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
-                   formControlName="firstName"
+                   formControlName="firstName" placeholder="Name Lastname"
             >
           </div>
           <div class="form-group">
             <label for="email">Email <span>*</span></label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                   formControlName="email"
+                   formControlName="email" placeholder="youremail@mail.com"
             >
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
+            <label for="subject">Subject <span>*</span></label>
             <select class="form-control" id="subject" formControlName="support">
-              <option selected>Support</option>
+              <option selected class="color-option">...</option>
             </select>
           </div>
           <div class="form-group">
@@ -73,6 +54,11 @@
               <strong>Los Campos con (*) son requeridos</strong> <!--{{error}}-->
             </span>
           </div>
+          <div class="form-group" *ngIf="isLoading">
+            <div>
+              <img src="../../../assets/images/loading.gif" class="w-100">
+            </div>
+          </div>
           <div class="form-group">
             <div class="button-submit">
               <app-button-type-template [template]="'form'" [disabled] = !contactForm.valid (onClickButton)="submit()" >
@@ -87,7 +73,5 @@
     </div>
   </div>
 
-  <app-download-app></app-download-app>
-  <app-footer></app-footer>
 </div>
 

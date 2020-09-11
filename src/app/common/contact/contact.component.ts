@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from "@angular/forms";
-import {ContactModel} from "../../models/contact.model";
-import {ContactService} from "../../service/contact.service";
+import {FormBuilder, Validators} from '@angular/forms';
+import {ContactModel} from '../../models/contact.model';
+import {ContactService} from '../../service/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,11 +18,12 @@ export class ContactComponent implements OnInit {
 
   message;
   status;
+  isLoading = false;
 
   contactForm = this.formBuilder.group({
     firstName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    support: ['', Validators.required],
+    support: ['...', Validators.required],
     comment: ['', Validators.required],
   });
 
@@ -35,10 +36,13 @@ export class ContactComponent implements OnInit {
       email: this.contactForm.value.email,
       subject: this.contactForm.value.support,
       description: this.contactForm.value.comment,
-    }
-    this.contactService.setContact(contact).subscribe((data: any) =>{
+    };
+    this.isLoading = true;
+    this.contactService.setContact(contact).subscribe((data: any) => {
       this.status = 'ok';
+      this.isLoading = false;
     }, error => {
+      this.isLoading = false;
       this.status = 'error';
       this.message = error.message;
     });

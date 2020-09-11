@@ -11,17 +11,20 @@ import {CloudState} from '../store/reducers/cloud.reducer';
 import {Cloud} from '../store/actions/cloud.action';
 import {Body} from '../store/actions/body.action';
 import {BodyState} from '../store/reducers/body.reducer';
+import {ModalState} from '../store/reducers/modal.global.reducer';
+import {Modal} from '../store/actions/modal.action';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  private scrollContent$: Observable<string>;
-  private videoContent$: Observable<string>;
-  private resizeContent$: Observable<string>;
-  private cloudContent$: Observable<string>;
-  private bodyContent$: Observable<string>;
+  private readonly scrollContent$: Observable<string>;
+  private readonly videoContent$: Observable<string>;
+  private readonly resizeContent$: Observable<string>;
+  private readonly cloudContent$: Observable<string>;
+  private readonly bodyContent$: Observable<string>;
+  private readonly modalContent$: Observable<string>;
 
   constructor(
     private scrollStateStore: Store<ScrollState>,
@@ -29,12 +32,14 @@ export class StoreService {
     private resizeStateStore: Store<ResizeState>,
     private cloudStateStore: Store<CloudState>,
     private bodyStateStore: Store<BodyState>,
+    private modalStateStore: Store<ModalState>,
   ) {
     this.scrollContent$ = this.scrollStateStore.select('scrolling');
     this.videoContent$ = this.videoStateStore.select('video');
     this.resizeContent$ = this.resizeStateStore.select('resize');
     this.cloudContent$ = this.cloudStateStore.select('cloud');
     this.bodyContent$ = this.bodyStateStore.select('background');
+    this.modalContent$ = this.modalStateStore.select('globalModal');
   }
 
   setScrollStore(type: string, {scrollHeight, clientHeight, scrollTop}:
@@ -137,7 +142,19 @@ export class StoreService {
   }
 
   getBodyStore() {
-    return this.bodyContent$;
+    return this.modalContent$;
+  }
+
+  setModalStore(type: string) {
+    const modal: Modal = null;
+    this.modalStateStore.dispatch({
+      type,
+      modal
+    });
+  }
+
+  getModalStore() {
+    return this.modalContent$;
   }
 
 }

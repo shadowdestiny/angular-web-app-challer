@@ -35,6 +35,8 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
   isMobile = false;
   isFirst = true;
   top = 0;
+  isScrollDownload = false;
+  isTable = false;
 
   subscribes: Subscription[] = [];
 
@@ -96,6 +98,8 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
   getResize() {
     this.subscribes.push(this.store.getResizeStore().subscribe((data: any) => {
       if (data.status === ResizeConstants.START) {
+        this.isScrollDownload = data.resize.height < 690;
+        this.isTable = data.resize.width < 992;
         this.innerHeight = data.resize.height - 60;
         this.innerWidth = data.resize.width;
         if (!this.isFirst && this.isMobile !== data.resize.isMobile) {
@@ -134,6 +138,14 @@ export class HomeChallerComponent implements OnInit, OnDestroy {
 
   onVision() {
     this.router.navigate(['/vision']);
+  }
+
+  onMision() {
+    this.router.navigate(['/mision']);
+  }
+
+  onStory() {
+    this.router.navigate(['/story']);
   }
 
   onBusiness() {

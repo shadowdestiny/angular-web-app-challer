@@ -27,7 +27,7 @@ import {ImageRadiusComponent} from './component/modal-sections/image-radius/imag
 import {TagsWebComponent} from './component/tags-web/tags-web.component';
 import {SelectorSiteComponent} from './component/selector-site/selector-site.component';
 import {SlideBannersComponent} from './component/slide-banners/slide-banners.component';
-import {ClickAngular, clickIOS, ToChallers} from './directives/app-store.directive';
+import {ClickAngular, clickIOS, ModalDirective, ToChallers} from './directives/app-store.directive';
 import {StoreModule} from '@ngrx/store';
 import {modalReducer} from './store/reducers/modal.reducer';
 import {scrollReducer} from './store/reducers/scroll.reducer';
@@ -42,8 +42,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {ContactCvComponent} from './component/contact-cv/contact-cv.component';
 import {DonwloadButtomsComponent} from './donwload-buttoms/donwload-buttoms.component';
 import {bodyReducer} from './store/reducers/body.reducer';
-import { StoryComponent } from './common/story/story.component';
-import { MisionComponent } from './common/mision/mision.component';
+import {StoryComponent} from './common/story/story.component';
+import {MisionComponent} from './common/mision/mision.component';
+import {GlobalModalComponent} from './component/global-modal/global-modal.component';
+import {modalGlobalReducer} from './store/reducers/modal.global.reducer';
+import {ChronometerComponent} from './component/chronometer/chronometer.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { MisionComponent } from './common/mision/mision.component';
 
     // pipes
     FixImageUrlPipe,
+
+    // directives
+    ModalDirective,
 
     // components
     ButtonTypeTemplateComponent,
@@ -82,7 +88,9 @@ import { MisionComponent } from './common/mision/mision.component';
     ContactCvComponent,
     DonwloadButtomsComponent,
     StoryComponent,
-    MisionComponent
+    MisionComponent,
+    GlobalModalComponent,
+    ChronometerComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +106,7 @@ import { MisionComponent } from './common/mision/mision.component';
       resize: resizeReducer,
       cloud: cloudReducer,
       background: bodyReducer,
+      globalModal: modalGlobalReducer
     }),
     ReactiveFormsModule,
   ],
