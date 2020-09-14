@@ -47,6 +47,9 @@ import {MisionComponent} from './common/mision/mision.component';
 import {GlobalModalComponent} from './component/global-modal/global-modal.component';
 import {modalGlobalReducer} from './store/reducers/modal.global.reducer';
 import {ChronometerComponent} from './component/chronometer/chronometer.component';
+import {VideoLoaderComponent} from './component/media/video-loader/video-loader.component';
+import {NgCircleProgressModule} from 'ng-circle-progress';
+import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,10 @@ import {ChronometerComponent} from './component/chronometer/chronometer.componen
     MisionComponent,
     GlobalModalComponent,
     ChronometerComponent,
+    EyeLoadingComponent,
+
+    // shared componente
+    VideoLoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,6 +116,15 @@ import {ChronometerComponent} from './component/chronometer/chronometer.componen
       globalModal: modalGlobalReducer
     }),
     ReactiveFormsModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
+      animationDuration: 300,
+    })
   ],
   providers: [httpInterceptorProviders],
   exports: [
