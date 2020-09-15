@@ -68,6 +68,28 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "qa": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.qa.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -79,6 +101,12 @@
           "configurations": {
             "production": {
               "browserTarget": "challer:build:production"
+            },
+            "qa": {
+              "browserTarget": "challer:build:qa"
+            },
+            "dev": {
+              "browserTarget": "challer:build:dev"
             }
           }
         },
