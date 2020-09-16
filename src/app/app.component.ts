@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
       }, 0);
     });
     this.route.events.subscribe((data: any) => {
-      if (this.route.url === '/business' || this.route.url === '/mision') {
+      if (this.route.url === '/business' || this.route.url === '/mision' || this.route.url === '/policy') {
         this.colorBackground = 'default';
       } else if (this.route.url === '/home-challer'){
         this.isHomeChaller = true;

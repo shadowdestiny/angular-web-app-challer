@@ -21,6 +21,9 @@ export class FooterComponent implements OnInit {
   onVision(){
     this.router.navigate(['/vision']);
   }
+  onMision(){
+    this.router.navigate(['/mision']);
+  }
   onBusiness(){
     this.router.navigate(['/business']);
   }
@@ -29,5 +32,11 @@ export class FooterComponent implements OnInit {
   }
   onContact(){
     this.router.navigate(['/contact']);
+  }
+  onStory(){
+    this.router.navigate(['/story']);
+  }
+  onPolicy(){
+    this.router.navigate(['/policy']);
   }
 }
