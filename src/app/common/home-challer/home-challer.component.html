@@ -3,12 +3,12 @@
   <div class="home" *ngIf="!isMobile">
     <div class="menu-left desktop">
       <app-selector-site></app-selector-site>
-      <div class="menu-bottom mt-5">
-        <div class="">
-          <div class="font-style-7 click" (click)="onAbout()">ABOUT US</div>
-          <div class="font-style-7 click" (click)="onMision()">OUR MISION</div>
-          <div class="font-style-7 click" (click)="onStory()">OUR STORY</div>
-          <div class="font-style-7 click" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
+      <div class="menu-bottom mt-2">
+        <div [ngClass]="{'center':isScrollDownload}">
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}"  (click)="onAbout()">ABOUT US</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onMision()">OUR MISION</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onStory()">OUR STORY</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
         </div>
       </div>
     </div>
