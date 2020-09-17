@@ -10,17 +10,17 @@
   left: 0;
   bottom: 0;
   padding-left: 65px;
-  padding-right: 65px;
+  padding-right: 20px;
   z-index: 11;
   border: 1px solid #dbdbdb;
   padding-top: 75px;
   background: white;
+  overflow-y: auto;
 }
 .section-right{
   margin-top: 9px;
 }
 .menu-bottom{
-  position: fixed;
   bottom: 5px;
   width: 317px;
   z-index: 10;
