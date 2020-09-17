@@ -50,6 +50,7 @@ import {ChronometerComponent} from './component/chronometer/chronometer.componen
 import {VideoLoaderComponent} from './component/media/video-loader/video-loader.component';
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component';
+import {VoteResultComponent} from './component/vote-result/vote-result.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component
 
     // shared componente
     VideoLoaderComponent,
+    VoteResultComponent,
   ],
   imports: [
     BrowserModule,
