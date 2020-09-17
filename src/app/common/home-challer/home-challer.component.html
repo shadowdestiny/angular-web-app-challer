@@ -1,10 +1,10 @@
 <ng-container #vc></ng-container>
 <ng-template #tpl>
   <div class="home" *ngIf="!isMobile">
-    <div class="menu-left desktop">
+    <div [class]="'menu-left desktop mt-1'" >
       <app-selector-site></app-selector-site>
-      <div class="menu-bottom mt-2">
-        <div [ngClass]="{'center':isScrollDownload}">
+      <div class="menu-bottom mt-2" [ngClass]="{'float':!isScrollDownload}">
+        <div [ngClass]="{'center':isScrollDownload}" >
           <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}"  (click)="onAbout()">ABOUT US</div>
           <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onMision()">OUR MISION</div>
           <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onStory()">OUR STORY</div>
