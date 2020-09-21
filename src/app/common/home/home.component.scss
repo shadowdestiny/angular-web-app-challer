@@ -63,6 +63,9 @@
     clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
     position: absolute;
     bottom: 0;
+    @include for-mobile-very-small-2 {
+      margin-top: 82px;
+    }
   }
 
   .diagonal:before {
@@ -72,7 +75,8 @@
     left: 15px;
     position: absolute;
     bottom: 0;
-    background-image: url(/assets/images/background/girl-background.jpg);
+    background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+    background-size: 100% 100%;
     clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
   }
 
