@@ -19,7 +19,7 @@ export class AboutusComponent implements OnInit, OnDestroy {
     private router: Router,
     private store: StoreService,
   ) {
-    this.resizeImage = new ResizeImage(544, 1440, [
+    this.resizeImage = new ResizeImage(744, 1440, [
       {
         width: 1200,
         outHeight: 500
@@ -30,15 +30,15 @@ export class AboutusComponent implements OnInit, OnDestroy {
       },
       {
         width: 767,
+        outHeight: 1300
+      },
+      {
+        width: 650,
         outHeight: 1100
       },
       {
         width: 650,
-        outHeight: 900
-      },
-      {
-        width: 400,
-        outHeight: 650
+        outHeight: 800
       },
     ]);
   }

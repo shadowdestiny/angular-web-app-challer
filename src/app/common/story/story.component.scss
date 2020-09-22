@@ -76,7 +76,7 @@
     left: 15px;
     position: absolute;
     bottom: 0;
-    background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+    background: url(/assets/images/background/hant_top.png) no-repeat center;
     background-size: 100% 100%;
     clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
   }
@@ -84,17 +84,17 @@
   @include for-table-long{
 
     .diagonal:before {
-      background-size: 200% 100%;
-      // background-position-y: 0%;
-      background-position-x: 22%;
+      // background-size: 200% 100%;
+      background-size: 160% 100%;
+      background-position-x: 57%;
     }
   }
 
   @include for-tablet{
 
     .diagonal:before {
-      background-size: 300% 100%;
-      background-position-x: 22%;
+      background-size: 250% 100%;
+      background-position-x: 50%;
     }
   }
 

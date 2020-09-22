@@ -22,7 +22,7 @@ export class StoryComponent implements OnInit, OnDestroy {
     this.resizeImage = new ResizeImage(574, 1440, [
       {
         width: 1200,
-        outHeight: 900
+        outHeight: 600
       },
       {
         width: 1000,
