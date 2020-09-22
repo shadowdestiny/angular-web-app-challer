@@ -72,10 +72,11 @@
     left: 0;
     position: absolute;
     bottom: 0;
-    background-image: url(/assets/images/background/flay.png);
+    background: url(/assets/images/background/flay.png) no-repeat center;
     clip-path: polygon(0 0, 100% 0, 41% 100%, 0 100%);
-    background-position-y: 40%;
-    background-size: 192%;
+    background-size: 100% 100%;
+    /*background-position-y: 40%;
+    background-size: 192%;*/
   }
 
   @include for-table-very-small{
@@ -86,9 +87,10 @@
       right: 0;
       top: 17px;
       clip-path: polygon(0 18.3%, 100% 0, 100% 100%, 0% 100%);
-      background-position-y: -15%;
-      background-position-x: 0%;
-      background-size: 220%;
+      background-position-y: 0%;
+      background-position-x: 22%;
+      // background-size: 220%;
+      background-size: 220% 220%;
     }
   }
 

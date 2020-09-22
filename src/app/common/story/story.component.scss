@@ -63,6 +63,10 @@
     clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
     position: absolute;
     bottom: 0;
+
+    @include for-table-very-small{
+      margin-top: 650px;
+    }
   }
 
   .diagonal:before {
@@ -72,8 +76,26 @@
     left: 15px;
     position: absolute;
     bottom: 0;
-    background-image: url(/assets/images/background/girl-background.jpg);
+    background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+    background-size: 100% 100%;
     clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  @include for-table-long{
+
+    .diagonal:before {
+      background-size: 200% 100%;
+      // background-position-y: 0%;
+      background-position-x: 22%;
+    }
+  }
+
+  @include for-tablet{
+
+    .diagonal:before {
+      background-size: 300% 100%;
+      background-position-x: 22%;
+    }
   }
 
   @include for-table-very-small{
@@ -84,6 +106,8 @@
       left: 0;
       top: 17px;
       clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
+      background-size: 100% 100%;
+      background-position-x: 0%;
     }
   }
 
