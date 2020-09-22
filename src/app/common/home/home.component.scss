@@ -104,3 +104,12 @@
     height: 780px;
   }
 }
+
+.diagonal-width{
+  width: 50%;
+  @include for-table-very-small{
+      width: 100%;
+      margin-top: 300px;
+  }
+}
+
