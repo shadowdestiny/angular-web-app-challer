@@ -1,7 +1,7 @@
 <ng-container #vc></ng-container>
 <ng-template #tpl>
   <div class="home" *ngIf="!isMobile">
-    <div [class]="'menu-left desktop mt-1'" >
+    <div [class]="'menu-left desktop'" style="margin-top: 1px">
       <app-selector-site></app-selector-site>
       <div class="menu-bottom mt-2" [ngClass]="{'float':!isScrollDownload}">
         <div [ngClass]="{'center':isScrollDownload}" >
