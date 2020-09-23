@@ -51,6 +51,7 @@ import {VideoLoaderComponent} from './component/media/video-loader/video-loader.
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component';
 import {VoteResultComponent} from './component/vote-result/vote-result.component';
+import {TourComponent} from './component/tour/tour.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import {VoteResultComponent} from './component/vote-result/vote-result.component
     // shared componente
     VideoLoaderComponent,
     VoteResultComponent,
+    TourComponent
   ],
   imports: [
     BrowserModule,
