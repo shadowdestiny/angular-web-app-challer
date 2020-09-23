@@ -63,6 +63,9 @@
     clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
     position: absolute;
     bottom: 0;
+    @include for-table-very-small {
+      margin-top: 50px;
+    }
     @include for-mobile-very-small-2 {
       margin-top: 82px;
     }
@@ -106,7 +109,6 @@
 }
 
 .diagonal-width{
-  width: 50%;
   @include for-table-very-small{
       width: 100%;
       margin-top: 300px;
