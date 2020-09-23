@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private router: Router,
     private store: StoreService,
   ) {
-    this.resizeImage = new ResizeImage(644, 1440, [
+    this.resizeImage = new ResizeImage(684, 1440, [
       {
         width: 1060,
         outHeight: 600
