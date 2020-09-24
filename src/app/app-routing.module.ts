@@ -10,11 +10,18 @@ import {HomeChallerComponent} from './common/home-challer/home-challer.component
 import {ContactCvComponent} from './component/contact-cv/contact-cv.component';
 import {StoryComponent} from './common/story/story.component';
 import {MisionComponent} from './common/mision/mision.component';
+import {Home2Component} from './common/home2/home2.component';
 
 
 const routes: Routes = [
   {
     path: '', pathMatch: 'full', component: HomeComponent,
+  },
+  {
+    path: 'home', pathMatch: 'full', component: HomeComponent,
+  },
+  {
+    path: 'home2', pathMatch: 'full', component: Home2Component,
   },
   {
     path: 'about-us', pathMatch: 'full', component: AboutusComponent,

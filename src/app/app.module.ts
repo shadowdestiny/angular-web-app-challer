@@ -52,6 +52,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component';
 import {VoteResultComponent} from './component/vote-result/vote-result.component';
 import {TourComponent} from './component/tour/tour.component';
+import { Home2Component } from './common/home2/home2.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import {TourComponent} from './component/tour/tour.component';
     // shared componente
     VideoLoaderComponent,
     VoteResultComponent,
-    TourComponent
+    TourComponent,
+    Home2Component
   ],
   imports: [
     BrowserModule,
