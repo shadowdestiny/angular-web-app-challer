@@ -15,7 +15,7 @@ import {Home2Component} from './common/home2/home2.component';
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', component: Home2Component,
+    path: '', pathMatch: 'full', component: HomeComponent,
   },
   {
     path: 'home2', pathMatch: 'full', component: Home2Component,
