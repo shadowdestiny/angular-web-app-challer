@@ -18,10 +18,10 @@ const routes: Routes = [
     path: '', pathMatch: 'full', component: HomeComponent,
   },
   {
-    path: 'home', pathMatch: 'full', component: HomeComponent,
+    path: 'home2', pathMatch: 'full', component: Home2Component,
   },
   {
-    path: 'home2', pathMatch: 'full', component: Home2Component,
+    path: 'home', pathMatch: 'full', component: HomeComponent,
   },
   {
     path: 'about-us', pathMatch: 'full', component: AboutusComponent,
