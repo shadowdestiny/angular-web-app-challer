@@ -89,6 +89,7 @@ export class AppComponent implements OnInit {
         this.colorBackground = 'gris';
       } else {
         this.colorBackground = 'blue';
+        this.isHomeChaller = false;
       }
     });
   }

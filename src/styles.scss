@@ -27,7 +27,7 @@
   overflow-x: hidden;
   /*top: 66px;*/
   /*height: calc(100% - 66px);*/
-  height: calc(100% - 130px);
+  height: calc(100% - 120px);
   &.noCloud{
     height: calc(100% - 65px);
   }
@@ -39,7 +39,7 @@
   }
   &.cloudMobile{
     height: calc(100% - 0px);
-    margin-top: -66px;
+    margin-top: -55px;
   }
 }
 app-cloud{
@@ -164,7 +164,7 @@ form.template-designer{
   }
 }
 .spacing-cloud{
-  height: 66px;
+  height: 55px;
   display: block;
 }
 
