@@ -2,13 +2,17 @@
 
 .home {
 
-  .col-sm-6 {
+  /*.col-sm-6 {
     padding-left: 0;
     padding-right: 0;
     @include for-mobile-small {
       padding-left: 15px;
       padding-right: 15px;
     }
+  }*/
+
+  &.mobile{
+
   }
 
   .text-left {
@@ -17,7 +21,8 @@
 
   .section {
     position: fixed;
-    top: 10%;
+    top: 9vw;
+    left: 2vw;
     display: table;
     text-align: center;
     margin-left: 0;
@@ -27,11 +32,11 @@
       width: 100%;
     }
 
-    @include for-tablet {
+    /*@include for-tablet {
       top: 5%;
-    }
+    }*/
 
-    @include for-mobile-small {
+    /*@include for-mobile-small {
       margin-left: auto;
       margin-right: auto;
       img {
@@ -39,6 +44,13 @@
         margin-left: auto;
         margin-right: auto;
       }
+    }*/
+  }
+
+  &.mobile{
+    .section{
+      margin-left: 5vw;
+      top: 3vw;
     }
   }
 
@@ -62,34 +74,121 @@
     width: 218px;
   }
 
-  .diagonal {
-    right: 0;
-    top: 0;
-    background: var(--grin-color);
-    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
-    position: absolute;
-    bottom: 0;
-    @include for-table-very-small {
-      margin-top: 50px;
+  &.desktop{
+    .diagonal {
+      right: 0;
+      top: 0;
+      background: var(--grin-color);
+      clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+      position: absolute;
+      bottom: 0;
+      /*@include for-table-very-small {
+        margin-top: 50px;
+      }
+      @include for-mobile-very-small-2 {
+        margin-top: 150px;
+      }*/
     }
-    @include for-mobile-very-small-2 {
-      margin-top: 150px;
+
+    .diagonal:before {
+      content: "";
+      right: 0;
+      top: 0;
+      left: 0.8vw;
+      position: absolute;
+      bottom: 0;
+      background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+      background-size: 73%;
+      background-position-x: -5.5vw;
+      background-position-y: 0vw;
+      -webkit-clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .diagonal-two{
+      right: -36vw;
+      top: 0;
+      position: absolute;
+      bottom: 0;
+    }
+    .diagonal-two:before{
+      content: "";
+      right: 0;
+      top: 0;
+      left: 0.8vw;
+      position: absolute;
+      bottom: 0;
+      background: url(/assets/images/background/black.jpg) no-repeat center;
+      background-size: 71%;
+      background-position-x: -12.8vw;
+      background-position-y: 0vw;
+      -webkit-clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
     }
   }
 
-  .diagonal:before {
-    content: "";
-    right: 0;
-    top: 0;
-    left: 15px;
-    position: absolute;
-    bottom: 0;
-    background: url(/assets/images/background/girl-background.jpg) no-repeat center;
-    background-size: 120%;
-    clip-path: polygon(20.3% 0, 100% 0%, 100% 100%, 0% 100%);
+  &.mobile{
+
+    .diagonal {
+      right: 0;
+      left: 0;
+      top: 0;
+      background: var(--grin-color);
+      clip-path: polygon(102% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
+      position: absolute;
+      bottom: 0;
+      /*@include for-table-very-small {
+        margin-top: 50px;
+      }
+      @include for-mobile-very-small-2 {
+        margin-top: 150px;
+      }*/
+    }
+
+    .diagonal:before {
+      content: "";
+      right: 0;
+      left: 0;
+      top: 3vw;
+      position: absolute;
+      bottom: 0;
+      background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+      background-size: 187%;
+      background-position-y: 1vw;
+      background-position-x: -15vw;
+      clip-path: polygon(101.3% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
+    }
+
+    .diagonal-two {
+      right: 0;
+      left: 0;
+      top: 80vw;
+      position: absolute;
+      bottom: 0;
+      /*@include for-table-very-small {
+        margin-top: 50px;
+      }
+      @include for-mobile-very-small-2 {
+        margin-top: 150px;
+      }*/
+    }
+
+    .diagonal-two:before {
+      content: "";
+      right: 0;
+      left: 0;
+      top: 3vw;
+      position: absolute;
+      bottom: 0;
+      background: url(/assets/images/background/black2.jpg) no-repeat center;
+      background-size: 100%;
+      background-position-y: -4vw;
+      background-position-x: 0vw;
+      clip-path: polygon(101.3% 0%, 100% 0%, 100% 100%, 0 100%, 0 59%);
+    }
   }
 
-  @include for-table-very-small{
+  /*@include for-table-very-small{
     .diagonal {
       clip-path: polygon(102% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
     }
@@ -99,48 +198,80 @@
       clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
       background-size: 180%;
     }
-  }
+  }*/
 
-  @include for-mobile-very-small-2{
+  /*@include for-mobile-very-small-2{
     .diagonal:before {
       left: 0;
       top: 17px;
       clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
       background-size: 200%;
     }
+  }*/
+  &.desktop{
+    .float-section{
+      margin-top: 48px;
+    }
+  }
+  &.mobile{
+    .float-section{
+      margin-top: 38px;
+    }
   }
 
-  .float-section{
-
+}
+.desktop{
+  &.dynamic-height{
+    height: 48vw;
   }
 }
-.dynamic-height{
-  height: 644px;
+.mobile{
+  &.dynamic-height{
+    height: 236vw
+  }
 }
 
-@include for-table-very-small{
+/*@include for-table-very-small{
   .dynamic-height{
     height: 780px;
   }
+}*/
+
+.desktop{
+  .diagonal-width{
+    width: 80vw;
+    /*@include for-tablet{
+      width: 70%;
+    }
+    @include for-table-very-small{
+        width: 100%;
+        margin-top: 300px;
+    }*/
+  }
+}
+.mobile{
+  .diagonal-width{
+    width: 100%;
+  }
 }
 
-.diagonal-width{
-  width: 80%;
-  @include for-tablet{
-    width: 70%;
-  }
-  @include for-table-very-small{
-      width: 100%;
-      margin-top: 300px;
-  }
-}
 
 .container-fluid{
   margin-top: 1vw;
 }
 .font-style-3{
   font-size: 22px;
-  @include for-table-very-small{
+  /*@include for-table-very-small{
     font-size: 16px;
+  }*/
+}
+.mobile{
+  .elastic-margin-top{
+    margin-top: -2vw;
+  }
+}
+.desktop{
+  .elastic-margin-top{
+    margin-top: 0.5vw;
   }
 }

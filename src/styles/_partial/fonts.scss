@@ -9,6 +9,12 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
+  &.elastic{
+    font-size: 4vw;
+  }
+  &.elastic-mobile{
+    font-size: 11vw;
+  }
   &.white{
     color: var(--white-color)
   }
@@ -96,6 +102,12 @@
   color: #02ffbb;
   &.white{
     color: var(--white)
+  }
+  &.elastic{
+    font-size: 1.3vw;
+  }
+  &.elastic-mobile{
+    font-size: 2.9vw;
   }
 }
 
