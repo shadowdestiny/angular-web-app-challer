@@ -12,8 +12,14 @@
   &.elastic{
     font-size: 4vw;
   }
+  &.elastic-min{
+    font-size: 3vw;
+  }
   &.elastic-mobile{
     font-size: 11vw;
+  }
+  &.elastic-mobile-content{
+    font-size: 4.8vw;
   }
   &.white{
     color: var(--white-color)

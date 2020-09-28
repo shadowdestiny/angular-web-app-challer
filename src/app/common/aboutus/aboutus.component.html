@@ -1,47 +1,73 @@
-<div class="home position-relative spacing-top-default animated fadeInRight dynamic-height"
-     [ngStyle]="{'height': newHeight + 'px'}"
+<div class="home position-relative spacing-top-default animated fadeInRight dynamic-height desktop"
+
 >
 
   <div class="float-section w-100 ">
     <div class="diagonal diagonal-width"></div>
   </div>
 
-  <div class="container mt-5 pb-5">
-    <div class="row">
-      <div class="col-sm-6 col-md-6 mt-sm-1">
-        <div class="section text-1 pt-0 pt-md-5  text-left">
-          <div class="font-style-3 grin-light font-weight-bold">
-            ABOUT US
-          </div>
-          <div class="font-style-2 white text-left font-weight-bold">
-            Challenge or
-          </div>
-          <div class="font-style-2 white text-left font-weight-bold">
-            Be Challenged
-          </div>
-          <div class="font-style-3 white text-left">
-            <span class="font-style-3 grin-light">CHALLER</span>
-            <span class="font-style-3 white">
+  <div class="float-section-left">
+    <div class="section pt-0 pt-md-5  text-left">
+      <div class="font-style-3 elastic-min grin-light font-weight-bold">
+        ABOUT US
+      </div>
+      <div class="font-style-2 elastic-min white text-left font-weight-bold mt-elastic">
+        Challenge or
+      </div>
+      <div class="font-style-2 elastic-min white text-left font-weight-bold">
+        Be Challenged
+      </div>
+      <div class="font-style-3 elastic-min white text-left mt-elastic">
+        <span class="font-style-3 elastic-min grin-light">CHALLER</span>
+        <span class="font-style-3 elastic-min white">
               is a unique place to connect with people around the world and challenge them in a fun and interactive way.
             </span>
-          </div>
-          <div class="font-style-3 white">
-              Users can challenge others, vote for their favorites, interactive and become the champion of our ranking where they will ge the chance to win amazing prizes.
-          </div>
-
-          <div class="rectangle mt-4"></div>
-
-          <div class="button-challers mt-5 mb-5 desktop">
-            <app-button-type-template [template]="'green-2'" >
-              <div class="font-weight-bold text-center" clickChallers>
-                WATCH CHALLENGES
-              </div>
-            </app-button-type-template>
-          </div>
-        </div>
       </div>
+      <div class="font-style-3 elastic-min white">
+        Users can challenge others, vote for their favorites, interactive and become the champion of our ranking where they will ge the chance to win amazing prizes.
+      </div>
+
+      <div class="rectangle mt-4"></div>
+
     </div>
   </div>
+
+</div>
+
+<div class="home position-relative spacing-top-default animated fadeInUp dynamic-height mobile"
+
+>
+  <div class="float-section w-100 ">
+    <div class="diagonal diagonal-width"></div>
+    <div class="diagonal-two diagonal-width"></div>
+  </div>
+
+  <div class="float-section-left mt-elastic">
+    <div class="section text-1 pt-0 pt-md-5 font-weight-bold text-left">
+      <div class="font-style-3 elastic-mobile grin-light font-weight-bold ">
+        ABOUT US
+      </div>
+      <div class="font-style-2 elastic-mobile elastic-mobile-content white text-left font-weight-bold mt-elastic">
+        Challenge or
+      </div>
+      <div class="font-style-2 elastic-mobile elastic-mobile-content white text-left font-weight-bold">
+        Be Challenged
+      </div>
+      <div class="font-style-3 elastic-min white text-left mt-elastic width-content">
+        <span class="font-style-3 elastic-mobile grin-light">CHALLER</span>
+        <span class="font-style-3 elastic-mobile white">
+              is a unique place to connect with people around the world and challenge them in a fun and interactive way.
+            </span>
+      </div>
+
+      <div class="font-style-3 elastic-mobile white mt-elastic width-content min">
+        Users can challenge others, vote for their favorites, interactive and become the champion of our ranking where they will ge the chance to win amazing prizes.
+      </div>
+
+      <div class="rectangle mt-4"></div>
+    </div>
+  </div>
+
 </div>
 <app-footer></app-footer>
 
