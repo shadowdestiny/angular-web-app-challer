@@ -14,26 +14,19 @@
         </div>
         <div class="p-2 bd-highlight click position-relative">
           <app-cloud-notification [type]="'left'">
-            <!--<div class="click animated">
-              <app-image-radius [type]="'profile-header'"
-                                [src]="'/assets/images/components/header/profile.svg'">
-              </app-image-radius>
-            </div>-->
             <app-button-type-template [template]="'green'">
               <div class="pl-4 pr-4">SING IN</div>
             </app-button-type-template>
           </app-cloud-notification>
         </div>
-        <!--<div class="p-3 bd-highlight click" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
-          Legal
-        </div>-->
       </div>
     </div>
     <div [hidden]="router.url === '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
              [ngClass]="{'img-selected': router.url === '/'}">
-          <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop d-block">
+          <img [src]="'/assets/images/icons/chall-logo.svg'" class="icon-home-desktop responsive-image">
+          <img [src]="'/assets/images/icons/challer.min.svg'" class="icon-home-desktop responsive-image-min">
         </div>
         <div class="p-3 bd-highlight click" (click)="onAbout()" [ngClass]="{'font-style-4': router.url === '/about-us'}"
              (click)="onAbout()">
@@ -60,9 +53,6 @@
             </app-button-type-template>
           </div>
         </div>
-        <!--<div class="p-3 bd-highlight click" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
-          Legal
-        </div>-->
       </div>
     </div>
   </div>
@@ -132,9 +122,6 @@
           </div>
         </div>
       </div>
-      <!--<div class="p-2 bd-highlight click mt-3 animated bounceInLeft" (click)="onPolicy()" [ngClass]="{'font-style-4': router.url === '/policy'}">
-        Legal
-      </div>-->
     </div>
     <app-button-type-template [template]="'red'">
       <div class="text-center click" clickModal>
