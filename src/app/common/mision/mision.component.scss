@@ -89,8 +89,7 @@
       clip-path: polygon(0 18.3%, 100% 0, 100% 100%, 0% 100%);
       background-position-y: 0%;
       background-position-x: 22%;
-      // background-size: 220%;
-      background-size: 220% 220%;
+      background-size: 220%;
     }
   }
 
@@ -99,12 +98,12 @@
   }
 }
 .dynamic-height{
-  height: 780px;
+  height: 58vw;
 }
 
 @include for-table-very-small{
   .dynamic-height{
-    height:1200px;
+    height:333vw;
   }
 }
 
@@ -114,7 +113,7 @@
 @include for-table-very-small{
   .diagonal-width{
     width: 100%;
-    margin-top: 320px;
+    margin-top: 100vw;
   }
 }
 .slide-title{
@@ -129,4 +128,49 @@
       padding-right: 0;
     }
   }
+}
+.font-style-3{
+  font-size: 22px;
+  /*@include for-table-very-small{
+    font-size: 16px;
+  }*/
+  &.elastic{
+    font-size: 2vw;
+  }
+  &.elastic-min{
+    font-size: 1.3vw;
+  }
+  &.elastic-mobile{
+    font-size: 3.8vw;
+  }
+  @include for-table-very-small{
+    &.elastic-min{
+      font-size: 5vw;
+    }
+  }
+
+}
+
+.font-style-2{
+  &.elastic{
+    font-size: 2vw;
+  }
+  &.elastic-min{
+    font-size: 1.3vw;
+  }
+
+  @include for-table-very-small{
+    &.elastic-min{
+      font-size: 6vw;
+    }
+    &.elastic{
+      font-size: 8vw;
+    }
+  }
+}
+.mt-elastic{
+  margin-top: 1vw;
+}
+.mt-elastic-2{
+  margin-top: 8vw;
 }
