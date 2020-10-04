@@ -2,15 +2,18 @@
 <ng-template #tpl>
   <div class="home" *ngIf="!isMobile">
     <div [class]="'menu-left desktop'" style="margin-top: 1px">
-      <app-selector-site></app-selector-site>
-      <div class="menu-bottom mt-2" [ngClass]="{'float':!isScrollDownload}">
-        <div [ngClass]="{'center':isScrollDownload}" >
-          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}"  (click)="onAbout()">ABOUT US</div>
-          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onMision()">OUR MISION</div>
-          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onStory()">OUR STORY</div>
-          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
+      <div>
+        <app-selector-site></app-selector-site>
+        <div class="menu-bottom mt-2" [ngClass]="{'float':!isScrollDownload}">
+          <div [ngClass]="{'center':isScrollDownload}" >
+            <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}"  (click)="onAbout()">ABOUT US</div>
+            <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onMision()">OUR MISION</div>
+            <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onStory()">OUR STORY</div>
+            <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
+          </div>
         </div>
       </div>
+
     </div>
     <div class="container-fluid mt-2">
       <div class="row">

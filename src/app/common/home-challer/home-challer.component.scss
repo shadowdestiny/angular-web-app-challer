@@ -15,6 +15,11 @@
   border: 1px solid #dbdbdb;
   padding-top: 75px;
   background: white;
+  direction: rtl;
+  overflow-y: auto;
+  > div{
+    direction: ltr;
+  }
   @include for-tablet{
    /* padding-left: 10px;
     padding-right: 10px;*/

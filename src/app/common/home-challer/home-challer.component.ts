@@ -24,7 +24,7 @@ import {Subscription} from 'rxjs';
   templateUrl: './home-challer.component.html',
   styleUrls: ['./home-challer.component.scss']
 })
-export class HomeChallerComponent implements OnInit, OnDestroy {
+  export class HomeChallerComponent implements OnInit, OnDestroy {
 
   challenges: Array<HomeChallerModel> = [];
   paginator: Paginator;
