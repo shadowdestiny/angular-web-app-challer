@@ -17,6 +17,7 @@
   background: white;
   direction: rtl;
   overflow-y: auto;
+  overflow-x: hidden;
   > div{
     direction: ltr;
   }
