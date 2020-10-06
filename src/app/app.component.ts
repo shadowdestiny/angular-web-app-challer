@@ -1,9 +1,8 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {StoreService} from './service/store.service';
 import {ScrollConstants} from './store/constants/scroll.constants';
 import {ResizeConstants} from './store/constants/resize.constants';
-import {Route, Router} from '@angular/router';
-import {CloudConstants} from './store/constants/cloud.constants';
+import {Router} from '@angular/router';
 import {BodyConstants} from './store/constants/body.constants';
 
 @Component({
@@ -17,6 +16,8 @@ export class AppComponent implements OnInit {
   isMobileValue = false;
   colorBackground = 'blue';
   isHomeChaller = false;
+
+  @ViewChild('scrollMe', {static: true}) scrollMe: ElementRef;
 
   constructor(
     private store: StoreService,
@@ -48,16 +49,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.setResizeEvent();
     this.getBodyStatus();
-    this.getBackground();
-  }
-
-  getBackground() {
-    /*if (this.route.url === 'home-challer') {
-      this.colorBackground = 'default';
-      alert(this.colorBackground);
-    } else if (this.route.url === 'business'){
-      this.colorBackground = 'default';
-    }*/
   }
 
   setResizeEvent() {
@@ -84,14 +75,20 @@ export class AppComponent implements OnInit {
     this.route.events.subscribe((data: any) => {
       if (this.route.url === '/business' || this.route.url === '/mision' || this.route.url === '/policy') {
         this.colorBackground = 'default';
-      } else if (this.route.url === '/home-challer'){
+      } else if (this.route.url === '/home-challer') {
         this.isHomeChaller = true;
         this.colorBackground = 'gris';
       } else {
         this.colorBackground = 'blue';
         this.isHomeChaller = false;
       }
+      this.resetScroll();
     });
+  }
+
+  private resetScroll() {
+    console.log(this.scrollMe.nativeElement);
+    this.scrollMe.nativeElement.scrollTop = 0;
   }
 
   onVisual(isShow = true) {
