@@ -5,7 +5,12 @@
         'home-challer-mobile': isShowMobile
      }"
      [hidden]="(isMobile && router.url === '/home-challer') && !isShowMobile">
-  <div class="container desktop">
+  <div [class]="' desktop'"
+       [ngClass]="{
+        'container': router.url !== '/home-challer',
+        'container-fluid': router.url === '/home-challer'
+        }"
+  >
     <div [hidden]="router.url !== '/home-challer'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
@@ -59,15 +64,16 @@
 
   <div class="container mobile">
     <div>
-      <div class="d-flex justify-content-between bd-highlight mb-3 font-style-1">
+      <div class="d-flex justify-content-between bd-highlight mb-3 font-style-1" >
         <div class="p-3 bd-highlight click logo-section">
           <div class="section-menu">
-            <div *ngIf="!isOpen; else open" (click)="onClickMenu()">
+            <div *ngIf="!isOpen; else open" (click)="onClickMenu()" >
               <img [src]="'/assets/images/icons/menu.svg'" class="menu-icon d-block">
             </div>
-            <ng-template #open>
-              <div class="bd-highlight click click" (click)="onClickMenu()" [ngClass]="{'isMobileNative':isShowMobile}">
-                <img [src]="'/assets/images/icons/close.svg'" class="menu-icon d-block">
+            <ng-template #open >
+              <div class="bd-highlight click click"  (click)="onClickMenu()" [ngClass]="{'isMobileNative':isShowMobile}"
+                   >
+                <img [src]="'/assets/images/icons/close.svg'" class="menu-icon d-block" >
               </div>
             </ng-template>
           </div>
@@ -88,8 +94,8 @@
     </div>
   </div>
 
-  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}">
-    <div class="d-flex flex-column bd-highlight mb-3">
+  <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}" (clickOutside)="closed()">
+    <div class="d-flex flex-column bd-highlight mb-3" >
       <div class="p-2 bd-highlight click animated bounceInRight" (click)="onAbout()"
            [ngClass]="{'font-style-4': router.url === '/about-us'}">
         <div class="menu-items">
