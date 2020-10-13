@@ -1,5 +1,6 @@
 export interface VideoOption {
   isPlay: boolean;
+  isMuted: boolean;
 }
 
 export interface AbilitiesModel {

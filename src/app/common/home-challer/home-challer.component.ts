@@ -118,7 +118,8 @@ import {Subscription} from 'rxjs';
       const challenges = [...data.challerHome.map((x: HomeChallerModel) => {
         return x.videoOptions = {
           ...x,
-          isPlay: false
+          isPlay: false,
+          isMuted: false,
         };
       })];
       this.challenges = [...this.challenges, ...challenges];
