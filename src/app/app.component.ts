@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
 
   onScroll(event, scrollMe: any) {
     const maxScrollPosition = scrollMe.scrollHeight - scrollMe.clientHeight;
-    if (scrollMe.scrollTop >= maxScrollPosition) {
+    if (scrollMe.scrollTop >= maxScrollPosition - 10) {
       this.store.setScrollStore(ScrollConstants.SCROLLING_DOWN);
     }
     this.store.setScrollStore(ScrollConstants.ALL_SCROLLING,
