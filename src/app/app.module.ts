@@ -53,6 +53,7 @@ import {EyeLoadingComponent} from './component/eye-loading/eye-loading.component
 import {VoteResultComponent} from './component/vote-result/vote-result.component';
 import {TourComponent} from './component/tour/tour.component';
 import { Home2Component } from './common/home2/home2.component';
+import {VideoStreamingComponent} from './component/video-streaming/video-streaming.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { Home2Component } from './common/home2/home2.component';
     VideoLoaderComponent,
     VoteResultComponent,
     TourComponent,
-    Home2Component
+    Home2Component,
+    VideoStreamingComponent
   ],
   imports: [
     BrowserModule,

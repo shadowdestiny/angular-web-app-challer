@@ -1,11 +1,5 @@
-import {Action} from '@ngrx/store';
-import {ModalState} from '../interfaces/modal.state';
-import {ReducerModalConstants} from "../constants/reducer.modal.constants";
-import {ScrollState} from "../interfaces/scroll.state";
-import {ScrollConstants} from "../constants/scroll.constants";
-import {ScrollAction} from "../actions/scroll.actions";
-import {VideoConstants} from "../constants/video.constants";
-import {VideoAction} from "../actions/video.action";
+import {VideoConstants} from '../constants/video.constants';
+import {VideoAction} from '../actions/video.action';
 
 export const PLAY = VideoConstants.PLAY;
 export const PAUSE = VideoConstants.PAUSE;
@@ -16,7 +10,7 @@ export const initialState = {
 };
 
 export interface VideoState {
-  video : string;
+  video: string;
 }
 
 
