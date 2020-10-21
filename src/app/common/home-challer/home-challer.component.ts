@@ -37,6 +37,7 @@ import {Subscription} from 'rxjs';
   top = 0;
   isScrollDownload = false;
   isTable = false;
+  isAndroid = false;
 
   subscribes: Subscription[] = [];
 
@@ -108,6 +109,7 @@ import {Subscription} from 'rxjs';
         }
         this.isFirst = false;
         this.isMobile = data.resize.isMobile;
+        this.isAndroid = data.resize.isAndroid;
       }
     }));
     this.resetView();

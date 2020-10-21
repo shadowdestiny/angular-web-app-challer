@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {API} from "../config/api";
-import {UtilsService} from "./utils.service";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {API} from '../config/api';
+import {UtilsService} from './utils.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,10 @@ export class ChallengeService {
   ) {
   }
 
-  public getChallenges(page=0, items=50) {
+  public getChallenges(page = 0, items = 50) {
     let url = `${API.CHALLENGE}`;
     url = this.utils.settingParameter(url, 'id', '0');
-    const chunk = `${'&page='+page+'&items='+items}`;
-    console.log(url + chunk);
+    const chunk = `${'&page=' + page + '&items=' + items}`;
     return this.http.get(url + chunk);
   }
 }

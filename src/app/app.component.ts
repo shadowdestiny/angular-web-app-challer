@@ -87,7 +87,6 @@ export class AppComponent implements OnInit {
   }
 
   private resetScroll() {
-    console.log(this.scrollMe.nativeElement);
     this.scrollMe.nativeElement.scrollTop = 0;
   }
 
