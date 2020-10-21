@@ -67,7 +67,7 @@ import {Subscription} from 'rxjs';
   }
 
   removeChildView() {
-    this.vc.detach();
+    this.vc.remove();
   }
 
   resetView() {
