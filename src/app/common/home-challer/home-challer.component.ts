@@ -99,7 +99,7 @@ import {Subscription} from 'rxjs';
   getResize() {
     this.subscribes.push(this.store.getResizeStore().subscribe((data: any) => {
       if (data.status === ResizeConstants.START) {
-        this.isScrollDownload = data.resize.height < 690;
+        this.isScrollDownload = data.resize.height < 590;
         this.isTable = data.resize.width < 992;
         this.innerHeight = data.resize.height - 60;
         this.innerWidth = data.resize.width;
