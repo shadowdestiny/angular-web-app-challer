@@ -1,3 +1,4 @@
+@import "../../../styles/_partial/mixins/responsive.mixin";
 .footer-component{
   padding-top: 60px;
   padding-bottom: 60px;
@@ -12,6 +13,33 @@
   .padding-footer{
     padding-left: 15%;
     padding-right: 15%;
+    .logo-section{
+      display: block;
+    }
+  }
+  @include for-table-long {
+    .padding-footer{
+      padding-left: 1%;
+      padding-right: 15%;
+    }
+  }
+  @include for-tablet {
+    .padding-footer{
+      padding-left: 1%;
+      padding-right: 15%;
+      .logo-section{
+        display: none;
+      }
+    }
+  }
+  @include for-table-very-small{
+    .padding-footer{
+      padding-left: 15%;
+      padding-right: 15%;
+      .logo-section{
+        display: block;
+      }
+    }
   }
 
   .logo-section{
@@ -49,6 +77,10 @@
 .download-section{
   position: absolute;
   bottom: 0;
+  left: 20%;
+  @include for-tablet {
+    left: 50%;
+  }
 }
 .mobile-download{
   inline-size: min-content;
