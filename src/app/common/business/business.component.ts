@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {CloudConstants} from '../../store/constants/cloud.constants';
 import {StoreService} from '../../service/store.service';
 import {BodyConstants} from '../../store/constants/body.constants';
 
