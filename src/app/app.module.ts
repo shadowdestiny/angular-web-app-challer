@@ -54,6 +54,7 @@ import {VoteResultComponent} from './component/vote-result/vote-result.component
 import {TourComponent} from './component/tour/tour.component';
 import { Home2Component } from './common/home2/home2.component';
 import {VideoStreamingComponent} from './component/video-streaming/video-streaming.component';
+import { ChronometerTimeVoteComponent } from './component/chronometer-time-vote/chronometer-time-vote.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import {VideoStreamingComponent} from './component/video-streaming/video-streami
     VoteResultComponent,
     TourComponent,
     Home2Component,
-    VideoStreamingComponent
+    VideoStreamingComponent,
+    ChronometerTimeVoteComponent
   ],
   imports: [
     BrowserModule,

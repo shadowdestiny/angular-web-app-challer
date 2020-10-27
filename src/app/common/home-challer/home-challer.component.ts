@@ -101,7 +101,7 @@ import {Subscription} from 'rxjs';
       if (data.status === ResizeConstants.START) {
         this.isScrollDownload = data.resize.height < 590;
         this.isTable = data.resize.width < 992;
-        this.innerHeight = data.resize.height - 60;
+        this.innerHeight = data.resize.height - 0;
         this.innerWidth = data.resize.width;
         if (!this.isFirst && this.isMobile !== data.resize.isMobile) {
           this.store.setVideoStore(VideoConstants.PAUSE_ALL);
