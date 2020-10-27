@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const AUTH_SERVICES_BASE_URL = 'https://apiqa.challer.app';
+const AUTH_SERVICES_BASE_URL = 'https://apidev.challer.app';
 export const environment = {
   production: false,
   CHALLENGE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:id/challer?mac=-1`,
