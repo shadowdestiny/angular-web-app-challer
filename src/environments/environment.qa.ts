@@ -9,6 +9,7 @@ export const environment = {
   ADVERTISING: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/advertising`,
   CONTACT: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact`,
   CONTACT_CV: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact/cv`,
+  CHALLENGE_DETAIL: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/-1/challenge`,
 
   CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`
 };

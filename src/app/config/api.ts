@@ -7,4 +7,5 @@ export const API = {
   ADVERTISING: environment.ADVERTISING,
   CONTACT: environment.CONTACT,
   CONTACT_CV: environment.CONTACT_CV,
+  CHALLENGE_DETAIL: environment.CHALLENGE_DETAIL,
 };

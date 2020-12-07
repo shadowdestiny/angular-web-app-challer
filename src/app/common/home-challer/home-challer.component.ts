@@ -9,9 +9,9 @@ import {
   ViewRef
 } from '@angular/core';
 import {ChallengeService} from '../../service/challenge.service';
-import {HomeChallerModel} from '../../models/home.challer.model';
+import {AbilitiesModel, HomeChallerModel, VideoOption} from '../../models/home.challer.model';
 import {ConfigurationService} from '../../service/configuration.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Paginator} from '../../../lib/paginator';
 import {StoreService} from '../../service/store.service';
 import {ScrollConstants} from '../../store/constants/scroll.constants';
@@ -45,13 +45,17 @@ import {Subscription} from 'rxjs';
   @ViewChild('tpl', {read: TemplateRef, static: true}) tpl: TemplateRef<any>;
   childViewRef: ViewRef;
 
+  challengerId: number;
+
   constructor(
     private challengeService: ChallengeService,
     private configurationService: ConfigurationService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private store: StoreService
   ) {
     this.paginator = new Paginator(0, this.limit);
+    this.challengerId = Number(activatedRoute.snapshot.paramMap.get('challenger_id'));
   }
 
   ngOnInit(): void {
@@ -115,17 +119,107 @@ import {Subscription} from 'rxjs';
     this.resetView();
   }
 
+  getMapChaller(challengeId: number,
+                nameChallenge: string,
+                nameVideo: string,
+                imageCategoryUrl: string,
+                tutorialVideo: string,
+                invitedVideo: string,
+                imagePreviewUrl: string,
+                imagePreviewTutorial: string,
+                imagePreviewInvited: string,
+                imageUserCreator: string,
+                imageUserInvited: string,
+                timeSystem: string,
+                timeEnd: string,
+                qtyvotesOwnerChallenge: number,
+                qtyvotesInvitedChallenge: number,
+  ): HomeChallerModel{
+    return {
+      idSeq: 0,
+      challengeId,
+      nameChallenge,
+      nameVideo,
+      statusChallenge : '',
+      userprofileOwnerChallengeId: 0,
+      userprofileInvitedChallengeId: 0,
+      nameOwnerChallenge: '',
+      lastNameOwnerChallenge: 'string',
+      qtyLikes: 0,
+      qtyComments: 0,
+      userchallengeshowId: 0,
+      showLikesComments: false,
+      imageCategoryUrl,
+      imageSelectedUrl: 'string',
+      imagePreviewUrl: 'string',
+      tutorialVideo,
+      invitedVideo, // null
+      imagePreviewTutorial,
+      imagePreviewInvited,
+      likedByMe: false,
+      imageUserCreator,
+      imageUserInvited,
+      timer: {
+        timeSystem,
+        timeEnd
+      },
+      finalDate: 'string',
+      votePublicFinalDate: 'string',
+      statusCode: 'string',
+      userNameInvited: 'string',
+      nicknameInvited: 'string',
+      nicknameOwner: 'string',
+      votedByMe: false,
+      qtyvotesOwnerChallenge,
+      qtyvotesInvitedChallenge,
+      showVotes: false,
+      videoOptions: {
+        isPlay: true,
+        isMuted: false,
+      },
+      abilities: []
+    };
+  }
+
   getChallenges(page: number, items: number) {
-    this.challengeService.getChallenges(page, items).subscribe((data: any) => {
-      const challenges = [...data.challerHome.map((x: HomeChallerModel) => {
-        return x.videoOptions = {
-          ...x,
-          isPlay: false,
-          isMuted: false,
-        };
-      })];
-      this.challenges = [...this.challenges, ...challenges];
-      this.paginator.setTotalRowFromService(Number(data.total_items_challerhome));
+    const isOne = !!this.challengerId;
+
+    console.log(isOne);
+
+    this.challengeService.getChallenges(page, items, isOne, this.challengerId).subscribe((data: any) => {
+      console.log(data);
+
+      if (isOne){
+        const detailChaller = data.challenges[0];
+        this.challenges = [{...this.getMapChaller(
+            this.challengerId,
+            detailChaller.name,
+            detailChaller.urlVideo,
+            detailChaller.category.sportImageSelected,
+            detailChaller.urlVideo,
+            detailChaller.videoInvited,
+            detailChaller.videoPreviewCreator,
+            detailChaller.urlImage,
+            detailChaller.videoPreviewInvited,
+            detailChaller.userChallenger.photo,
+            detailChaller.userInvited.photo,
+            detailChaller.systemDate,
+            detailChaller.finalDate,
+            detailChaller.votesCreator,
+            detailChaller.votesInvited,
+          )}];
+      } else {
+        const challenges = [...data.challerHome.map((x: HomeChallerModel) => {
+          return x.videoOptions = {
+            ...x,
+            isPlay: false,
+            isMuted: false,
+          };
+        })];
+        this.challenges = [...this.challenges, ...challenges];
+        this.paginator.setTotalRowFromService(Number(data.total_items_challerhome));
+      }
+
     });
   }
 

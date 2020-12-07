@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
     this.route.events.subscribe((data: any) => {
       if (this.route.url === '/business' || this.route.url === '/mision' || this.route.url === '/policy') {
         this.colorBackground = 'default';
-      } else if (this.route.url === '/home-challer') {
+      } else if (this.route.url === '/home-challer' || this.route.url.search('challenger')) {
         this.isHomeChaller = true;
         this.colorBackground = 'gris';
       } else {
