@@ -184,10 +184,7 @@ import {Subscription} from 'rxjs';
   getChallenges(page: number, items: number) {
     const isOne = !!this.challengerId;
 
-    console.log(isOne);
-
     this.challengeService.getChallenges(page, items, isOne, this.challengerId).subscribe((data: any) => {
-      console.log(data);
 
       if (isOne){
         const detailChaller = data.challenges[0];
