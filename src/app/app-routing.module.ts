@@ -45,7 +45,7 @@ const routes: Routes = [
     path: 'home-challer', pathMatch: 'full', component: HomeChallerComponent,
   },
   {
-    path: 'challenger/:challenger_id', pathMatch: 'full', component: HomeChallerComponent,
+    path: 'challenge/:challenger_id', pathMatch: 'full', component: HomeChallerComponent,
   },
   {
     path: 'story', pathMatch: 'full', component: StoryComponent,
