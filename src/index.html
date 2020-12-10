@@ -26,14 +26,6 @@
       }
     });
 
-    branch.autoAppIndex({
-      iosAppId:'com.challer',
-      iosURL:'example/home/cupertino/12345',
-      androidPackageName:'com.somecompany.app',
-      androidURL:'example/home/cupertino/12345',
-      data:{"walkScore":65, "transitScore":50}
-    }, function(err) { console.log(err); });
-
     function createLinkBranch(challengeId, _function_){
       branch.link({
         tags: [ 'challer', 'challenge' ],
