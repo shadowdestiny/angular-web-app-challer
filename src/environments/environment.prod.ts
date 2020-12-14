@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 const AUTH_SERVICES_BASE_URL = 'https://api.challer.app';
 export const environment = {
-  production: true,
+  production: false,
   CHALLENGE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:id/challer?mac=-1`,
   CONFIGURATION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/system/config`,
   ADVERTISING: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/advertising`,
