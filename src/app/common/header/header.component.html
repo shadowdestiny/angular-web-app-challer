@@ -1,10 +1,10 @@
 <div class="header"
      [ngClass]="
      {
-        'home-challer': router.url === '/home-challer',
+        'home-challer': router.url === '/home-challer' || this.router.url.search('challenge') >= 0,
         'home-challer-mobile': isShowMobile
      }"
-     [hidden]="(isMobile && router.url === '/home-challer') && !isShowMobile">
+     [hidden]="(isMobile && router.url === '/home-challer' || this.router.url.search('challenge') >= 0) && !isShowMobile">
   <div [class]="' desktop'"
        [ngClass]="{
         'container': router.url !== '/home-challer',
