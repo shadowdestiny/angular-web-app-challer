@@ -4,11 +4,12 @@
         'home-challer': router.url === '/home-challer' || this.router.url.search('challenge') >= 0,
         'home-challer-mobile': isShowMobile
      }"
-     [hidden]="(isMobile && router.url === '/home-challer' || this.router.url.search('challenge') >= 0) && !isShowMobile">
+     [hidden]="(isMobile && (router.url === '/home-challer' || this.router.url.search('challenge') >= 0 ))
+     && !isShowMobile">
   <div [class]="' desktop'"
        [ngClass]="{
         'container': router.url !== '/home-challer',
-        'container-fluid': router.url === '/home-challer'
+        'container-fluid': router.url === '/home-challer' || this.router.url.search('challenge') >= 0
         }"
   >
     <div [hidden]="router.url !== '/home-challer'">
@@ -54,7 +55,7 @@
         <div class="bd-highlight click button-top">
           <div>
             <app-button-type-template [template]="'green-2'" clickChallers>
-              WATCH CHALLENGES
+              CHALLERS
             </app-button-type-template>
           </div>
         </div>
@@ -84,7 +85,7 @@
           </div>
         </div>
         <div class="bd-highlight pt-1">
-          <div class="to-challenge" *ngIf="router.url !== '/home-challer'">
+          <div class="to-challenge" *ngIf="router.url !== '/home-challer' && this.router.url.search('challenge') < 0 ">
                 <app-button-type-template [template]="'green'">
                   <div class="pl-1 pr-1" clickChallers>CHALLERS</div>
                 </app-button-type-template>
