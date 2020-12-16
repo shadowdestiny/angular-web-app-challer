@@ -5,7 +5,7 @@
         <div class="mobile text-center ml-auto mb-4 mr-auto mobile-download">
           <app-donwload-buttoms></app-donwload-buttoms>
         </div>
-        <div class="footer-logo">
+        <div class="footer-logo click" (click)="onClickHome()">
           <img src="assets/images/icons/logo.svg" class="text-md-left text-center d-block ml-auto mr-auto">
         </div>
       </div>
@@ -25,13 +25,13 @@
       </div>
       <div class="col-md-2">
         <div class="font-style-5 bold text-md-left text-center mt-4 mt-md-0 mt-sm-4">
-          QUESTIONS?
+          QUESTIONS
         </div>
         <div class="font-style-8 text-md-left text-center click" (click)="onPolicy()">
-          Terms & Conditions
+          Terms of Services
         </div>
         <div class="font-style-8 text-md-left text-center click " (click)="onPolicy()">
-          Policy policy
+          Privacy & Cookies Policy
         </div>
         <div class="font-style-8 text-md-left text-center click" (click)="onPolicy()">
           Cookies policy
@@ -40,10 +40,10 @@
 
       <div class="col-md-2">
         <div class="font-style-5 bold text-md-left text-center mt-4 mt-md-0 mt-sm-4">
-          CONTACT UPS
+          CONTACT US
         </div>
         <div class="font-style-8 text-md-left text-center ">
-          Join our team
+          Join our Team
         </div>
         <div class="font-style-8 text-md-left text-center click" (click)="onBusiness()" >
           Challer for Business

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -38,5 +38,8 @@ export class FooterComponent implements OnInit {
   }
   onPolicy(){
     this.router.navigate(['/policy']);
+  }
+  onClickHome(){
+    this.router.navigate(['/home']);
   }
 }
