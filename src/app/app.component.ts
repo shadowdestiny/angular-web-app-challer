@@ -82,7 +82,9 @@ export class AppComponent implements OnInit {
         this.colorBackground = 'blue';
         this.isHomeChaller = false;
       }
-      this.resetScroll();
+      if (!(this.route.url.indexOf("/policy") >= 0)){
+        this.resetScroll();
+      }
     });
   }
 
