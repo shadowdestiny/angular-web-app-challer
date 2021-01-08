@@ -34,8 +34,10 @@
         branch.init('key_live_lcVQGXGtY5fYM7nf0U2m5akaABbDfsoL', function(err, data){
           console.log(err, data);
           if (data.data_parsed !== undefined){
-            if ( data.data_parsed.id !== undefined){
-              window.location.href = 'https://challer.app/challenge/' + data.data_parsed.id;
+            if (['challengeShare', 'challengeInvitation'].includes(data.data_parsed.action)) {
+              if ( data.data_parsed.id !== undefined){
+                window.location.href = 'https://challer.app/challenge/' + data.data_parsed.id;
+              }
             }
           }
         });
