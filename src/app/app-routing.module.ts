@@ -30,6 +30,15 @@ const routes: Routes = [
     path: 'policy', pathMatch: 'full', component: PolicyComponent,
   },
   {
+      path: 'privacypolicy', pathMatch: 'full', component: PolicyComponent,
+  },
+  {
+    path: 'legal', pathMatch: 'full', component: PolicyComponent,
+  },
+  {
+    path: 'eula', pathMatch: 'full', component: PolicyComponent,
+  },
+  {
     path: 'business', pathMatch: 'full', component: BusinessComponent,
   },
   {

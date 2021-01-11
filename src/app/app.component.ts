@@ -73,7 +73,14 @@ export class AppComponent implements OnInit {
       }, 0);
     });
     this.route.events.subscribe((data: any) => {
-      if (this.route.url === '/business' || this.route.url === '/mision' || this.route.url === '/policy' || this.route.url.indexOf("/policy") >= 0) {
+      if (this.route.url === '/business'
+        || this.route.url === '/mision'
+        || this.route.url === '/policy'
+        || this.route.url.indexOf('/policy') >= 0
+        || this.route.url.indexOf('/privacypolicy') >= 0
+        || this.route.url.indexOf('/legal') >= 0
+        || this.route.url.indexOf('/eula') >= 0
+      ) {
         this.colorBackground = 'default';
       } else if (this.route.url === '/home-challer' || this.route.url.search('challenge') >= 0) {
         this.isHomeChaller = true;
@@ -82,7 +89,10 @@ export class AppComponent implements OnInit {
         this.colorBackground = 'blue';
         this.isHomeChaller = false;
       }
-      if (!(this.route.url.indexOf("/policy") >= 0)){
+      if (!(this.route.url.indexOf('/policy') >= 0
+        && this.route.url.indexOf('/privacypolicy') >= 0
+        && this.route.url.indexOf('/legal') >= 0
+        && this.route.url.indexOf('/eula') >= 0)) {
         this.resetScroll();
       }
     });
