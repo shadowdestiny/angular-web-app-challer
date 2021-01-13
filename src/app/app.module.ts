@@ -55,6 +55,9 @@ import {TourComponent} from './component/tour/tour.component';
 import { Home2Component } from './common/home2/home2.component';
 import {VideoStreamingComponent} from './component/video-streaming/video-streaming.component';
 import { ChronometerTimeVoteComponent } from './component/chronometer-time-vote/chronometer-time-vote.component';
+import { LegalComponent } from './common/legal/legal.component';
+import { EulaComponent } from './common/eula/eula.component';
+import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +110,10 @@ import { ChronometerTimeVoteComponent } from './component/chronometer-time-vote/
     TourComponent,
     Home2Component,
     VideoStreamingComponent,
-    ChronometerTimeVoteComponent
+    ChronometerTimeVoteComponent,
+    LegalComponent,
+    EulaComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

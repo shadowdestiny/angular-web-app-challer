@@ -89,10 +89,11 @@ export class AppComponent implements OnInit {
         this.colorBackground = 'blue';
         this.isHomeChaller = false;
       }
-      if (!(this.route.url.indexOf('/policy') >= 0
-        && this.route.url.indexOf('/privacypolicy') >= 0
-        && this.route.url.indexOf('/legal') >= 0
-        && this.route.url.indexOf('/eula') >= 0)) {
+      if (
+        !(this.route.url.search('/privacypolicy') >= 0)
+        && !(this.route.url.search('/legal') >= 0)
+        && !(this.route.url.search('/eula') >= 0)
+      ) {
         this.resetScroll();
       }
     });

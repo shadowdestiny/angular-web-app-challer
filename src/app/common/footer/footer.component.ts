@@ -37,7 +37,13 @@ export class FooterComponent implements OnInit {
     this.router.navigate(['/story']);
   }
   onPolicy(){
-    this.router.navigate(['/policy']);
+    this.router.navigate(['/privacypolicy']);
+  }
+  onLegal(){
+    this.router.navigate(['/legal']);
+  }
+  onEula(){
+    this.router.navigate(['/eula']);
   }
   onClickHome(){
     this.router.navigate(['/home']);

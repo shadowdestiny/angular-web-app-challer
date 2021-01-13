@@ -11,6 +11,9 @@ import {ContactCvComponent} from './component/contact-cv/contact-cv.component';
 import {StoryComponent} from './common/story/story.component';
 import {MisionComponent} from './common/mision/mision.component';
 import {Home2Component} from './common/home2/home2.component';
+import {PrivacyPolicyComponent} from './common/privacy-policy/privacy-policy.component';
+import {LegalComponent} from './common/legal/legal.component';
+import {EulaComponent} from './common/eula/eula.component';
 
 
 const routes: Routes = [
@@ -30,13 +33,13 @@ const routes: Routes = [
     path: 'policy', pathMatch: 'full', component: PolicyComponent,
   },
   {
-      path: 'privacypolicy', pathMatch: 'full', component: PolicyComponent,
+    path: 'privacypolicy', pathMatch: 'full', component: PrivacyPolicyComponent,
   },
   {
-    path: 'legal', pathMatch: 'full', component: PolicyComponent,
+    path: 'legal', pathMatch: 'full', component: LegalComponent,
   },
   {
-    path: 'eula', pathMatch: 'full', component: PolicyComponent,
+    path: 'eula', pathMatch: 'full', component: EulaComponent,
   },
   {
     path: 'business', pathMatch: 'full', component: BusinessComponent,
