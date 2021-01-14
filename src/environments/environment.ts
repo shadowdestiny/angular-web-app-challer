@@ -11,7 +11,8 @@ export const environment = {
   CONTACT_CV: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact/cv`,
   CHALLENGE_DETAIL: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:id/challenge`,
 
-  CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`
+  CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`,
+  KEY_TAG_MANAGER: `GTM-T2G2TH8`
 };
 
 /*
