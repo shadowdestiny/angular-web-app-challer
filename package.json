@@ -24,14 +24,12 @@
     "@angular/router": "~9.1.1",
     "@ngrx/store": "^9.0.0",
     "@types/swiper": "5.2.0",
-    "angular-google-tag-manager": "^1.2.4",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "dashjs": "^3.1.2",
     "hls.js": "^0.14.9",
     "jquery": "^3.5.1",
     "moment": "^2.27.0",
-    "ng-circle-progress": "^1.5.1",
     "ng-click-outside": "^7.0.0",
     "ngx-auto-unsubscribe": "^3.0.1",
     "ngx-useful-swiper": "^9.0.3",
@@ -39,10 +37,11 @@
     "rxjs": "~6.5.4",
     "swiper": "^5.2.1",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "ng-circle-progress": "^1.5.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1100.7",
+    "@angular-devkit/build-angular": "^0.1000.5",
     "@angular/cli": "~9.1.1",
     "@angular/compiler-cli": "~9.1.1",
     "@angular/language-service": "~9.1.1",

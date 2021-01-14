@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {environment} from '../environments/environment';
+// import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './common/header/header.component';
@@ -140,11 +141,14 @@ import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.c
       outerStrokeColor: '#78C000',
       innerStrokeColor: '#C7E596',
       animationDuration: 300,
-    })
+    }),
+    /*GoogleTagManagerModule.forRoot({
+      id: environment.KEY_TAG_MANAGER,
+    })*/
   ],
   providers: [
     httpInterceptorProviders,
-    {provide: 'googleTagManagerId', useValue: environment.KEY_TAG_MANAGER}
+    // {provide: 'googleTagManagerId', useValue: environment.KEY_TAG_MANAGER}
   ],
   exports: [
     clickIOS,
