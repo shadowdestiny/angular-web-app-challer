@@ -12,7 +12,11 @@ export const environment = {
   CHALLENGE_DETAIL: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/-1/challenge`,
 
   CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`,
-  KEY_TAG_MANAGER: `GTM-MPSJSLW`
+  KEY_TAG_MANAGER: `GTM-MPSJSLW`,
+  INSTAGRAM_LINK: `https://instagram.com/challerapp`,
+  TWITTER_LINK: `https://twitter.com/ChallerApp`,
+  FACEBOOK_LINK: `https://www.facebook.com/challerapp`,
+  YOUTUBE_LINK: `https://www.youtube.com/channel/UC5hx9plJBJdbbPZ-eHddppg`
 };
 
 /*
