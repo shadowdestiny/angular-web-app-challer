@@ -56,13 +56,23 @@
         </div>
         <div>
           <div class="d-flex bd-highlight">
-            <div class="p-2 flex-fill bd-highlight">
-              <div class="instagram">
+            <div class="p-1 flex-fill bd-highlight">
+              <div class="instagram click" (click)="onClickInstagram()">
                 <img src="assets/images/components/footer/instagram.svg">
               </div>
             </div>
-            <div class="p-2 flex-fill bd-highlight">
-              <div>
+            <div class="p-1 flex-fill bd-highlight">
+              <div class="facebook click" (click)="onClickFacebook()">
+                <img src="assets/images/components/footer/facebook.svg">
+              </div>
+            </div>
+            <div class="p-1 flex-fill bd-highlight">
+              <div class="youtube click" (click)="onClickYouTube()">
+                <img src="assets/images/components/footer/youtube.svg">
+              </div>
+            </div>
+            <div class="p-1 flex-fill bd-highlight click" (click)="onClickTwitter()">
+              <div class="twitter click">
                 <img src="assets/images/components/footer/twitter.svg">
               </div>
             </div>
