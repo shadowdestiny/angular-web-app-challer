@@ -73,7 +73,38 @@
   text-align: right;
   margin-left: auto;
   display: block;
+  img{
+    width: 42px;
+  }
 }
+.twitter{
+  position: absolute;
+  z-index: 100;
+  @include for-table-very-small {
+    position: inherit;
+  }
+}
+.youtube{
+  text-align: right;
+  margin-left: auto;
+  display: block;
+  img{
+    width: 42px;
+  }
+}
+.twitter, .youtube, .facebook, .instagram{
+  text-align: right;
+  margin-left: auto;
+  display: block;
+  img{
+    width: 26px;
+  }
+  @include for-tablet {
+    text-align: center;
+    margin-right: auto;
+  }
+}
+
 .download-section{
   position: absolute;
   bottom: 0;

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -10,42 +11,69 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  onAbout(){
+  onAbout() {
     this.router.navigate(['/about-us']);
   }
-  onVision(){
+
+  onVision() {
     this.router.navigate(['/vision']);
   }
-  onMision(){
+
+  onMision() {
     this.router.navigate(['/mision']);
   }
-  onBusiness(){
+
+  onBusiness() {
     this.router.navigate(['/business']);
   }
-  onCondition(){
+
+  onCondition() {
     this.router.navigate(['/policy']);
   }
-  onContact(){
+
+  onContact() {
     this.router.navigate(['/contact']);
   }
-  onStory(){
+
+  onStory() {
     this.router.navigate(['/story']);
   }
-  onPolicy(){
+
+  onPolicy() {
     this.router.navigate(['/privacypolicy']);
   }
-  onLegal(){
+
+  onLegal() {
     this.router.navigate(['/legal']);
   }
-  onEula(){
+
+  onEula() {
     this.router.navigate(['/eula']);
   }
-  onClickHome(){
+
+  onClickHome() {
     this.router.navigate(['/home']);
+  }
+
+  onClickInstagram() {
+    window.location.href = environment.INSTAGRAM_LINK;
+  }
+
+  onClickTwitter() {
+    window.location.href = environment.TWITTER_LINK;
+  }
+
+  onClickFacebook() {
+    window.location.href = environment.FACEBOOK_LINK;
+  }
+
+  onClickYouTube() {
+    window.location.href = environment.YOUTUBE_LINK;
   }
 }
