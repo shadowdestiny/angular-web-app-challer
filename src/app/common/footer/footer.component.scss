@@ -77,12 +77,11 @@
     width: 42px;
   }
 }
-.facebook{
-  text-align: right;
-  margin-left: auto;
-  display: block;
-  img{
-    width: 42px;
+.twitter{
+  position: absolute;
+  z-index: 100;
+  @include for-table-very-small {
+    position: inherit;
   }
 }
 .youtube{
