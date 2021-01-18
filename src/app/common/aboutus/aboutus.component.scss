@@ -2,15 +2,6 @@
 
 .home {
 
-  /*.col-sm-6 {
-    padding-left: 0;
-    padding-right: 0;
-    @include for-mobile-small {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }*/
-
   &.mobile{
 
   }
@@ -22,7 +13,7 @@
   .section {
     width: 35vw;
     position: absolute;
-    top: 4vw;
+    top: 0vw;
     left: 7vw;
     display: table;
     text-align: center;
@@ -223,7 +214,7 @@
 }
 .desktop{
   &.dynamic-height{
-    height: 48vw;
+    height: 39.96vw;
   }
 }
 .mobile{
