@@ -1,0 +1,77 @@
+<div class="home">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="font-contact-bold font-style-3 black-2 text-center">
+          Contact Us
+        </div>
+
+      </div>
+      <div class="col-md-12">
+        <form [formGroup]="contactForm"  class="template-designer">
+          <div class="form-group">
+            <label for="fullname">Full Name <span>*</span></label>
+            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+                   formControlName="firstName" placeholder="Name Last Name"
+            >
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span>*</span></label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   formControlName="email" placeholder="youremail@mail.com"
+            >
+          </div>
+          <div class="form-group">
+            <label for="profile">Profile <span>*</span></label>
+            <input type="text" class="form-control" id="profile" aria-describedby="emailHelp"
+                   formControlName="profile" placeholder="www.linkedin/in/..."
+            >
+          </div>
+          <div class="form-group">
+            <label for="validationTextarea"></label>
+            <textarea class="form-control" id="validationTextarea" formControlName="comment"></textarea>
+          </div>
+          <div class="form-group" *ngIf="status === 'ok'">
+            <div class="alert alert-primary" role="alert">
+              Email send!
+            </div>
+          </div>
+          <div class="form-group" *ngIf="status === 'error'">
+            <div class="alert alert-warning" role="alert">
+              {{message}}
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="help-block"
+                  *ngIf="contactForm.get('firstName').hasError('required')
+                  || contactForm.get('email').hasError('required')
+                  || contactForm.get('email').hasError('email')
+                  || contactForm.get('profile').hasError('required')
+                  || contactForm.get('comment').hasError('required')
+                "
+            >
+              <strong>Fields marked with * are mandatory</strong> <!--{{error}}-->
+            </span>
+          </div>
+          <div class="form-group" *ngIf="isLoading">
+            <div>
+              <img src="../../../assets/images/loading.gif" class="w-100">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="button-submit">
+              <app-button-type-template [template]="'form'" [disabled] = !contactForm.valid (onClickButton)="submit()" >
+                <div class="text-center font-weight-bold">
+                  SUBMIT
+                </div>
+              </app-button-type-template>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+

@@ -14,7 +14,7 @@ import {DownloadAppComponent} from './component/download-app/download-app.compon
 import {FooterComponent} from './common/footer/footer.component';
 import {BusinessComponent} from './common/business/business.component';
 import {VisionComponent} from './common/vision/vision.component';
-import {ContactComponent} from './common/contact/contact.component';
+import {ContactJoinComponent} from './common/contact-join/contact-join.component';
 import {NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 import {HomeChallerComponent} from './common/home-challer/home-challer.component';
 import {ChallerSlideListComponent} from './component/challer-slide-list/challer-slide-list.component';
@@ -59,6 +59,7 @@ import { ChronometerTimeVoteComponent } from './component/chronometer-time-vote/
 import { LegalComponent } from './common/legal/legal.component';
 import { EulaComponent } from './common/eula/eula.component';
 import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.component';
+import {ContactComponent} from './common/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.c
     StoryComponent,
     MisionComponent,
     GlobalModalComponent,
+    ContactJoinComponent,
     ChronometerComponent,
     EyeLoadingComponent,
 

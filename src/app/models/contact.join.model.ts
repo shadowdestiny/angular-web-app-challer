@@ -1,4 +1,4 @@
-export interface ContactModel{
+export interface ContactJoinModel{
   fullName: string;
   email: string;
   subject: string;
@@ -6,5 +6,6 @@ export interface ContactModel{
   document?: string;
   typeDocument?: string;
   documentName?: string;
-  typeForm?: number;
+  profile?: string;
+  typeForm: number;
 }

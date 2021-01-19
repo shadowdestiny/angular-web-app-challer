@@ -15,12 +15,12 @@ export class ContactService {
   }
 
   public setContact(body: ContactModel) {
-    let url = `${API.CONTACT}`;
+    const url = `${API.CONTACT}`;
     return this.http.post( url , body);
   }
 
   public setContactCv(body: ContactModel) {
-    let url = `${API.CONTACT_CV}`;
+    const url = `${API.CONTACT_CV}`;
     return this.http.post( url , body);
   }
 }
