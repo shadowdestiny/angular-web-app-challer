@@ -13,7 +13,7 @@
           <div class="form-group">
             <label for="fullname">Full Name <span>*</span></label>
             <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
-                   formControlName="firstName" placeholder="Name Last Name"
+                   formControlName="firstName" placeholder="Name Lastname"
             >
           </div>
           <div class="form-group">
@@ -23,10 +23,10 @@
             >
           </div>
           <div class="form-group">
-            <label for="subject">Subject <span>*</span></label>
-            <select class="form-control" id="subject" formControlName="support">
-              <option [value]="subject.value"  class="color-option" *ngFor="let subject of subjects">{{subject.name}}</option>
-            </select>
+            <label for="profile">Profile <span>*</span></label>
+            <input type="text" class="form-control" id="profile" aria-describedby="emailHelp"
+                   formControlName="profile" placeholder="www.linkedin/in/..."
+            >
           </div>
           <div class="form-group">
             <label for="validationTextarea"></label>
@@ -47,7 +47,7 @@
                   *ngIf="contactForm.get('firstName').hasError('required')
                   || contactForm.get('email').hasError('required')
                   || contactForm.get('email').hasError('email')
-                  || contactForm.get('support').hasError('required')
+                  || contactForm.get('profile').hasError('required')
                   || contactForm.get('comment').hasError('required')
                 "
             >

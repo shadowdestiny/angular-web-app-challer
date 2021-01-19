@@ -1,15 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {ContactModel} from '../../models/contact.model';
 import {ContactService} from '../../service/contact.service';
-import {SubjectModel} from '../../models/subject.model';
+import {ContactJoinModel} from '../../models/contact.join.model';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-contact-join',
+  templateUrl: './contact-join.component.html',
+  styleUrls: ['./contact-join.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactJoinComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,46 +19,27 @@ export class ContactComponent implements OnInit {
   message;
   status;
   isLoading = false;
-  subjects: Array<SubjectModel>;
 
   contactForm = this.formBuilder.group({
     firstName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    support: ['...', Validators.required],
     comment: ['', Validators.required],
+    profile: ['', Validators.required],
   });
 
-  private preparingData() {
-    this.subjects = [
-      {
-        name: 'Report a problem',
-        value: 'Report a problem'
-      },
-      {
-        name: 'Support requests',
-        value: 'Support requests'
-      },
-      {
-        name: 'Other',
-        value: 'Other'
-      }
-    ];
-  }
-
   ngOnInit(): void {
-    this.preparingData();
   }
 
   sendData() {
-    const contact: ContactModel = {
+    const contact: ContactJoinModel = {
       fullName: this.contactForm.value.firstName,
       email: this.contactForm.value.email,
       subject: this.contactForm.value.support,
       description: this.contactForm.value.comment,
-      typeForm: 1
+      profile: this.contactForm.value.profile,
+      typeForm: 2
     };
     this.isLoading = true;
-    // tslint:disable-next-line:no-shadowed-variable
     this.contactService.setContact(contact).subscribe((data: any) => {
       this.status = 'ok';
       this.isLoading = false;

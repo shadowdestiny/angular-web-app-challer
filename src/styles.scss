@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 @import './styles/_partial/sections';
 @import './styles/libs/swiper';
 @import "styles/_partial/mixins/responsive.mixin";
@@ -14,20 +13,12 @@
   cursor: pointer;
 }
 .principal-background{
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/assets/images/background/caller-landing-2@3x.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;*/
   position: fixed;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  /*top: 66px;*/
-  /*height: calc(100% - 66px);*/
-  height: calc(100% - 120px);
+
+  height: calc(100% - 116px);
   &.noCloud{
     height: calc(100% - 65px);
   }
@@ -154,7 +145,7 @@ form.template-designer{
   select{
     border: 1px solid var(--border-form-input);
     border-radius: 6px;
-    color: red;
+    color: var(--border-form-input);
   }
   span{
     color:red;

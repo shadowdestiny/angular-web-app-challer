@@ -63,12 +63,17 @@ export class ModalDirective {
   constructor(
     private store: StoreService
   ) { }
-  @HostListener('click', ['$event.target']) onClick(id: any) {
-    this.onModal();
+  @HostListener('click', ['$event.target']) onClick(target: any) {
+    this.onModal(target);
   }
 
-  onModal(){
-    this.store.setModalStore(ModalConstants.OPEN);
+  onModal(target: any){
+    let typeForm = 0;
+    if (!!target.getAttribute('typeForm')){
+      typeForm = target.getAttribute('typeForm');
+    }
+
+    this.store.setModalStore(ModalConstants.OPEN, typeForm);
   }
 
 }

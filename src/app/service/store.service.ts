@@ -3,8 +3,8 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {ScrollState} from '../store/interfaces/scroll.state';
 import {VideoState} from '../store/interfaces/video.state';
-import {Scroll, ScrollAction} from '../store/actions/scroll.actions';
-import {Video, VideoAction} from '../store/actions/video.action';
+import {Scroll} from '../store/actions/scroll.actions';
+import {Video} from '../store/actions/video.action';
 import {ResizeState} from '../store/reducers/resize.reducer';
 import {Resize} from '../store/actions/resize.action';
 import {CloudState} from '../store/reducers/cloud.reducer';
@@ -145,12 +145,19 @@ export class StoreService {
     return this.modalContent$;
   }
 
-  setModalStore(type: string) {
-    const modal: Modal = null;
-    this.modalStateStore.dispatch({
+  setModalStore(type: string, typeForm: number = 0) {
+    // tslint:disable-next-line:no-shadowed-variable
+    const modalAction = ({modal, type}: { modal: Modal, type: string }) => ({
       type,
       modal
     });
+
+    this.modalStateStore.dispatch(modalAction({
+      modal: {
+        typeForm
+      },
+      type,
+    }));
   }
 
   getModalStore() {

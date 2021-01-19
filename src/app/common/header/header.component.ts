@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   onContact() {
     this.isOpen = false;
-    this.router.navigate(['/contact']);
+    this.router.navigate(['/contact-join']);
   }
 
   onVision() {

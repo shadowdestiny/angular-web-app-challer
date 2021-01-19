@@ -17,6 +17,7 @@ export function modalGlobalReducer(state: ModalState = initialState, action: Mod
     case OPEN:
       return {
         status: OPEN,
+        typeForm: action.modal.typeForm
       };
     case CLOSE:
       return {

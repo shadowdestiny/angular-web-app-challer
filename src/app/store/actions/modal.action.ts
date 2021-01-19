@@ -3,13 +3,13 @@ import {ModalConstants} from '../constants/modal.constants';
 
 
 export class Modal {
-  param: any;
+  typeForm: number;
 }
 
 export class ModalAction implements Action {
   type: string = ModalConstants.CLOSE;
   modal: Modal = {
-    param: null,
+    typeForm: null,
   };
 
   constructor(modal: Modal) {

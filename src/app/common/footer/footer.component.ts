@@ -38,7 +38,7 @@ export class FooterComponent implements OnInit {
   }
 
   onContact() {
-    this.router.navigate(['/contact']);
+    this.router.navigate(['/contact-join']);
   }
 
   onStory() {
@@ -75,5 +75,8 @@ export class FooterComponent implements OnInit {
 
   onClickYouTube() {
     window.location.href = environment.YOUTUBE_LINK;
+  }
+  onJoin(){
+
   }
 }
