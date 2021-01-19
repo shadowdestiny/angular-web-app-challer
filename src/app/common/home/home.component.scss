@@ -223,6 +223,7 @@
 .desktop{
   &.dynamic-height{
     height: 39.96vw;
+    background: var(--background-color);
   }
 }
 .mobile{
@@ -261,9 +262,7 @@
 }
 .font-style-3{
   font-size: 22px;
-  /*@include for-table-very-small{
-    font-size: 16px;
-  }*/
+  margin-left: 3px;
 }
 .mobile{
   .elastic-margin-top{
