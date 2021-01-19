@@ -25,7 +25,7 @@
           <div class="form-group">
             <label for="subject">Subject <span>*</span></label>
             <select class="form-control" id="subject" formControlName="support">
-              <option selected class="color-option">...</option>
+              <option [value]="subject.value"  class="color-option" *ngFor="let subject of subjects">{{subject.name}}</option>
             </select>
           </div>
           <div class="form-group">

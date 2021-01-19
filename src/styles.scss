@@ -145,7 +145,7 @@ form.template-designer{
   select{
     border: 1px solid var(--border-form-input);
     border-radius: 6px;
-    color: red;
+    color: var(--border-form-input);
   }
   span{
     color:red;

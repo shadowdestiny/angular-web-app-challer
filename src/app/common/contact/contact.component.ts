@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ContactModel} from '../../models/contact.model';
 import {ContactService} from '../../service/contact.service';
+import {SubjectModel} from '../../models/subject.model';
 
 @Component({
   selector: 'app-contact',
@@ -19,6 +20,7 @@ export class ContactComponent implements OnInit {
   message;
   status;
   isLoading = false;
+  subjects: Array<SubjectModel>;
 
   contactForm = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -27,7 +29,25 @@ export class ContactComponent implements OnInit {
     comment: ['', Validators.required],
   });
 
+  private preparingData() {
+    this.subjects = [
+      {
+        name: 'Report a problem',
+        value: 'Report a problem'
+      },
+      {
+        name: 'Support requests',
+        value: 'Support requests'
+      },
+      {
+        name: 'Other',
+        value: 'Other'
+      }
+    ];
+  }
+
   ngOnInit(): void {
+    this.preparingData();
   }
 
   sendData() {
@@ -39,6 +59,7 @@ export class ContactComponent implements OnInit {
       typeForm: 1
     };
     this.isLoading = true;
+    // tslint:disable-next-line:no-shadowed-variable
     this.contactService.setContact(contact).subscribe((data: any) => {
       this.status = 'ok';
       this.isLoading = false;
