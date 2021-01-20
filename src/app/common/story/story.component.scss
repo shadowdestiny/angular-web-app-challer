@@ -20,10 +20,10 @@
   }
 
   .section {
-    width: 38vw;
+    width: 47vw;
     position: absolute;
-    top: 1vw;
-    left: 7vw;
+    top: 0;
+    left: 3vw;
     display: table;
     text-align: center;
     margin-left: 0;
@@ -207,7 +207,7 @@
 }
 .desktop{
   &.dynamic-height{
-    height: 54vw;
+    height: 39.96vw;
   }
 }
 .mobile{

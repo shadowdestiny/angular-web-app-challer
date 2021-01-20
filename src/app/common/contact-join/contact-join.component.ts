@@ -34,7 +34,7 @@ export class ContactJoinComponent implements OnInit {
     const contact: ContactJoinModel = {
       fullName: this.contactForm.value.firstName,
       email: this.contactForm.value.email,
-      subject: '-',
+      subject: this.contactForm.value.profile,
       description: this.contactForm.value.comment,
       profile: this.contactForm.value.profile,
       typeForm: 2,
