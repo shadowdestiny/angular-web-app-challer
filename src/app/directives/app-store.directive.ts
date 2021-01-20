@@ -2,6 +2,7 @@ import { Directive, HostListener } from '@angular/core';
 import {Router} from '@angular/router';
 import {StoreService} from '../service/store.service';
 import {ModalConstants} from '../store/constants/modal.constants';
+import {environment} from '../../environments/environment';
 
 // tslint:disable-next-line:directive-selector
 @Directive({selector: '[clickAndroid]'})
@@ -17,7 +18,7 @@ export class ClickAngular {
   }
 
   toGoogle(){
-    window.location.href = 'https://play.google.com/store/apps/details?id=com.challer';
+    window.location.href = environment.GOOGLE_APP;
   }
 
 }
@@ -30,11 +31,7 @@ export class clickIOS {
     private router: Router
   ) { }
   @HostListener('click', ['$event.target']) onClick(id: any) {
-    this.toGoogle();
-  }
-
-  toGoogle(){
-    window.location.href = 'https://play.google.com/store/apps/details?id=com.challer';
+    window.location.href = environment.IOS_APP;
   }
 
 }

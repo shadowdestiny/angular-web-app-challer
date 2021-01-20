@@ -16,7 +16,11 @@ export const environment = {
   INSTAGRAM_LINK: `https://instagram.com/challerapp`,
   TWITTER_LINK: `https://twitter.com/ChallerApp`,
   FACEBOOK_LINK: `https://www.facebook.com/challerapp`,
-  YOUTUBE_LINK: `https://www.youtube.com/channel/UC5hx9plJBJdbbPZ-eHddppg`
+  YOUTUBE_LINK: `https://www.youtube.com/channel/UC5hx9plJBJdbbPZ-eHddppg`,
+
+  // download app
+  GOOGLE_APP: `https://play.google.com/store/apps/details?id=com.challer`,
+  IOS_APP: `https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154`
 };
 
 /*
