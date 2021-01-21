@@ -28,18 +28,18 @@
   </p>
 <script>
   var isMobile = function () {
-    const ua = navigator.userAgent;
-    return this.isMobileValue = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua));
+    var ua = navigator.userAgent;
+    return /Android/i.test(ua);
   }
 
   var isIOS = function () {
-    const ua = navigator.userAgent;
+    var ua = navigator.userAgent;
     return /iPhone|iPad|iPod/i.test(ua);
   }
 
-  if (isMobile() == true){
+  if (isMobile() === true){
     window.location.href = 'https://play.google.com/store/apps/details?id=com.challer'
-  } else if (isIOS() == true){
+  } else if (isIOS() === true){
     window.location.href = 'https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154';
   } else {
     window.location.href="/";
