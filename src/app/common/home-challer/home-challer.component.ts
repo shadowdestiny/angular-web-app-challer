@@ -191,7 +191,7 @@ import {Subscription} from 'rxjs';
         this.challenges = [{...this.getMapChaller(
             this.challengerId,
             detailChaller.name,
-            detailChaller.urlVideo,
+            detailChaller.videoCreator,
             detailChaller.category.sportImageSelected,
             detailChaller.urlVideo,
             detailChaller.videoInvited,
