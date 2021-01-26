@@ -72,11 +72,11 @@
     left: 0;
     position: absolute;
     bottom: 0;
-    background: url(/assets/images/background/flay.png) no-repeat center;
+    background: url(/assets/images/background/flay.jpg) no-repeat center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 41% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 41% 100%, 0 100%);
-    background-size: 100% 100%;
-    /*background-position-y: 40%;
-    background-size: 192%;*/
+    background-size: 114%;
+    background-position-y: 35%;
   }
 
   @include for-table-very-small{
@@ -98,7 +98,7 @@
   }
 }
 .dynamic-height{
-  height: 58vw;
+  height: 39.96vw;
 }
 
 @include for-table-very-small{

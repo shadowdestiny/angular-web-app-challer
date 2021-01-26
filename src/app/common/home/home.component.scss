@@ -97,7 +97,7 @@
       left: 0.8vw;
       position: absolute;
       bottom: 0;
-      background: url(/assets/images/background/girl-background.jpg) no-repeat center;
+      background: url(/assets/images/background/home-left.gif) no-repeat center;
       background-size: 73%;
       background-position-x: -5.5vw;
       background-position-y: 0vw;
@@ -118,7 +118,7 @@
       left: 0.8vw;
       position: absolute;
       bottom: 0;
-      background: url(/assets/images/background/black.jpg) no-repeat center;
+      background: url(/assets/images/background/home-rigth.gif) no-repeat center;
       background-size: 71%;
       background-position-x: -12.8vw;
       background-position-y: 0vw;
@@ -152,10 +152,10 @@
       top: 3vw;
       position: absolute;
       bottom: 0;
-      background: url(/assets/images/background/girl-background.jpg) no-repeat center;
-      background-size: 187%;
-      background-position-y: 1vw;
-      background-position-x: -15vw;
+      background: url(/assets/images/background/home-left.gif) no-repeat center;
+      background-size: 212%;
+      background-position-y: 0vw;
+      background-position-x: -52vw;
       clip-path: polygon(101.3% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
     }
 
@@ -180,34 +180,14 @@
       top: -9vw;
       position: absolute;
       bottom: 0;
-      background: url(/assets/images/background/black2.jpg) no-repeat center;
-      background-size: 100%;
-      background-position-y: -4vw;
-      background-position-x: 0vw;
+      background: url(/assets/images/background/home-rigth.gif) no-repeat center;
+      background-size: 187%;
+      background-position-y: 0vw;
+      background-position-x: -44vw;
       clip-path: polygon(101.3% 0%, 100% 0%, 100% 100%, 0 100%, 0 59%);
     }
   }
 
-  /*@include for-table-very-small{
-    .diagonal {
-      clip-path: polygon(102% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
-    }
-    .diagonal:before {
-      left: 0;
-      top: 17px;
-      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
-      background-size: 180%;
-    }
-  }*/
-
-  /*@include for-mobile-very-small-2{
-    .diagonal:before {
-      left: 0;
-      top: 17px;
-      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 0 36%);
-      background-size: 200%;
-    }
-  }*/
   &.desktop{
     .float-section{
       margin-top: 48px;
@@ -223,30 +203,19 @@
 .desktop{
   &.dynamic-height{
     height: 39.96vw;
+    background: var(--background-color);
   }
 }
 .mobile{
   &.dynamic-height{
-    height: 236vw
+    height: 236vw;
+    background: var(--background-color);
   }
 }
-
-/*@include for-table-very-small{
-  .dynamic-height{
-    height: 780px;
-  }
-}*/
 
 .desktop{
   .diagonal-width{
     width: 80vw;
-    /*@include for-tablet{
-      width: 70%;
-    }
-    @include for-table-very-small{
-        width: 100%;
-        margin-top: 300px;
-    }*/
   }
 }
 .mobile{
@@ -261,9 +230,7 @@
 }
 .font-style-3{
   font-size: 22px;
-  /*@include for-table-very-small{
-    font-size: 16px;
-  }*/
+  margin-left: 3px;
 }
 .mobile{
   .elastic-margin-top{
