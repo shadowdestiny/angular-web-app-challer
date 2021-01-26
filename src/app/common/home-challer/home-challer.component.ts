@@ -230,10 +230,6 @@ import {Subscription} from 'rxjs';
     this.router.navigate(['/about-us']);
   }
 
-  onVision() {
-    this.router.navigate(['/vision']);
-  }
-
   onMision() {
     this.router.navigate(['/mision']);
   }
