@@ -19,6 +19,7 @@ export class ContactJoinComponent implements OnInit {
   message;
   status;
   isLoading = false;
+  isShowError = false;
 
   contactForm = this.formBuilder.group({
     firstName: ['', Validators.required],
@@ -52,6 +53,10 @@ export class ContactJoinComponent implements OnInit {
 
   submit() {
     this.sendData();
+  }
+
+  direct() {
+    this.isShowError = true;
   }
 
 }

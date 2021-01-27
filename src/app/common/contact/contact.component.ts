@@ -21,11 +21,12 @@ export class ContactComponent implements OnInit {
   status;
   isLoading = false;
   subjects: Array<SubjectModel>;
+  isShowError = false;
 
   contactForm = this.formBuilder.group({
-    firstName: ['', Validators.required],
+    firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
     email: ['', [Validators.required, Validators.email]],
-    support: ['...', Validators.required],
+    support: ['', Validators.required],
     comment: ['', Validators.required],
   });
 
@@ -72,6 +73,10 @@ export class ContactComponent implements OnInit {
 
   submit() {
     this.sendData();
+  }
+
+  direct() {
+    this.isShowError = true;
   }
 
 }
