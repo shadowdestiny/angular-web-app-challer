@@ -60,6 +60,7 @@ import { LegalComponent } from './common/legal/legal.component';
 import { EulaComponent } from './common/eula/eula.component';
 import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.component';
 import {ContactComponent} from './common/contact/contact.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import {ContactComponent} from './common/contact/contact.component';
       innerStrokeColor: '#C7E596',
       animationDuration: 300,
     }),
+    ScullyLibModule,
     /*GoogleTagManagerModule.forRoot({
       id: environment.KEY_TAG_MANAGER,
     })*/
