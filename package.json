@@ -40,6 +40,7 @@
     "ngx-auto-unsubscribe": "^3.0.1",
     "ngx-useful-swiper": "^9.0.3",
     "ngx-webstorage": "^6.0.0",
+    "puppeteer-cli": "^1.5.1",
     "rxjs": "~6.5.4",
     "swiper": "^5.2.1",
     "tslib": "^1.10.0",
