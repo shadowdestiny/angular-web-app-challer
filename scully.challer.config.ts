@@ -1,8 +1,25 @@
-import { ScullyConfig } from '@scullyio/scully';
+import {ScullyConfig} from '@scullyio/scully';
+
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'challer',
   outDir: './dist/static',
-  routes: {
+  routes: {},
+  puppeteerLaunchOptions: {
+    args: [
+      '--disable-gpu',
+      '--renderer',
+      '--no-sandbox',
+      '--no-service-autorun',
+      '--no-experiments',
+      '--no-default-browser-check',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--disable-setuid-sandbox',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+      '--disable-extensions'
+    ]
   }
 };
