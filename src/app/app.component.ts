@@ -60,6 +60,14 @@ export class AppComponent implements OnInit {
         isIos: this.isIOS(),
         isAndroid: this.isAndroid(),
       });
+
+    this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START) {
+        if (data.resize.isMobile && this.isHomeChaller) {
+          window.location.href = location.href;
+        }
+      }
+    });
   }
 
   getBodyStatus() {
