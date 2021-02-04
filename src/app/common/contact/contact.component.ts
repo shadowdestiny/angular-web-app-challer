@@ -24,8 +24,8 @@ export class ContactComponent implements OnInit {
   isShowError = false;
 
   contactForm = this.formBuilder.group({
-    firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
-    email: ['', [Validators.required, Validators.email]],
+    firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
     support: ['', Validators.required],
     comment: ['', Validators.required],
   });

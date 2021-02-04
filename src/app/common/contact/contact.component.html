@@ -33,7 +33,7 @@
                  class="alert alert-danger">
               This field is required.
             </div>
-            <div *ngIf="contactForm.get('email').hasError('email') && isShowError"
+            <div *ngIf="contactForm.get('email').hasError('pattern') && isShowError"
                  class="alert alert-danger">
               The email must be in a suitable format
             </div>
@@ -53,7 +53,7 @@
             <textarea class="form-control" id="validationTextarea" formControlName="comment"></textarea>
             <div *ngIf="contactForm.get('comment').hasError('required') && isShowError"
                  class="alert alert-danger">
-              El correo debe tener un formato adecuado
+              The text cannot be empty
             </div>
           </div>
           <div class="form-group" *ngIf="status === 'ok'">
@@ -70,7 +70,6 @@
             <span class="help-block"
                   *ngIf="contactForm.get('firstName').hasError('required')
                   || contactForm.get('email').hasError('required')
-                  || contactForm.get('email').hasError('email')
                   || contactForm.get('support').hasError('required')
                   || contactForm.get('comment').hasError('required')
                 "

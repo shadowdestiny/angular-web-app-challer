@@ -33,7 +33,7 @@
                  class="alert alert-danger">
               This field is required.
             </div>
-            <div *ngIf="contactForm.get('email').hasError('email') && isShowError"
+            <div *ngIf="contactForm.get('email').hasError('pattern') && isShowError"
                  class="alert alert-danger">
               The email must be in a suitable format
             </div>
@@ -41,16 +41,24 @@
           <div class="form-group">
             <label for="profile">Profile <span>*</span></label>
             <input type="text" class="form-control" id="profile" aria-describedby="emailHelp"
-                   formControlName="profile" placeholder="www.linkedin/in/..."
+                   formControlName="profile" placeholder="https://www.linkedin/in/..."
             >
             <div *ngIf="contactForm.get('profile').hasError('required') && isShowError"
                  class="alert alert-danger">
               This field is required.
             </div>
+            <div *ngIf="contactForm.get('profile').hasError('pattern') && isShowError"
+                 class="alert alert-danger">
+              The link format is invalid.
+            </div>
           </div>
           <div class="form-group">
             <label for="validationTextarea"></label>
             <textarea class="form-control" id="validationTextarea" formControlName="comment"></textarea>
+            <div *ngIf="contactForm.get('comment').hasError('required') && isShowError"
+                 class="alert alert-danger">
+              The text cannot be empty
+            </div>
           </div>
           <div class="form-group" *ngIf="status === 'ok'">
             <div class="alert alert-primary" role="alert">
@@ -66,7 +74,6 @@
             <span class="help-block"
                   *ngIf="contactForm.get('firstName').hasError('required')
                   || contactForm.get('email').hasError('required')
-                  || contactForm.get('email').hasError('email')
                   || contactForm.get('profile').hasError('required')
                   || contactForm.get('comment').hasError('required')
                 "

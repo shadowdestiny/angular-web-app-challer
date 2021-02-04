@@ -20,12 +20,14 @@ const routes: Routes = [
   {
     path: '', pathMatch: 'full', component: HomeComponent,
   },
+  // home
   {
     path: 'home2', pathMatch: 'full', component: Home2Component,
   },
   {
     path: 'home', pathMatch: 'full', component: HomeComponent,
   },
+  // home
   {
     path: 'about-us', pathMatch: 'full', component: AboutusComponent,
   },
@@ -35,6 +37,7 @@ const routes: Routes = [
   {
     path: 'privacypolicy', pathMatch: 'full', component: PrivacyPolicyComponent,
   },
+  //
   {
     path: 'legal', pathMatch: 'full', component: LegalComponent,
   },

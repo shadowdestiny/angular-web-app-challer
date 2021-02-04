@@ -22,10 +22,10 @@ export class ContactJoinComponent implements OnInit {
   isShowError = false;
 
   contactForm = this.formBuilder.group({
-    firstName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
     comment: ['', Validators.required],
-    profile: ['', Validators.required],
+    profile: ['', [Validators.required, Validators.pattern('(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})')]],
   });
 
   ngOnInit(): void {
