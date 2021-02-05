@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   isMobileValue = false;
   colorBackground = 'blue';
   isHomeChaller = false;
+  isHorizaontal = false;
 
   @ViewChild('scrollMe', {static: true}) scrollMe: ElementRef;
 
@@ -23,7 +24,19 @@ export class AppComponent implements OnInit {
     private store: StoreService,
     public route: Router
   ) {
+    screen.orientation.addEventListener('change', () => {
+      this.show();
+    });
 
+    window.addEventListener('load', () => {
+      this.show();
+    });
+  }
+
+  show() {
+    const { type, angle } = screen.orientation;
+    // console.log(`Orientation type is ${type} & angle is ${angle}.`);
+    this.isHorizaontal = type === 'landscape-primary';
   }
 
   @HostListener('window:resize', ['$event'])
@@ -49,6 +62,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.setResizeEvent();
     this.getBodyStatus();
+    // screen.orientation.lock();
   }
 
   setResizeEvent() {
