@@ -24,17 +24,45 @@ export class AppComponent implements OnInit {
     private store: StoreService,
     public route: Router
   ) {
-    screen.orientation.addEventListener('change', () => {
-      this.show();
-    });
+    try {
+      screen.orientation.addEventListener('change', () => {
+        this.show();
+      });
+    } catch (e) {
+      console.log(e);
+      this.detectEventIosHorizontal();
+    }
+    try {
+      window.addEventListener('load', () => {
+        this.show();
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
-    window.addEventListener('load', () => {
-      this.show();
+  private detectEventIosHorizontal() {
+    if (this.isMobile()) {
+      this.isHorizaontal = window.innerWidth > window.innerHeight;
+    }
+  }
+
+  private loadResize() {
+    this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START) {
+        if (data.resize.isMobile && this.isHomeChaller) {
+          this.isHorizaontal = true;
+          setTimeout(() => {
+            this.detectEventIosHorizontal();
+            window.location.reload();
+          }, 0);
+        }
+      }
     });
   }
 
   show() {
-    const { type, angle } = screen.orientation;
+    const {type, angle} = screen.orientation;
     // console.log(`Orientation type is ${type} & angle is ${angle}.`);
     this.isHorizaontal = type === 'landscape-primary';
   }
@@ -63,6 +91,7 @@ export class AppComponent implements OnInit {
     this.setResizeEvent();
     this.getBodyStatus();
     // screen.orientation.lock();
+    this.loadResize();
   }
 
   setResizeEvent() {
@@ -74,14 +103,6 @@ export class AppComponent implements OnInit {
         isIos: this.isIOS(),
         isAndroid: this.isAndroid(),
       });
-
-    this.store.getResizeStore().subscribe((data: any) => {
-      if (data.status === ResizeConstants.START) {
-        if (data.resize.isMobile && this.isHomeChaller) {
-          window.location.href = location.href;
-        }
-      }
-    });
   }
 
   getBodyStatus() {
