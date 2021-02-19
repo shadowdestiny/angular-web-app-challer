@@ -97,6 +97,14 @@
 
   <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}" (clickOutside)="closed()">
     <div class="d-flex flex-column bd-highlight mb-3" >
+      <div class="p-2 bd-highlight click animated bounceInRight" routerLink="/home"
+           [ngClass]="{'font-style-4': router.url === '/home'}">
+        <div class="menu-items">
+          <div class="text">
+            HOME
+          </div>
+        </div>
+      </div>
       <div class="p-2 bd-highlight click animated bounceInRight" (click)="onAbout()"
            [ngClass]="{'font-style-4': router.url === '/about-us'}">
         <div class="menu-items">
