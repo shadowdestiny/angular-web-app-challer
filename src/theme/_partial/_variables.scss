@@ -9,10 +9,11 @@ $size-font-grant-2: 28px;
 $color-clear: #8f8f8f;
 $color-clear-2: #a8a8a8;
 $line-color-clear: #acacac;
-$line-color-clear-2: lighten($line-color-clear, 20%);
+$line-color-clear-2: lighten($line-color-clear, 25%);
 $line-color-separation: #97b1ef;
 $color-light: #ffffff;
 $color-gris: darken(#f8f8f8, 2%);
+$color-gris-2: #DDDDDD;
 
 /*header color*/
 $color-header-title: #676767;
@@ -26,6 +27,7 @@ $color-header-to-window:#006dff;
 $title-color: #1656cc;
 $title-color-dark: black;
 $title-color-light: $color-light;
+$title-color-light-green: #02FFBB;
 
 /* border color*/
 $border-color: #acb0b4;
@@ -47,7 +49,7 @@ $color-chat-background-left: $color-light;
 $font-color-remark: #006dff;
 $font-color-remark-0: #48bbff;
 $font-color-remark-2: #f50057;
-$font-color-remark-3: #ffe203;
+$font-color-remark-3: #36EFA5;
 $font-color-remark-4: #04afff;
 $font-color-remark-5: #919191;
 $font-color-remark-6: black;

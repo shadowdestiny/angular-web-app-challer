@@ -1,18 +1,18 @@
 <div class="header"
      [ngClass]="
      {
-        'home-challer': router.url === '/home-challer' || this.router.url.search('challenge') >= 0,
+        'home-challer': router.url === '/home-challer' || router.url === '/ranking' || this.router.url.search('challenge') >= 0,
         'home-challer-mobile': isShowMobile
      }"
-     [hidden]="(isMobile && (router.url === '/home-challer' || this.router.url.search('challenge') >= 0 ))
+     [hidden]="(isMobile && (router.url === '/home-challer' ||this.router.url.search('challenge') >= 0 ))
      && !isShowMobile">
   <div [class]="' desktop'"
        [ngClass]="{
-        'container': router.url !== '/home-challer',
-        'container-fluid': router.url === '/home-challer' || this.router.url.search('challenge') >= 0
+        'container': router.url !== '/home-challer' && router.url !== '/ranking',
+        'container-fluid': router.url === '/home-challer' || router.url === '/ranking' || this.router.url.search('challenge') >= 0
         }"
   >
-    <div [hidden]="router.url !== '/home-challer'">
+    <div [hidden]="router.url !== '/home-challer' && router.url !== '/ranking'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
              [ngClass]="{'img-selected': router.url === '/'}">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div [hidden]="router.url === '/home-challer'">
+    <div [hidden]="router.url === '/home-challer' || router.url === '/ranking'">
       <div class="d-flex bd-highlight mb-3 font-style-1">
         <div class="animated fadeInLeft p-3 mr-auto bd-highlight click" (click)="onHome()"
              [ngClass]="{'img-selected': router.url === '/'}">
@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="bd-highlight pt-1">
-          <div class="to-challenge" *ngIf="router.url !== '/home-challer' && this.router.url.search('challenge') < 0 ">
+          <div class="to-challenge" *ngIf="router.url !== '/home-challer' && router.url !== '/ranking' && this.router.url.search('challenge') < 0 ">
                 <app-button-type-template [template]="'green'">
                   <div class="pl-1 pr-1" clickChallers>CHALLERS</div>
                 </app-button-type-template>
@@ -97,7 +97,7 @@
 
   <div class="mobile menu-float pt-4 animated fadeIn" *ngIf="isOpen" [ngClass]="{'isMobileNative':isShowMobile}" (clickOutside)="closed()">
     <div class="d-flex flex-column bd-highlight mb-3" >
-      <div class="p-2 bd-highlight click animated bounceInRight" routerLink="/home"
+      <div class="p-2 bd-highlight click animated bounceInRight" (click)="onHome()"
            [ngClass]="{'font-style-4': router.url === '/home'}">
         <div class="menu-items">
           <div class="text">

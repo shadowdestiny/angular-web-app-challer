@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7.857" viewBox="0 0 10 7.857">
+    <defs>
+        <style>
+            .cls-1{fill:red}
+        </style>
+    </defs>
+    <path id="play_icon" d="M8 5.14v10l7.857-5z" class="cls-1" data-name="play icon" transform="rotate(90 11.57 3.57)"/>
+</svg>

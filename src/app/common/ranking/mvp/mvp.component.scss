@@ -1,0 +1,11 @@
+.margin-top{
+  margin-top: 20px;
+  &.isMobil{
+    margin-top: 0;
+  }
+}
+.container-fluid{
+  &.isMobil{
+    padding: 0!important;
+  }
+}

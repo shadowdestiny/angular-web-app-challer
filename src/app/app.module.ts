@@ -61,6 +61,12 @@ import { EulaComponent } from './common/eula/eula.component';
 import { PrivacyPolicyComponent } from './common/privacy-policy/privacy-policy.component';
 import {ContactComponent} from './common/contact/contact.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import {TopRankingHeaderComponent} from './component/top-ranking-header/top-ranking-header.component';
+import {ListRankingComponent} from './component/list-ranking/list-ranking.component';
+import {PositionComponent} from './common/ranking/position/position.component';
+import {DivSectionTwoComponent} from './component/div-section-two/div-section-two.component';
+import {RowRankingComponent} from './component/row-ranking/row-ranking.component';
+import {MvpComponent} from './common/ranking/mvp/mvp.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +113,12 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     ContactJoinComponent,
     ChronometerComponent,
     EyeLoadingComponent,
+    TopRankingHeaderComponent,
+    ListRankingComponent,
+    PositionComponent,
+    DivSectionTwoComponent,
+    RowRankingComponent,
+    MvpComponent,
 
     // shared componente
     VideoLoaderComponent,

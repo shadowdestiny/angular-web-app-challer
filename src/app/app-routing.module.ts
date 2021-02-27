@@ -14,6 +14,7 @@ import {Home2Component} from './common/home2/home2.component';
 import {PrivacyPolicyComponent} from './common/privacy-policy/privacy-policy.component';
 import {LegalComponent} from './common/legal/legal.component';
 import {EulaComponent} from './common/eula/eula.component';
+import {MvpComponent} from './common/ranking/mvp/mvp.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,9 @@ const routes: Routes = [
   },
   {
     path: 'mision', pathMatch: 'full', component: MisionComponent,
+  },
+  {
+    path: 'ranking', pathMatch: 'full', component: HomeChallerComponent,
   },
 ];
 

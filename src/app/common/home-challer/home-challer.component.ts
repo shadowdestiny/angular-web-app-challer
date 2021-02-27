@@ -46,6 +46,7 @@ import {Subscription} from 'rxjs';
   childViewRef: ViewRef;
 
   challengerId: number;
+  isRating = false;
 
   constructor(
     private challengeService: ChallengeService,
@@ -56,6 +57,7 @@ import {Subscription} from 'rxjs';
   ) {
     this.paginator = new Paginator(0, this.limit);
     this.challengerId = Number(activatedRoute.snapshot.paramMap.get('challenger_id'));
+    this.isRating = this.router.url.search('/ranking') >= 0;
   }
 
   ngOnInit(): void {

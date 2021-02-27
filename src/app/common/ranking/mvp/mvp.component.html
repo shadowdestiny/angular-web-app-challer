@@ -1,0 +1,9 @@
+<div class="container-fluid fadeIn animated margin-top" [ngClass]="{'isMobil':isMobil}">
+  <div>
+    <app-top-ranking-header *ngIf="!!mvpHead" [mvpHead]="mvpHead" (typeSelected)="onSelectTypeList($event)" ></app-top-ranking-header>
+  </div>
+  <div>
+    <app-div-section-two></app-div-section-two>
+    <app-list-ranking [listUserMvp]="listUserMvp" (scrollMe)="onScroll($event)" [isScrollUp]="isAll" [scrollTop]="isAll ? 0 : 100" ></app-list-ranking>
+  </div>
+</div>

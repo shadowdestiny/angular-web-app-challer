@@ -26,8 +26,10 @@
         'col-md-4': !isTable,
         'col-md-6': isTable
         }">
-          <div *ngFor="let challenge of challenges" class="video-challer">
-            <app-challer-slide-list [challenge]="challenge"></app-challer-slide-list>
+          <div *ngIf="!isRating; else mvp">
+            <div *ngFor="let challenge of challenges" class="video-challer" >
+              <app-challer-slide-list [challenge]="challenge"></app-challer-slide-list>
+            </div>
           </div>
         </div>
         <div class="col-md-4" *ngIf="!isTable">
@@ -46,7 +48,7 @@
     </div>
   </div>
   <div class="home" *ngIf="isMobile">
-    <app-challer-vertical-slide
+    <app-challer-vertical-slide *ngIf="!isRating; else mvp"
       [challenges] = challenges
       [height]="innerHeight"
       [width]="innerWidth"
@@ -54,5 +56,9 @@
       [isAndroid]="isAndroid"
     ></app-challer-vertical-slide>
   </div>
+
+  <ng-template #mvp>
+    <app-mvp [isMobil]="isMobile"></app-mvp>
+  </ng-template>
 
 </ng-template>

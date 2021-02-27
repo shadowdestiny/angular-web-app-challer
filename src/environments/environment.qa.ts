@@ -11,6 +11,12 @@ export const environment = {
   CONTACT_CV: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact/cv`,
   CHALLENGE_DETAIL: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/-1/challenge`,
 
+  /* ranking */
+  AUTH_RANKING_MVP: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvplist?all=:all`,
+  AUTH_RANKING_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/positionlist?all=:all`,
+  AUTH_RANKING_MVP_HEAD: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvphead?`,
+  AUTH_RANKING_MVP_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvpandpositionlist?`,
+
   CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`,
   KEY_TAG_MANAGER: `GTM-5VH8DT2`,
   INSTAGRAM_LINK: `https://instagram.com/challerapp`,
