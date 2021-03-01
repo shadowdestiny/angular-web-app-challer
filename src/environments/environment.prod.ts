@@ -10,7 +10,6 @@ export const environment = {
   CONTACT: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact`,
   CONTACT_CV: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/sent/email/contact/cv`,
   CHALLENGE_DETAIL: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/-1/challenge`,
-  AUTH_RANKING_MVP_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvpandpositionlist?`,
 
   /* ranking */
   AUTH_RANKING_MVP: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvplist?all=:all`,
