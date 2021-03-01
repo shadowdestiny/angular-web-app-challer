@@ -15,6 +15,7 @@ import {PrivacyPolicyComponent} from './common/privacy-policy/privacy-policy.com
 import {LegalComponent} from './common/legal/legal.component';
 import {EulaComponent} from './common/eula/eula.component';
 import {MvpComponent} from './common/ranking/mvp/mvp.component';
+import {DownloadComponent} from './common/download/download.component';
 
 
 const routes: Routes = [
@@ -71,6 +72,9 @@ const routes: Routes = [
   },
   {
     path: 'ranking', pathMatch: 'full', component: HomeChallerComponent,
+  },
+  {
+    path: 'download', pathMatch: 'full', component: DownloadComponent,
   },
 ];
 

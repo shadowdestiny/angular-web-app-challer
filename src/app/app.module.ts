@@ -67,6 +67,7 @@ import {PositionComponent} from './common/ranking/position/position.component';
 import {DivSectionTwoComponent} from './component/div-section-two/div-section-two.component';
 import {RowRankingComponent} from './component/row-ranking/row-ranking.component';
 import {MvpComponent} from './common/ranking/mvp/mvp.component';
+import { DownloadComponent } from './common/download/download.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import {MvpComponent} from './common/ranking/mvp/mvp.component';
     ChronometerTimeVoteComponent,
     LegalComponent,
     EulaComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
