@@ -170,7 +170,7 @@ import {RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_V3_SITE_KEY} from 'ng-r
   providers: [
     httpInterceptorProviders,
     // {provide: 'googleTagManagerId', useValue: environment.KEY_TAG_MANAGER}
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.KEY_TAG_MANAGER }
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.RE_CAPTCHA_KEY }
   ],
   exports: [
     clickIOS,
