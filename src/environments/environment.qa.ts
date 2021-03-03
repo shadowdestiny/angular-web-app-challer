@@ -26,7 +26,8 @@ export const environment = {
 
   // download app
   GOOGLE_APP: `https://play.google.com/store/apps/details?id=com.challer`,
-  IOS_APP: `https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154`
+  IOS_APP: `https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154`,
+  RE_CAPTCHA_KEY: `6LcUTW8aAAAAADDO1qWxfrp6XBAb9XTystEKuM5A`
 };
 
 /*

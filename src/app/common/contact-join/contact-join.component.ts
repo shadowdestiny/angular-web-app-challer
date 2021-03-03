@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {ContactService} from '../../service/contact.service';
 import {ContactJoinModel} from '../../models/contact.join.model';
 
@@ -16,6 +16,7 @@ export class ContactJoinComponent implements OnInit {
   ) {
   }
 
+  recaptcha: any[];
   message;
   status;
   isLoading = false;
@@ -26,6 +27,7 @@ export class ContactJoinComponent implements OnInit {
     email: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
     comment: ['', Validators.required],
     profile: ['', [Validators.required, Validators.pattern('(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})')]],
+    recaptchaReactive: new FormControl(null, Validators.required),
   });
 
   ngOnInit(): void {

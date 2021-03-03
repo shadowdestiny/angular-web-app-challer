@@ -68,6 +68,7 @@ import {DivSectionTwoComponent} from './component/div-section-two/div-section-tw
 import {RowRankingComponent} from './component/row-ranking/row-ranking.component';
 import {MvpComponent} from './common/ranking/mvp/mvp.component';
 import { DownloadComponent } from './common/download/download.component';
+import {RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_V3_SITE_KEY} from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,8 @@ import { DownloadComponent } from './common/download/download.component';
   ],
   imports: [
     BrowserModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     AppRoutingModule,
     NgxUsefulSwiperModule,
     HttpClientModule,
@@ -167,6 +170,7 @@ import { DownloadComponent } from './common/download/download.component';
   providers: [
     httpInterceptorProviders,
     // {provide: 'googleTagManagerId', useValue: environment.KEY_TAG_MANAGER}
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.KEY_TAG_MANAGER }
   ],
   exports: [
     clickIOS,
