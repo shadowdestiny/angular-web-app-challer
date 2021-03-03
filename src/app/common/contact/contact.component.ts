@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {ContactModel} from '../../models/contact.model';
 import {ContactService} from '../../service/contact.service';
 import {SubjectModel} from '../../models/subject.model';
@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
     email: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
     support: ['', Validators.required],
     comment: ['', Validators.required],
+    recaptchaReactive: new FormControl(null, Validators.required),
   });
 
   private preparingData() {

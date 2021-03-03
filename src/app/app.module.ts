@@ -69,6 +69,7 @@ import {RowRankingComponent} from './component/row-ranking/row-ranking.component
 import {MvpComponent} from './common/ranking/mvp/mvp.component';
 import { DownloadComponent } from './common/download/download.component';
 import {RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_V3_SITE_KEY} from 'ng-recaptcha';
+import {RecaptchatPipe} from './pipes/recaptchat.pipe';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import {RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_V3_SITE_KEY} from 'ng-r
 
     // pipes
     FixImageUrlPipe,
+    RecaptchatPipe,
 
     // directives
     ModalDirective,
@@ -170,7 +172,7 @@ import {RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_V3_SITE_KEY} from 'ng-r
   providers: [
     httpInterceptorProviders,
     // {provide: 'googleTagManagerId', useValue: environment.KEY_TAG_MANAGER}
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq` }
+    /*{ provide: RECAPTCHA_V3_SITE_KEY, useValue: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq` }*/
   ],
   exports: [
     clickIOS,
