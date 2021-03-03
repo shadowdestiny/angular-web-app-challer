@@ -1,14 +1,18 @@
-<app-header></app-header>
-<app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud"></app-cloud>
-<div [class]="'principal-background height-infinite background-section '+colorBackground" [ngClass]="{
+<div style="display: none">
+  <app-header></app-header>
+  <app-cloud (isShow)="onVisual($event)" *ngIf="isShowCloud"></app-cloud>
+  <div [class]="'principal-background height-infinite background-section '+colorBackground" [ngClass]="{
 'noCloud': !isShowCloud,
 'noCloudMobile': !isShowCloud && isMobileValue && isHomeChaller,
 'cloudMobile': isShowCloud && isMobileValue && isHomeChaller
 }"
-     #scrollMe (scroll)="onScroll($event,scrollMe)"
->
-  <router-outlet></router-outlet>
+       #scrollMe (scroll)="onScroll($event,scrollMe)"
+  >
+    <router-outlet></router-outlet>
+  </div>
+  <app-global-modal></app-global-modal>
+  <app-cloud-notification [type]="'bottom-global'" [isVisible]=false></app-cloud-notification>
+  <app-tour *ngIf="isHomeChaller && isHorizaontal && isMobileValue"></app-tour>
 </div>
-<app-global-modal></app-global-modal>
-<app-cloud-notification [type]="'bottom-global'" [isVisible]=false></app-cloud-notification>
-<app-tour *ngIf="isHomeChaller && isHorizaontal && isMobileValue"></app-tour>
+
+<re-captcha ></re-captcha>
