@@ -1,19 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {ContactModel} from '../../models/contact.model';
 import {ContactService} from '../../service/contact.service';
 import {SubjectModel} from '../../models/subject.model';
+import {ResizeConstants} from '../../store/constants/resize.constants';
+import {Subscription} from 'rxjs';
+import {StoreService} from '../../service/store.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private store: StoreService
   ) {
   }
 
@@ -23,6 +27,9 @@ export class ContactComponent implements OnInit {
   subjects: Array<SubjectModel>;
   isShowError = false;
 
+  subscribes: Subscription[] = [];
+  isMobile = false;
+
   contactForm = this.formBuilder.group({
     firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
     email: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
@@ -30,6 +37,14 @@ export class ContactComponent implements OnInit {
     comment: ['', Validators.required],
     recaptchaReactive: new FormControl(null, Validators.required),
   });
+
+  getResize() {
+    this.subscribes.push(this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START) {
+        this.isMobile = data.resize.isMobile;
+      }
+    }));
+  }
 
   private preparingData() {
     this.subjects = [
@@ -50,6 +65,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.preparingData();
+    this.getResize();
   }
 
   sendData() {
@@ -78,6 +94,12 @@ export class ContactComponent implements OnInit {
 
   direct() {
     this.isShowError = true;
+  }
+
+  ngOnDestroy() {
+    this.subscribes.forEach((e: Subscription) => {
+      e.unsubscribe();
+    });
   }
 
 }

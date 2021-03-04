@@ -85,7 +85,7 @@
 
           <div class="form-group">
             <div class="recaptcha">
-              <re-captcha formControlName="recaptchaReactive" [siteKey]="''| recaptchatKey"></re-captcha>
+              <re-captcha [size]="isMobile ? 'compact': 'normal'" formControlName="recaptchaReactive" [siteKey]="''| recaptchatKey"></re-captcha>
             </div>
           </div>
 

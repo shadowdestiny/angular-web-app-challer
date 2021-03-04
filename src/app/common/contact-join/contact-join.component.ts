@@ -1,18 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {ContactService} from '../../service/contact.service';
 import {ContactJoinModel} from '../../models/contact.join.model';
+import {ResizeConstants} from '../../store/constants/resize.constants';
+import {Subscription} from 'rxjs';
+import {StoreService} from '../../service/store.service';
 
 @Component({
   selector: 'app-contact-join',
   templateUrl: './contact-join.component.html',
   styleUrls: ['./contact-join.component.scss']
 })
-export class ContactJoinComponent implements OnInit {
+export class ContactJoinComponent implements OnInit, OnDestroy  {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private store: StoreService,
   ) {
   }
 
@@ -21,6 +25,8 @@ export class ContactJoinComponent implements OnInit {
   status;
   isLoading = false;
   isShowError = false;
+  subscribes: Subscription[] = [];
+  isMobile = false;
 
   contactForm = this.formBuilder.group({
     firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
@@ -31,6 +37,15 @@ export class ContactJoinComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.getResize();
+  }
+
+  getResize() {
+    this.subscribes.push(this.store.getResizeStore().subscribe((data: any) => {
+      if (data.status === ResizeConstants.START) {
+        this.isMobile = data.resize.isMobile;
+      }
+    }));
   }
 
   sendData() {
@@ -59,6 +74,12 @@ export class ContactJoinComponent implements OnInit {
 
   direct() {
     this.isShowError = true;
+  }
+
+  ngOnDestroy() {
+    this.subscribes.forEach((e: Subscription) => {
+      e.unsubscribe();
+    });
   }
 
 }
