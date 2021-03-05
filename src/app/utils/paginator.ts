@@ -20,7 +20,6 @@ export class Paginator {
   public paginateDown(scrollMe, call: (any)) {
     this.scrollMe = scrollMe;
     const maxScrollPosition = scrollMe.scrollHeight - scrollMe.clientHeight;
-    console.log(scrollMe.scrollTop, maxScrollPosition);
     if (scrollMe.scrollTop >= maxScrollPosition - 30) {
       if (this.otherPage()) {
         call(this.page);

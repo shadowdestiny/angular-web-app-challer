@@ -115,14 +115,12 @@ export class MvpComponent implements OnInit {
     this.scrollMe = scrollMe;
 
     this.paginatorMVP.paginateDown(scrollMe, (page) => {
-      console.log("hola2");
-      if (this.typeSelectList === TypeHeadConstants.MVP) {
+     if (this.typeSelectList === TypeHeadConstants.MVP) {
         this.loadListMvp(page);
       }
     });
 
     this.paginatorPosition.paginateDown(scrollMe, (page) => {
-      console.log("hola");
       if (this.typeSelectList === TypeHeadConstants.POSITION) {
         this.loadListPosition(page);
       }
