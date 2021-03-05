@@ -220,7 +220,7 @@
   font-size: 23px;
 }
 .separation-section-format{
-  color: #103247;
+  color: #103247 !important;
   font-size: 13px;
 }
 .title-number-ranking{
@@ -234,9 +234,10 @@
 }
 .title-name-user-bottom-ranking{
   color:#787c7f;
-  font-size: 12px;
+  font-size: 11px;
 }
 .title-point-ranking{
   color:#194a69;
   font-size: 11px;
+  margin-top: 6px;
 }
