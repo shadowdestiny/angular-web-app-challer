@@ -1,0 +1,98 @@
+div.video-component{
+  height: 449px;
+  display: table;
+  background: black;
+  overflow: hidden;
+  &.radius{
+    border-radius: 17px;
+  }
+  div.video-section{
+    display: table-cell;
+    vertical-align: middle;
+   /* border-left:2px solid #ffffff;
+    border-right:2px solid #ffffff;*/
+    position: relative;
+    width: 256px;
+    max-height: 449px;
+    &.radius{
+      border-radius: 17px;
+    }
+    video{
+      position: absolute;
+      width: 256px;
+      max-height: 449px;
+      top: 50%;
+      left: 50%;
+      /* min-width: 100%; */
+      /* min-height: 100%; */
+      transform: translateX(-50%) translateY(-50%);
+      &.radius{
+        /*border-radius: 17px;*/
+      }
+      &.mobile-no-bootstrap{
+        top: 46%;
+      }
+    }
+  }
+  .loading{
+    position: absolute;
+    bottom: 40px;
+    right: 52px;
+    &.mobile{
+      right: 56px;
+      bottom: 58px;
+    }
+  }
+}
+
+/*svg {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+}
+svg mask rect {
+  fill: rgba(255, 255, 255, 0.9);
+}
+svg > rect {
+  fill: white;
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}*/
+
+/*svg {
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0; // needed for FF, Safari, Edge
+  height: 100%;
+  z-index: 10;
+}
+svg text {
+  font-family: Biko, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 38px;
+}
+svg .rect {
+  fill: white;
+}
+svg > .rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}
+
+video{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  overflow: hidden;
+}*/
+.colega{
+  /*border: 1px solid red;
+  width: 258px;*/
+}

@@ -1,0 +1,19 @@
+<div class="app-container">
+    <circle-progress
+            [radius]="50"
+            [space]="-7"
+            [percent]="value"
+            [toFixed]="1"
+            [outerStrokeWidth]="7"
+            [outerStrokeColor]="'#ffffff'"
+            [innerStrokeColor] = "'#02ffbb'"
+            [innerStrokeWidth]="7"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [showBackground]="false"
+            [animation]="false"
+            [responsive]="true"
+            [showTitle]="false"
+    ></circle-progress>
+    <ng-content></ng-content>
+</div>
