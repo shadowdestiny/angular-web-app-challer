@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './common/home/home.component';
-import {AboutusComponent} from './common/aboutus/aboutus.component';
-import {PolicyComponent} from './common/policy/policy.component';
-import {BusinessComponent} from './common/business/business.component';
-import {VisionComponent} from './common/vision/vision.component';
-import {ContactComponent} from './common/contact/contact.component';
-import {HomeChallerComponent} from './common/home-challer/home-challer.component';
+import {HomeComponent} from './common/pages/home/home.component';
+import {PolicyComponent} from './common/pages/policy/policy.component';
+import {BusinessComponent} from './common/pages/business/business.component';
+import {VisionComponent} from './common/pages/vision/vision.component';
+import {ContactComponent} from './common/pages/contact/contact.component';
+import {HomeChallerComponent} from './common/pages/home-challer/home-challer.component';
 import {ContactCvComponent} from './component/contact-cv/contact-cv.component';
-import {StoryComponent} from './common/story/story.component';
-import {MisionComponent} from './common/mision/mision.component';
-import {Home2Component} from './common/home2/home2.component';
-import {PrivacyPolicyComponent} from './common/privacy-policy/privacy-policy.component';
-import {LegalComponent} from './common/legal/legal.component';
+import {StoryComponent} from './common/pages/story/story.component';
+import {MisionComponent} from './common/pages/mision/mision.component';
+import {Home2Component} from './common/pages/home2/home2.component';
+import {LegalComponent} from './common/pages/legal/legal.component';
 import {EulaComponent} from './common/eula/eula.component';
 import {MvpComponent} from './common/ranking/mvp/mvp.component';
-import {DownloadComponent} from './common/download/download.component';
+import {DownloadComponent} from './common/pages/download/download.component';
+import {AboutusComponent} from './common/pages/aboutus/aboutus.component';
+import {PrivacyPolicyComponent} from './common/pages/privacy-policy/privacy-policy.component';
+import {ProfileModule} from './common/pages/profile/profile.module';
 
 
 const routes: Routes = [
@@ -76,6 +77,12 @@ const routes: Routes = [
   {
     path: 'download', pathMatch: 'full', component: DownloadComponent,
   },
+  /*module profile*/
+  {
+    path: 'profile',
+    // loadChildren: './common/pages/profile/profile.module#ProfileModule'
+    loadChildren: () => import('./common/pages/profile/profile.module').then( m => ProfileModule)
+  }
 ];
 
 @NgModule({

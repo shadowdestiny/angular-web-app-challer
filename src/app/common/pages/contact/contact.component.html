@@ -1,0 +1,110 @@
+<div class="home">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="font-contact-bold font-style-3 black-2 text-center">
+          Contact Us
+        </div>
+
+      </div>
+      <div class="col-md-12">
+        <form [formGroup]="contactForm"  class="template-designer">
+          <div class="form-group">
+            <label for="fullname">Full Name <span>*</span></label>
+            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp"
+                   formControlName="firstName" placeholder="Name Lastname"
+            >
+            <div *ngIf="contactForm.get('firstName').hasError('required') && isShowError"
+                 class="alert alert-danger">
+              This field is required.
+            </div>
+            <div *ngIf="contactForm.get('firstName').hasError('pattern') && isShowError"
+                 class="alert alert-danger">
+              Name must be text only
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span>*</span></label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                   formControlName="email" placeholder="youremail@mail.com"
+            >
+            <div *ngIf="contactForm.get('email').hasError('required') && isShowError"
+                 class="alert alert-danger">
+              This field is required.
+            </div>
+            <div *ngIf="contactForm.get('email').hasError('pattern') && isShowError"
+                 class="alert alert-danger">
+              The email must be in a suitable format
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject <span>*</span></label>
+            <select class="form-control" id="subject" formControlName="support">
+              <option [value]="subject.value"  class="color-option" *ngFor="let subject of subjects">{{subject.name}}</option>
+            </select>
+            <div *ngIf="contactForm.get('support').hasError('required') && isShowError"
+                 class="alert alert-danger">
+              This field is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validationTextarea"></label>
+            <textarea class="form-control" id="validationTextarea" formControlName="comment"></textarea>
+            <div *ngIf="contactForm.get('comment').hasError('required') && isShowError"
+                 class="alert alert-danger">
+              The text cannot be empty
+            </div>
+          </div>
+          <div class="form-group" *ngIf="status === 'ok'">
+            <div class="alert alert-primary" role="alert">
+              Email send!
+            </div>
+          </div>
+          <div class="form-group" *ngIf="status === 'error'">
+            <div class="alert alert-warning" role="alert">
+              {{message}}
+            </div>
+          </div>
+          <div class="form-group">
+            <span class="help-block"
+                  *ngIf="contactForm.get('firstName').hasError('required')
+                  || contactForm.get('email').hasError('required')
+                  || contactForm.get('support').hasError('required')
+                  || contactForm.get('comment').hasError('required')
+                "
+            >
+              <strong>Fields marked with * are mandatory</strong> <!--{{error}}-->
+            </span>
+          </div>
+          <div class="form-group" *ngIf="isLoading">
+            <div>
+              <img src="../../../../assets/images/loading.gif" class="w-100">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="recaptcha">
+              <re-captcha [size]="isMobile ? 'compact': 'normal'" formControlName="recaptchaReactive" [siteKey]="''| recaptchatKey"></re-captcha>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="button-submit">
+              <app-button-type-template [template]="'form'" [disabled] = !contactForm.valid
+                                        (onClickButton)="submit()"
+                                        (onClickDirect)="direct()"
+              >
+                <div class="text-center font-weight-bold">
+                  SUBMIT
+                </div>
+              </app-button-type-template>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
