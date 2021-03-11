@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProfileHeaderComponent} from './profile-header/profile-header.component';
 import {RouterModule} from '@angular/router';
-import {ProfileSectionComponent} from './profile-section/profile-section.component';
 import {ImageRadiusComponent} from '../../components/image-radius/image-radius.component';
 import {FixImageUrlPipe} from '../../pipes/fix-image-url.pipe';
 
@@ -132,23 +130,18 @@ import {HeaderComponent} from '../../common/header/header.component';
     PrivacyPolicyComponent,
     DownloadComponent,
     ImageRadiusComponent,
-    ProfileHeaderComponent,
-    ProfileSectionComponent,
     CloudNotificationComponent,
     HeaderComponent
   ],
   imports: [
-    BrowserModule,
     CommonModule,
-    RouterModule,
+    HttpClientModule,
+    NgxUsefulSwiperModule,
+    ClickOutsideModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-
-    NgxUsefulSwiperModule,
-    HttpClientModule,
-    ClickOutsideModule,
     NgxWebstorageModule.forRoot(),
-    StoreModule.forRoot({
+   /* StoreModule.forRoot({
       modalLoginMessage: modalReducer,
       scrolling: scrollReducer,
       video: videoReducer,
@@ -156,7 +149,7 @@ import {HeaderComponent} from '../../common/header/header.component';
       cloud: cloudReducer,
       background: bodyReducer,
       globalModal: modalGlobalReducer
-    }),
+    }),*/
     ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
@@ -166,16 +159,9 @@ import {HeaderComponent} from '../../common/header/header.component';
       outerStrokeColor: '#78C000',
       innerStrokeColor: '#C7E596',
       animationDuration: 300,
-    }),
-    ScullyLibModule,
-    // SharedComponentsModule,
-    /*GoogleTagManagerModule.forRoot({
-      id: environment.KEY_TAG_MANAGER,
-    })*/
+    })
   ],
   exports: [
-    ProfileSectionComponent,
-    ProfileHeaderComponent,
     clickIOS,
     ClickAngular,
     FixImageUrlPipe,
@@ -238,8 +224,6 @@ import {HeaderComponent} from '../../common/header/header.component';
     PrivacyPolicyComponent,
     DownloadComponent,
     ImageRadiusComponent,
-    ProfileHeaderComponent,
-    ProfileSectionComponent,
     CloudNotificationComponent,
     HeaderComponent
   ]

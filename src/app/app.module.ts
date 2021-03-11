@@ -20,6 +20,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 import {ScullyLibModule} from '@scullyio/ng-lib';
 import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
 import {SharedComponentsModule} from './modules/shared-components/shared-components.module';
+import {ProfileModule} from './common/pages/profile/profile.module';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,11 @@ import {SharedComponentsModule} from './modules/shared-components/shared-compone
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ScullyLibModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-    AppRoutingModule,
-    NgxUsefulSwiperModule,
-    HttpClientModule,
-    ClickOutsideModule,
     NgxWebstorageModule.forRoot(),
     StoreModule.forRoot({
       modalLoginMessage: modalReducer,
@@ -43,18 +43,8 @@ import {SharedComponentsModule} from './modules/shared-components/shared-compone
       background: bodyReducer,
       globalModal: modalGlobalReducer
     }),
-    ReactiveFormsModule,
-    NgCircleProgressModule.forRoot({
-      // set defaults here
-      radius: 100,
-      outerStrokeWidth: 16,
-      innerStrokeWidth: 8,
-      outerStrokeColor: '#78C000',
-      innerStrokeColor: '#C7E596',
-      animationDuration: 300,
-    }),
-    ScullyLibModule,
     SharedComponentsModule,
+    // ProfileModule
   ],
   providers: [
     httpInterceptorProviders,
