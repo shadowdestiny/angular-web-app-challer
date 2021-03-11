@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {ConfigurationService} from "../service/configuration.service";
-import {API} from "../config/api";
+import {ConfigurationService} from '../service/configuration.service';
+// import {API} from "../config/api";
 // import {API} from '../../config/api';
 
 @Pipe({
