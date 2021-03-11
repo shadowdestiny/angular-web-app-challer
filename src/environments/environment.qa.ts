@@ -17,6 +17,9 @@ export const environment = {
   AUTH_RANKING_MVP_HEAD: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvphead?`,
   AUTH_RANKING_MVP_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvpandpositionlist?`,
 
+  /*profile*/
+  PROFILE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/biography?language=EN`,
+
   CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`,
   KEY_TAG_MANAGER: `GTM-5VH8DT2`,
   INSTAGRAM_LINK: `https://instagram.com/challerapp`,
