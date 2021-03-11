@@ -1,0 +1,52 @@
+<div class="x-img">
+  <div [class]="(isPulse ? type + '_pulse': '')">
+  </div>
+  <div [class]="'x-circle '"
+       [ngClass]="{
+       'default': type === 'default',
+       'default-red': type === 'default-red',
+       'default-gris': type === 'default-gris',
+       'default-black': type === 'default-black',
+       'mark': type === 'mark',
+       'mark-2': type === 'mark-2',
+       'mark-3': type === 'mark-3',
+       'mark-4': type === 'mark-4',
+       'mark-5': type === 'mark-5',
+       'mark-6': type === 'mark-6',
+       'mark-7': type === 'mark-7',
+       'mark-7-no-border': type === 'mark-7-no-border',
+       'mark-8-no-border': type === 'mark-8-no-border',
+       'mark-7-red': type === 'mark-7-red',
+       'mark-7-2': type === 'mark-7-2',
+       'mark-0': type === 'mark-0',
+       'mark-0-2': type === 'mark-0-2',
+       'mark-8': type === 'mark-8',
+       'mark-9': type === 'mark-9',
+       'profile-resume': type === 'profile-resume',
+       'profile-header': type === 'profile-header',
+       'header-radius-profile': type === 'header-radius-profile',
+       'header-radius-profile-grant': type === 'header-radius-profile-grant',
+       'header-radius-profile-window': type === 'header-radius-profile-window',
+       'profile-icon-video': type === 'profile-icon-video',
+       'profile-icon-video-challer': type === 'profile-icon-video-challer',
+       'profile-icon-video-challer-mobile': type === 'profile-icon-video-challer-mobile',
+       'profile-icon-video-challer-orange-mobile': type === 'profile-icon-video-challer-orange-mobile',
+       'profile-icon-video-challer-big': type === 'profile-icon-video-challer-big',
+       'invitation': type === 'invitation',
+       'profile': type === 'profile',
+       'opacity': isOpacity,
+
+
+       'border-green': borderName === 'border-green'
+       }"
+  >
+    <div>
+      <!--<img [defaultImage]="'assets/images/spinner/Eclipse-1s-200px.svg'" [lazyLoad]="src"  class="d-block w-100">-->
+    </div>
+    <div [class]="'img'" [ngClass]="{'front': isFront, 'dark': isDark}"  [ngStyle]="{'background-image':'url(' + (src) + ')', 'background-size': (size) + '%'}" >
+      <img [src]="'assets/imgs/loading.svg'" *ngIf="isLoading" class="fadeIn delay-1s animated">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+</div>

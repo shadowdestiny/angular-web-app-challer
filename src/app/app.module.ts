@@ -22,7 +22,6 @@ import {FixImageUrlPipe} from './pipes/fix-image-url.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {httpInterceptorProviders} from './interceptors';
-import {ImageRadiusComponent} from './component/modal-sections/image-radius/image-radius.component';
 import {TagsWebComponent} from './component/tags-web/tags-web.component';
 import {SelectorSiteComponent} from './component/selector-site/selector-site.component';
 import {SlideBannersComponent} from './component/slide-banners/slide-banners.component';
@@ -68,10 +67,10 @@ import {MvpComponent} from './common/ranking/mvp/mvp.component';
 import { DownloadComponent } from './common/pages/download/download.component';
 import {RecaptchaModule, RecaptchaFormsModule} from 'ng-recaptcha';
 import {RecaptchatPipe} from './pipes/recaptchat.pipe';
-import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
 import {PrivacyPolicyComponent} from './common/pages/privacy-policy/privacy-policy.component';
 import {AboutusComponent} from './common/pages/aboutus/aboutus.component';
 import {FooterComponent} from './common/pages/footer/footer.component';
+import {SharedComponentsModule} from './modules/shared-components/shared-components.module';
 
 @NgModule({
   declarations: [
@@ -101,7 +100,6 @@ import {FooterComponent} from './common/pages/footer/footer.component';
     ChallerSlideListComponent,
     ChallerSlideComponent,
     VideoChallerComponent,
-    ImageRadiusComponent,
     TagsWebComponent,
     SelectorSiteComponent,
     SlideBannersComponent,
@@ -137,7 +135,6 @@ import {FooterComponent} from './common/pages/footer/footer.component';
     EulaComponent,
     PrivacyPolicyComponent,
     DownloadComponent,
-    ProfileHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -168,6 +165,7 @@ import {FooterComponent} from './common/pages/footer/footer.component';
       animationDuration: 300,
     }),
     ScullyLibModule,
+    SharedComponentsModule,
     /*GoogleTagManagerModule.forRoot({
       id: environment.KEY_TAG_MANAGER,
     })*/
@@ -179,7 +177,7 @@ import {FooterComponent} from './common/pages/footer/footer.component';
   ],
   exports: [
     clickIOS,
-    ClickAngular
+    ClickAngular,
   ],
   bootstrap: [AppComponent]
 })

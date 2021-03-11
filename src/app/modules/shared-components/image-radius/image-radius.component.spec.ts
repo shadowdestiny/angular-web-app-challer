@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileHeaderComponent } from './profile-header.component';
+import { ImageRadiusComponent } from './image-radius.component';
 
-describe('ProfileHeaderComponent', () => {
-  let component: ProfileHeaderComponent;
-  let fixture: ComponentFixture<ProfileHeaderComponent>;
+describe('ImageRadiusComponent', () => {
+  let component: ImageRadiusComponent;
+  let fixture: ComponentFixture<ImageRadiusComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileHeaderComponent ]
+      declarations: [ ImageRadiusComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileHeaderComponent);
+    fixture = TestBed.createComponent(ImageRadiusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
