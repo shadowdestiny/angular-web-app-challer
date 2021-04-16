@@ -1,11 +1,11 @@
 export interface BiographyDataModel {
-  'fallowers': number,
-  'falloweds': number,
-  'fallower': boolean,
-  'fallowed': boolean,
-  'user_id': number,
-  'address': string,
-  'gender': string,
+  'fallowers': number;
+  'falloweds': number;
+  'fallower': boolean;
+  'fallowed': boolean;
+  'user_id': number;
+  'address': string;
+  'gender': string;
   'gender_code': string;
   'image_profile': string;
   'name': string;
@@ -23,4 +23,5 @@ export interface BiographyDataModel {
   'is_friend_request': boolean;
   'is_friend': boolean;
   'is_favorite': boolean;
+  about_me?: string;
 }

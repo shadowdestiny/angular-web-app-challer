@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
 import {ImageRadiusComponent} from '../../components/image-radius/image-radius.component';
 import {FixImageUrlPipe} from '../../pipes/fix-image-url.pipe';
 
@@ -31,7 +30,7 @@ import {StoryComponent} from '../../common/pages/story/story.component';
 import {MisionComponent} from '../../common/pages/mision/mision.component';
 import {GlobalModalComponent} from '../../component/global-modal/global-modal.component';
 import {ContactJoinComponent} from '../../common/pages/contact-join/contact-join.component';
-import {ChronometerComponent} from '../../component/chronometer/chronometer.component';
+import {ChronometerComponent} from './chronometer/chronometer.component';
 import {EyeLoadingComponent} from '../../component/eye-loading/eye-loading.component';
 import {TopRankingHeaderComponent} from '../../components/top-ranking-header/top-ranking-header.component';
 import {ListRankingComponent} from '../../component/list-ranking/list-ranking.component';
@@ -55,20 +54,12 @@ import {NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 import {HttpClientModule} from '@angular/common/http';
 import {ClickOutsideModule} from 'ng-click-outside';
 import {NgxWebstorageModule} from 'ngx-webstorage';
-import {StoreModule} from '@ngrx/store';
-import {modalReducer} from '../../store/reducers/modal.reducer';
-import {scrollReducer} from '../../store/reducers/scroll.reducer';
-import {videoReducer} from '../../store/reducers/video.reducer';
-import {resizeReducer} from '../../store/reducers/resize.reducer';
-import {cloudReducer} from '../../store/reducers/cloud.reducer';
-import {bodyReducer} from '../../store/reducers/body.reducer';
-import {modalGlobalReducer} from '../../store/reducers/modal.global.reducer';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgCircleProgressModule} from 'ng-circle-progress';
-import {ScullyLibModule} from '@scullyio/ng-lib';
-import {BrowserModule} from '@angular/platform-browser';
+
 import {CloudNotificationComponent} from '../../component/cloud-notification/cloud-notification.component';
 import {HeaderComponent} from '../../common/header/header.component';
+import {TimerIconTypeComponent} from './timer-icon-type/timer-icon-type.component';
 
 @NgModule({
   declarations: [
@@ -117,8 +108,6 @@ import {HeaderComponent} from '../../common/header/header.component';
     DivSectionTwoComponent,
     RowRankingComponent,
     MvpComponent,
-
-    // shared componente
     VideoLoaderComponent,
     VoteResultComponent,
     TourComponent,
@@ -131,7 +120,8 @@ import {HeaderComponent} from '../../common/header/header.component';
     DownloadComponent,
     ImageRadiusComponent,
     CloudNotificationComponent,
-    HeaderComponent
+    HeaderComponent,
+    TimerIconTypeComponent
   ],
   imports: [
     CommonModule,
@@ -141,15 +131,15 @@ import {HeaderComponent} from '../../common/header/header.component';
     RecaptchaModule,
     RecaptchaFormsModule,
     NgxWebstorageModule.forRoot(),
-   /* StoreModule.forRoot({
-      modalLoginMessage: modalReducer,
-      scrolling: scrollReducer,
-      video: videoReducer,
-      resize: resizeReducer,
-      cloud: cloudReducer,
-      background: bodyReducer,
-      globalModal: modalGlobalReducer
-    }),*/
+    /* StoreModule.forRoot({
+       modalLoginMessage: modalReducer,
+       scrolling: scrollReducer,
+       video: videoReducer,
+       resize: resizeReducer,
+       cloud: cloudReducer,
+       background: bodyReducer,
+       globalModal: modalGlobalReducer
+     }),*/
     ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
@@ -225,7 +215,8 @@ import {HeaderComponent} from '../../common/header/header.component';
     DownloadComponent,
     ImageRadiusComponent,
     CloudNotificationComponent,
-    HeaderComponent
+    HeaderComponent,
+    TimerIconTypeComponent
   ]
 })
 export class SharedComponentsModule {

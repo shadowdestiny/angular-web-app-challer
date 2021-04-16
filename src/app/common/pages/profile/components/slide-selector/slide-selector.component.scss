@@ -1,0 +1,38 @@
+.slide-selector{
+  display: flex;
+  width: 100%;
+  div.option{
+    width: 50%;
+    height: 32px;
+    .square-button{
+      cursor: pointer;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px;
+      &.selected{
+        border-top: 2px solid #1c2438;
+        padding-top: 2px;
+        img{
+          filter: invert(1%) sepia(113%) saturate(201%) hue-rotate(127deg) brightness(27%)
+        }
+        color:#0b273b;
+        font-weight: bold;
+      }
+      .icon{
+        display: inline-flex;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        div{
+          display: inline-block;
+          .font{
+            padding-top: 2px;
+            padding-left: 6px;
+          }
+        }
+      }
+    }
+  }
+}

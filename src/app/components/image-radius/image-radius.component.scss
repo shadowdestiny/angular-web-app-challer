@@ -268,8 +268,12 @@
     &.profile {
       width: 175px;
       height: 174px;
-      border: 2px solid #0b273b;
+      border: 3px solid #0b273b;
       background: #FFFFFF;
+      @include for-mobile(){
+        width: 100px;
+        height: 100px;
+      }
     }
     &.invitation {
       width: 40px;

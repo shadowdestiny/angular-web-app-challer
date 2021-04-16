@@ -80,7 +80,6 @@ const routes: Routes = [
   /*module profile*/
   {
     path: 'profile/:user_id',
-    // loadChildren: './common/pages/profile/profile.module#ProfileModule'
     loadChildren: () => import('./common/pages/profile/profile.module').then( m => ProfileModule)
   }
 ];

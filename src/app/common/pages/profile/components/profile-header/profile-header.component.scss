@@ -1,0 +1,76 @@
+@import "../../../../../../styles/_partial/mixins/responsive.mixin";
+.row-patter{
+  display: flex;
+  width: 100%;
+  .image{
+    display: inline-block;
+    width: 50%;
+    min-width: 180px;
+    @include for-mobile(){
+      width: 40%;
+      min-width: auto;
+    }
+  }
+  .info{
+    display: inline-block;
+    width: 50%;
+    @include for-mobile(){
+      width: 60%;
+    }
+    .row-1{
+      display: table;
+      margin-top: 12px;
+      > div{
+        display: inline-block;
+      }
+      font-weight: bold;
+      font-size: 18px;
+      color: #103247;
+      .icon{
+        padding-left: 5px;
+        padding-bottom: 2px;
+      }
+    }
+    .row-2{
+      color: #000000;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .row-3{
+      color:#999999;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .row-4{
+      .square-section{
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 20px;
+        margin-top: 10px;
+        width: 60px;
+        .number{
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+          color:#103247;
+          .star{
+            width: 15px;
+            padding-bottom: 4px;
+          }
+        }
+        .bottom-title{
+          font-size: 14px;
+          color: #999999;
+          text-align: center;
+        }
+      }
+      .square-section:first-child{
+        /*margin-left: auto;
+        @include for-mobile(){
+          margin-left: 20px;
+        }*/
+      }
+    }
+  }
+
+}

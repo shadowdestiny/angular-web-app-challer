@@ -16,6 +16,11 @@ export const environment = {
   AUTH_RANKING_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/positionlist?all=:all`,
   AUTH_RANKING_MVP_HEAD: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvphead?`,
   AUTH_RANKING_MVP_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvpandpositionlist?`,
+  CHALLENGE_HOME:  `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengehome`,
+
+  /* mosaic */
+  CHALLENGE_MOSAIC: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengeperfil`,
+  CHALLENGE_LIKE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengelike?userprofileid=:userId2`,
 
   /*profile*/
   PROFILE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/biography?language=EN`,
@@ -30,7 +35,10 @@ export const environment = {
   // download app
   GOOGLE_APP: `https://play.google.com/store/apps/details?id=com.challer`,
   IOS_APP: `https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154`,
-  RE_CAPTCHA_KEY: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq`
+  RE_CAPTCHA_KEY: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq`,
+
+  GOOGLEAPIS_GEOLOCATION: 'https://www.googleapis.com/geolocation/v1/geolocate',
+  google_api_map_key: 'AIzaSyBMt5T0QaxHg4Y3NjFcWH_h344TlFVDxgs',
 };
 
 /*

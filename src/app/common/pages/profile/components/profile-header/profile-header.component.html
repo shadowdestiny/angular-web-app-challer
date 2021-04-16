@@ -1,0 +1,72 @@
+<div class="row-patter">
+
+  <div class="image">
+    <app-image-radius [src]="biography.image_profile | fixImageUrl" [type]="'profile'"></app-image-radius>
+  </div>
+
+  <div class="info">
+
+    <div class="row-1">
+      <div>
+        @{{biography?.nickname}}
+      </div>
+      <div class="icon">
+        <img src="assets/images/icons/premium.svg">
+      </div>
+    </div>
+
+    <div class="row-2">
+      <div>
+        {{biography?.name}}
+      </div>
+    </div>
+
+    <div class="row-3">
+      <div>
+        {{biography.about_me}}
+      </div>
+    </div>
+
+    <div class="row-4">
+      <div class="square-section">
+        <div class="number">
+          {{stadistic.mvp}}
+        </div>
+        <div class="bottom-title">
+          Following
+        </div>
+      </div>
+
+      <div class="square-section">
+        <div class="number">
+          {{stadistic.points}}
+        </div>
+        <div class="bottom-title">
+          Followers
+        </div>
+      </div>
+
+      <!--<div class="square-section">
+        <div class="number">
+          50
+        </div>
+        <div class="bottom-title">
+          Ranking
+        </div>
+      </div>
+
+      <div class="square-section">
+        <div class="number">
+          <img src="../../../../../../assets/images/star.svg" class="star">
+          <span>2</span>
+        </div>
+        <div class="bottom-title">
+          Points
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+
+</div>
+

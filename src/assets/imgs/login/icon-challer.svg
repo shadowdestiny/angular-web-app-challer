@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__Group_2635" width="134.977" height="157.322" data-name="Group 2635" viewBox="0 0 134.977 157.322">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#02ffbb}
+        </style>
+    </defs>
+    <g id="prefix__Group_2580" data-name="Group 2580">
+        <g id="prefix__Group_2575" data-name="Group 2575">
+            <path id="prefix__Path_1523" d="M257.4 242.974a57.432 57.432 0 1 1 .752-92.731l15.8-14.87a79.222 79.222 0 0 0-105.988 5.332q-2.805 2.806-5.266 5.818l-.118-.131a81.54 81.54 0 0 0-17.28 41.784h.269c-.241 2.5-.368 5.04-.368 7.606a79.052 79.052 0 0 0 128.706 61.571q-7.408-7.448-14.816-14.9a10.834 10.834 0 0 1-1.691.521z" class="prefix__cls-1" data-name="Path 1523" transform="translate(-145.201 -117.572)"/>
+            <g id="prefix__Group_2574" data-name="Group 2574" transform="translate(37.919 38.718)">
+                <path id="prefix__Path_1524" d="M287.552 294.334L336.9 247.9V245h-51.461v5.146H270v18.012a28.34 28.34 0 0 0 17.552 26.176zm-7.259-26.175v-7.719h5.268a90.536 90.536 0 0 0 3.946 23.339 17.954 17.954 0 0 1-9.214-15.619z" class="prefix__cls-1" data-name="Path 1524" transform="translate(-270 -245)"/>
+                <path id="prefix__Path_1525" d="M389.213 281.064v4.123A17.954 17.954 0 0 1 380 300.806a81.746 81.746 0 0 0 2.907-12.633L352.461 322.5c.241.105.484.2.728.3v6.138a5.146 5.146 0 0 1-5.146 5.146 10.293 10.293 0 0 0-10.293 10.293h41.17a10.293 10.293 0 0 0-10.292-10.293 5.146 5.146 0 0 1-5.146-5.146v-6.105c4.04-1.515 7.673-4.828 10.736-9.5a28.341 28.341 0 0 0 25.288-28.139v-15.733z" class="prefix__cls-1" data-name="Path 1525" transform="translate(-317.165 -262.029)"/>
+            </g>
+        </g>
+        <g id="prefix__Group_2579" data-name="Group 2579" transform="translate(40.981 20.955)">
+            <g id="prefix__Group_2578" data-name="Group 2578">
+                <g id="prefix__Group_2577" data-name="Group 2577">
+                    <g id="prefix__Group_2576" data-name="Group 2576">
+                        <path id="prefix__Path_1526" d="M373.925 186.683a.493.493 0 0 1 .023.683L290.88 281.01c-.054.058-.124.133-.181.19a6.245 6.245 0 0 1-8.754.1 6.064 6.064 0 0 1-.105-8.649l91.383-85.98a.508.508 0 0 1 .7.006z" class="prefix__cls-1" data-name="Path 1526" transform="translate(-280.078 -186.538)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

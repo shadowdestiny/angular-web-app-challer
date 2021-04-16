@@ -1,0 +1,35 @@
+<div class="mosaic">
+  <div class="row-mosaic" #sectionMosaic >
+    <div class="col-mosaic fadeIn animated" *ngFor="let challenge of challengeDelay" [ngSwitch]="type" [id]="type + '-challer-' + challenge.id">
+      <!-- class="animated" [ngClass]="{'zoomIn': isAnimation}" -->
+      <div *ngSwitchCase="'myChallenge'">
+        <app-square-image-responsive (selectChallenge)="onSelectedChallenge($event)" [challenge]="challenge"
+                                     [isVideoEmpty]="challenge.imagePreview === '' || challenge.imagePreview === null"
+                                     (pushUpdate)="onPushUpdate()"
+                                     [userId] = "userId"
+                                     [from] = "'mosaic'"
+                                     [height] = height
+                                     [width] = width
+        ></app-square-image-responsive>
+      </div>
+      <!-- class="animated" [ngClass]="{'zoomIn': isAnimation}" -->
+      <div *ngSwitchCase="'mosaicMyLikeChallenge'">
+        <app-square-image-like (selectChallenge)="onSelectedChallenge($event)" [challenge]="challenge"
+                               [height] = height
+                               [width] = width
+                               [isVideoEmpty]="challenge.imagePreview === '' || challenge.imagePreview === null"></app-square-image-like>
+      </div>
+      <!--<div *ngSwitchCase="'myVotesChaller'">
+        <app-square-image-responsive (selectChallenge)="onSelectedChallenge($event)" [challenge]="challenge"
+                          [isVideoEmpty]="challenge.imagePreview === '' || challenge.imagePreview === null"
+                          (pushUpdate)="onPushUpdate()"
+                          [userId] = "userId"
+                          [from] = "'vote_mosaic'"
+                          [icon] = "'vote_mosaic'"
+        ></app-square-image-responsive>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+
