@@ -3,15 +3,23 @@ import {HttpClient} from '@angular/common/http';
 import {API} from '../config/api';
 import {UtilsService} from './utils.service';
 import {ConfigurationService} from './configuration.service';
+import {environment} from '../../environments/environment';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {ProfileResumePushModel} from '../models/profile.resume.push.model';
+import {FirebaseConstants} from '../constants/firebase.constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChallengeService {
 
+  private dbPath = environment.firebaseConfig.collection;
+  challengePush: AngularFirestoreDocument<ProfileResumePushModel>;
+
   constructor(
     private http: HttpClient,
     private utils: UtilsService,
+    private db: AngularFirestore
   ) {
   }
 
@@ -53,4 +61,17 @@ export class ChallengeService {
     url = this.utils.settingParameter(url, 'userId', userId);
     return this.http.get(url );
   }
+
+  getChallengePush(userId: number) {
+    let notification;
+    notification = this.db.collection(this.dbPath)
+      .doc(FirebaseConstants.USERS)
+      .collection(FirebaseConstants.USER)
+      .doc(userId.toString())
+      .collection(FirebaseConstants.CHALLENGES)
+      .doc(FirebaseConstants.CHALLER)
+    ;
+    return this.challengePush = notification.snapshotChanges();
+  }
+
 }

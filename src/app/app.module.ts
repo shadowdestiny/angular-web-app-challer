@@ -21,6 +21,9 @@ import {ScullyLibModule} from '@scullyio/ng-lib';
 import {RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
 import {SharedComponentsModule} from './modules/shared-components/shared-components.module';
 import {ProfileModule} from './common/pages/profile/profile.module';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import {ProfileModule} from './common/pages/profile/profile.module';
     }),
     SharedComponentsModule,
     // ProfileModule
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [
     httpInterceptorProviders,

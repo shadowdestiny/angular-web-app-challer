@@ -88,7 +88,7 @@
                 (timeOut)="refreshChallenge()"
                 [fontType]="isVideoEmpty || (from === 'mosaic' || from === 'vote_mosaic') ? 'mosaic' :'mosaic-invert'"
               ></app-timer-counter>-->
-              <app-chronometer></app-chronometer>
+              <app-chronometer [startTime]="timeEnd"  [iClass]="'mosaic'" [type]="'mosaic'" ></app-chronometer>
             </div>
           </app-timer-icon-type>
         </div>

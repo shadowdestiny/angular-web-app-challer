@@ -39,6 +39,18 @@ export const environment = {
 
   GOOGLEAPIS_GEOLOCATION: 'https://www.googleapis.com/geolocation/v1/geolocate',
   google_api_map_key: 'AIzaSyBMt5T0QaxHg4Y3NjFcWH_h344TlFVDxgs',
+
+  firebaseConfig: {
+    apiKey: 'AIzaSyBarnxw_wXF2sz8pquA3WZ4TjeIn8FJOVY',
+    authDomain: 'challer-f1de5.firebaseapp.com',
+    databaseURL: 'https://challer-f1de5.firebaseio.com',
+    projectId: 'challer-f1de5',
+    storageBucket: 'challer-f1de5.appspot.com',
+    messagingSenderId: '851447770310',
+    appId: '1:851447770310:web:e752f350c1df9d32c87bc7',
+    measurementId: 'G-1HSPCLSNYQ',
+    collection: `/dev`
+  },
 };
 
 /*

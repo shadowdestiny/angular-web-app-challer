@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as moment from 'moment';
 import {Format} from '../../../constants/format';
 import {ConfigurationService} from '../../../service/configuration.service';
@@ -14,6 +14,7 @@ export class ChronometerComponent implements OnInit {
   @Input() expiration = '2020-01-22 13:10:01';
   @Input() type = 'default';
   @Input() iClass = '';
+  @Output() almost = new EventEmitter<boolean>();
   nowTime;
   hours = '00';
   minutes = '00';
@@ -32,6 +33,7 @@ export class ChronometerComponent implements OnInit {
   }
 
   init() {
+    this.almost.emit(false);
     this.timeEndRed = Number(this.conf.getConfiguration(ConfigConstants.TIMEFOR_CHRONO_RED));
     this.nowTime = moment(this.startTime, Format.TimeChronometerIn);
     this.time();
@@ -53,15 +55,32 @@ export class ChronometerComponent implements OnInit {
 
     this.almostThere(diffDuration.asMilliseconds());
 
-    this.hours = this.format(expirationHours);
-    this.minutes = this.format(expirationMinutes);
-    this.seconds = this.format(expirationSeconds);
+    const formatEmpty = '--';
+
+    if (isNaN(Number(this.format(expirationHours)))){
+      this.hours = formatEmpty;
+    } else {
+      this.hours = this.format(expirationHours);
+    }
+
+    if (isNaN(Number(this.format(expirationMinutes)))){
+      this.minutes = formatEmpty;
+    } else {
+      this.minutes = this.format(expirationMinutes);
+    }
+
+    if (isNaN(Number(this.format(expirationSeconds)))){
+      this.seconds = formatEmpty;
+    } else {
+      this.seconds = this.format(expirationSeconds);
+    }
   }
 
   private almostThere(milliseconds: number) {
     const hourToMilliseconds = this.timeEndRed * (3.6 * 1000000);
     if (milliseconds <= hourToMilliseconds) {
       this.isAlmostThere = true;
+      this.almost.emit(this.isAlmostThere);
     }
   }
 

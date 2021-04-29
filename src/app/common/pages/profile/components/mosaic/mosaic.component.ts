@@ -98,9 +98,11 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
 
     this.challengeToRender.forEach((challenge: ChallengeProfileModel, i: number) => {
       setTimeout(() => {
-        this.challengeDelay.push(challenge);
-        this.getSizeLayout();
-      }, 150 * i);
+        if (!this.challengeDelay.includes(challenge)){
+          this.challengeDelay.push(challenge);
+          this.getSizeLayout();
+        }
+      }, 120 * i);
     });
 
     if (this.challerFunction) {

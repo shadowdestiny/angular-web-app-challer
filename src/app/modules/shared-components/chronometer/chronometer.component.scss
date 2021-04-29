@@ -1,6 +1,6 @@
 @import "../../../../theme/_partial/variables";
 .x-time{
-  padding: 5px 15px 5px 15px;
+  /*padding: 5px 15px 5px 15px;*/
   &.x-border{
     border: 1px solid $time-border;
     background: $time-background;
@@ -31,6 +31,12 @@
     }
     &.ending{
       color: $time-format-ending;
+    }
+    &.mosaic{
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      text-align: left
     }
   }
   .white{
