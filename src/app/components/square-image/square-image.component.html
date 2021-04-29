@@ -1,0 +1,121 @@
+<div class="default-square" (click)="OnSelectChallenge(challenge)">
+    <div class="patter-responsive" [ngClass]="{'border':isVideoEmpty}">
+        <div class="img" [ngStyle]="{'background-image':'url(' + (challenge.imagePreview | fixImageUrl) + ')'}"
+             *ngIf="!isVideoEmpty; else empty">
+        </div>
+
+        <ng-template #empty>
+            <div [ngSwitch]="type">
+                <div *ngSwitchCase="'default'">
+                    <div class="img absolute"
+                         [ngStyle]="{'background-image':'url(assets/imgs/components/square-image/empty.jpg)'}">
+                    </div>
+                    <div class="horizontal-center pt-40">
+                        <div class="section-center">
+                            <div class="horizontal-center">
+                                <div class="section-center z-index">
+                                    <img src="assets/imgs/components/square-image/no-video.svg" class="width-size">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="'myChallengeCreated'">
+                    <div class="horizontal-center pt-40">
+                        <div class="section-center">
+                            <div class="horizontal-center">
+                                <div class="section-center z-index">
+                                    <img src="assets/imgs/components/square-image/video.svg" class="width-size">
+                                </div>
+                            </div>
+                            <div class="color-dark-gray text-center font-12 pt-6">
+                                {{'VIDEO_UPLOAD_1' | translate}}
+                            </div>
+                            <div class="color-dark-gray text-center font-12">
+                                {{'VIDEO_UPLOAD_2' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="'myChallengeActive'">
+                    <div class="horizontal-center pt-40">
+                        <div class="section-center">
+                            <div class="horizontal-center">
+                                <div class="section-center z-index">
+                                    <img src="assets/imgs/components/square-image/video.svg" class="width-size">
+                                </div>
+                            </div>
+                            <div class="color-dark-gray text-center font-12 pt-6">
+                                {{'VIDEO_UPLOAD_1' | translate}}
+                            </div>
+                            <div class="color-dark-gray text-center font-12">
+                                {{'VIDEO_UPLOAD_2' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="'empty'">
+                    <div class="horizontal-center pt-40">
+                        <div class="section-center">
+                            <div class="horizontal-center">
+                                <div class="section-center z-index">
+                                    <img src="assets/imgs/components/square-image/copplus.svg" class="width-size">
+                                </div>
+                            </div>
+                            <div class="color-dark-gray text-center font-12 pt-6">
+                                {{'CREATE_CHALLENGE_1' | translate}}
+                            </div>
+                            <div class="color-dark-gray text-center font-12">
+                                {{'CREATE_CHALLENGE_2' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <div *ngIf="!!challenge">
+            <div class="timer-container" *ngIf="!isHideChronometer; else timeFormatted">
+                <div class="chronometer" *ngIf="isShowDate">
+                    <div class="left">
+                        <ion-icon
+                                [ngClass]="'color-ww' + ' custom-three-quarters-of-an-hour challenge-timer-acepted icon-timer-position'"></ion-icon>
+                    </div>
+                    <div class="right">
+                        <div class="delay-1s fadeIn animated">
+                            <app-timer-counter
+                                    [final]="timeEnd"
+                                    [challengeId]="challenge.id"
+                                    [challengeStatus]="challenge.estatus.code"
+                                    [run]="true"
+                                    [font]="'font-12 text-bold ' + (isVideoEmpty ? 'empty-cronom' : '')"
+                                    [type]="'default'"
+                                    (timeOut)="refreshChallenge()"
+                            ></app-timer-counter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #timeFormatted>
+                <div class="delay-1s fadeIn animated timer-container timer-format" [ngClass]="{'isEmpty':isVideoEmpty}"
+                     *ngIf="!!timeEnd && isShowDate">
+                    {{timeEnd | moment: 'monthNameDayYear'}}
+                </div>
+            </ng-template>
+            <div class="delay-1s fadeIn button-status animated">
+                <div>
+                    <app-icon-status [challenge]="challenge" [iconType]="icon"></app-icon-status>
+                </div>
+            </div>
+            <div class="delay-1s fadeIn icons-category animated" [ngClass]="{'left': isShowClose}">
+                <div>
+                    <img [src]="challenge.category.sportImage | fixImageUrl">
+                </div>
+            </div>
+            <div class="delay-1s fadeIn icon-close animated" *ngIf="isShowClose" (click)="deleteChaller($event)">
+                <div>
+                    <img src="assets/imgs/components/square-image/icon/close.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#f8f8f8}
+        </style>
+    </defs>
+    <g id="Grupo_3955" transform="translate(-93 -400)">
+        <g id="Elipse_250" fill="#ff2e62" stroke="#f8f8f8" transform="translate(93 400)">
+            <circle cx="12" cy="12" r="12" stroke="none"/>
+            <circle cx="12" cy="12" r="11.5" fill="none"/>
+        </g>
+        <g id="three-quarters-of-an-hour" transform="translate(99.316 404.053)">
+            <g id="Layer_2_30_">
+                <g id="Grupo_1368">
+                    <path id="Trazado_1110" d="M58.279 4.7l.657-.928a.374.374 0 0 0-.089-.521l-.99-.7a.374.374 0 0 0-.521.089l-.673.95a5.94 5.94 0 0 0-1.589-.488v-.383a.451.451 0 0 1 .45-.45h.248a.452.452 0 0 0 .45-.45V.45a.452.452 0 0 0-.45-.45h-3.29a.451.451 0 0 0-.45.45v1.369a.451.451 0 0 0 .45.45h.249a.451.451 0 0 1 .45.45v.387a5.944 5.944 0 0 0-1.7.539l-.663-.945a.374.374 0 0 0-.521-.089l-.99.7a.373.373 0 0 0-.089.521l.672.95a6 6 0 1 0 8.389-.082zm-4.152 8.89a4.56 4.56 0 1 1 4.56-4.56 4.565 4.565 0 0 1-4.56 4.56z" class="cls-2" transform="translate(-48.127)"/>
+                    <path id="Trazado_1111" d="M126.794 171.14a3.764 3.764 0 0 0-3.759-3.73h-.03v3.729h-3.729v.03a3.764 3.764 0 0 0 3.73 3.759h.03a3.764 3.764 0 0 0 3.76-3.76c.004-.008-.002-.018-.002-.028z" class="cls-2" transform="translate(-117.035 -162.14)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

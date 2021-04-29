@@ -221,3 +221,17 @@ u + .body .full-wrap {
   width: 100% !important;
   width: 100vw !important;
 }
+
+.horizontal-center{
+  display: grid;
+  &.flex{
+    display: flex;
+  }
+  .section-center{
+    margin-left: auto;
+    margin-right: auto;
+    img{
+      /*margin-top: 50%;*/
+    }
+  }
+}

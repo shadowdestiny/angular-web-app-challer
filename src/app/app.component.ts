@@ -126,7 +126,7 @@ export class AppComponent implements OnInit {
         || this.route.url.indexOf('/eula') >= 0
       ) {
         this.colorBackground = 'default';
-      } else if (this.route.url === '/home-challer' || this.route.url === '/ranking' || this.route.url.search('challenge') >= 0) {
+      } else if (this.route.url === '/home-challer' || this.route.url === '/ranking' || this.route.url.search('challenge') >= 0 || this.route.url.search('profile') >= 0) {
         this.isHomeChaller = true;
         this.colorBackground = 'gris';
       } else {

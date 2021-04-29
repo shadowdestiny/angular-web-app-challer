@@ -1,0 +1,13 @@
+<div class="x-time x-border" [ngClass]="{'x-border': type === 'votes'}" >
+  <div [class]="'x-format ' + iClass"
+       [ngClass]="{
+       'format-b': type === 'votes',
+       'format-c': type === 'list-challenge',
+       'format-d': type === 'format-d',
+       'mosaic': type === 'mosaic',
+       'video-home': type === 'video-home',
+       'ending': isAlmostThere}
+      " >
+    {{hours}}:{{minutes}}:{{seconds}}
+  </div>
+</div>

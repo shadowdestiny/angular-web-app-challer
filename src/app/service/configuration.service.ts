@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {API} from "../config/api";
-import {SessionStorageService} from "ngx-webstorage";
+import {API} from '../config/api';
+import {SessionStorageService} from 'ngx-webstorage';
+import {GeolocationModel} from '../models/geolocation.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class ConfigurationService {
     return this.http.get(url);
   }
 
-  public refreshConfiguration(callback = () => {}) {
+  public refreshConfiguration(callback = () => {
+  }) {
     this.configuration().subscribe((configuration: any) => {
       this.setConfiguration(configuration);
       callback();
@@ -37,6 +39,14 @@ export class ConfigurationService {
     }
 
     this.sessionStorageService.store('configuration', model);
+  }
+
+  public setGeoLocation(latitude: GeolocationModel) {
+    this.sessionStorageService.store('geolocation', latitude);
+  }
+
+  public getGeoLocation(): GeolocationModel {
+    return this.sessionStorageService.retrieve('geolocation');
   }
 
   public getConfiguration(key): string {

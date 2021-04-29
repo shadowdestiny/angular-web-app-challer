@@ -1,0 +1,45 @@
+@import "../../../../theme/_partial/variables";
+.x-time{
+  /*padding: 5px 15px 5px 15px;*/
+  &.x-border{
+    border: 1px solid $time-border;
+    background: $time-background;
+    border-radius: 5px;
+    padding: 2px 15px 2px 15px;
+  }
+  .x-format{
+    color: $time-format-dark;
+    font-size: 18px;
+    font-weight: bold;
+    &.video-home{
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: -9px;
+      margin-top: 1px;
+    }
+    &.format-b{
+      font-size: 22px;
+      color: $time-format-celeste;
+    }
+    &.format-c{
+      font-size: 22px;
+      color: $time-format-text
+    }
+    &.format-d{
+      font-size: 27px;
+      color: $time-format-text
+    }
+    &.ending{
+      color: $time-format-ending;
+    }
+    &.mosaic{
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      text-align: left
+    }
+  }
+  .white{
+    color: $time-white;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__Component_94_1" width="23" height="23" data-name="Component 94 – 1" viewBox="0 0 23 23">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_3237" data-name="Group 3237" transform="translate(-331 -472)">
+        <g id="prefix__Group_3238" data-name="Group 3238">
+            <g id="prefix__Group_3235" data-name="Group 3235" transform="translate(123)">
+                <g id="prefix__Group_3234" data-name="Group 3234" opacity="0.25" transform="translate(208.328 472.328)">
+                    <circle id="prefix__Ellipse_159" cx="11.5" cy="11.5" r="11.5" class="prefix__cls-2" data-name="Ellipse 159" transform="translate(-.328 -.328)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <path id="prefix__video-reload" d="M12.337 9.033V6.674A.637.637 0 0 0 11.663 6H3.574a.637.637 0 0 0-.674.674v6.741a.637.637 0 0 0 .674.674h8.089a.637.637 0 0 0 .674-.674v-2.359l2.7 2.7V6.337zm-4.921 4.382v-.944a2.488 2.488 0 0 1-2.494-2.494 2.431 2.431 0 0 1 .4-1.348L5.8 9.1a1.866 1.866 0 0 0-.2.876 1.929 1.929 0 0 0 1.887 1.887v-.944L8.765 12.2zm2.36-1.955l-.476-.472a1.866 1.866 0 0 0 .2-.876 1.929 1.929 0 0 0-1.881-1.888v.944L6.338 7.887l1.281-1.213v.944a2.488 2.488 0 0 1 2.494 2.494 2.85 2.85 0 0 1-.337 1.348z" class="prefix__cls-2" transform="translate(3.1 1)"/>
+</svg>

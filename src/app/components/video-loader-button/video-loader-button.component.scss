@@ -1,0 +1,11 @@
+.app-container {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  circle-progress {
+    position: absolute;
+    transform: translateY(2px);
+  }
+}

@@ -1,0 +1,70 @@
+<div class="slide-selector">
+  <div class="option animated" *ngIf="isVisible[0]" (click)="onOption(0)" [ngClass]="{
+  'selected': options[0].active,
+  'pulse': options[0].active
+  }">
+    <div class="square-button"
+         [ngClass]="{
+          'selected': options[0].active
+         }"
+    >
+      <div class="icon">
+        <div>
+          <img src="assets/imgs/components/slide-selector/mosaic.svg">
+        </div>
+        <div>
+          <div class="font">
+            CHALLERS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="option animated" *ngIf="isVisible[1]" (click)="onOption(2)" [ngClass]="{
+  'selected': options[2].active,
+  'pulse': options[2].active
+  }">
+    <div class="square-button"
+         [ngClass]="{
+          'selected': options[2].active
+         }"
+    >
+      <div class="icon">
+        <img src="assets/imgs/components/slide-selector/icono_reto.svg">
+      </div>
+    </div>
+  </div>
+  <div class="option animated" *ngIf="isVisible[2]" (click)="onOption(1)" [ngClass]="{
+  'selected': options[1].active,
+  'pulse': options[1].active
+  }">
+    <div class="square-button"
+         [ngClass]="{
+          'selected': options[1].active
+         }"
+    >
+      <div class="icon" *ngIf="options[1].active; else unselectedHeard">
+        <div>
+          <img src="assets/imgs/components/slide-selector/heard.svg">
+        </div>
+        <div>
+          <div class="font">
+            LIKES
+          </div>
+        </div>
+      </div>
+      <ng-template #unselectedHeard>
+        <div class="icon">
+          <div>
+            <img src="assets/imgs/components/slide-selector/heart-unselected.svg">
+          </div>
+          <div>
+            <div class="font" style="padding-top: 1px">
+              LIKES
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

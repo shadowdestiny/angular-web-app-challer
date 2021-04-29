@@ -1,0 +1,30 @@
+<div [class]="'video-component'" [ngClass]="{'radius': isRadius}">
+  <div [class]="'video-section'"
+       [style]="(!!height ? 'height:'+ (height) + 'px; max-height:'+(height)+'px; ' : '') +''+ (!!width? 'width:'+ width + 'px ' : '')"
+       #videoSectionElement
+  >
+    <ng-container #vc></ng-container>
+    <ng-template #tpl>
+
+      <app-video-streaming
+        [imagePreview]="imagePreview"
+        [video]="video"
+        [height]="height"
+        [width]="width"
+        [template]="template"
+        [isRadius]="isRadius"
+        [isMuted]="true"
+        [isPlay] = "isPlayed"
+        (currentTimeVideoPercentage)="currentTime($event)"
+      >
+      </app-video-streaming>
+
+    </ng-template>
+
+  </div>
+  <div [class]="'loading click ' + template" *ngIf="template === 'desktop'">
+    <app-cloud-notification [type]="template === 'desktop' ? 'left' : 'bottom'" [isEye]=true [fixedTop] = "'top:-80px'">
+      <app-eye-loaging [inPercentage]=currentTimeValue></app-eye-loaging>
+    </app-cloud-notification>
+  </div>
+</div>

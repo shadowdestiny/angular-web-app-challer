@@ -68,6 +68,11 @@
             window.location.href = 'https://challer.app/challenge/' + data.data_parsed.id;
           }
         }
+        if (['profileShare'].includes(data.data_parsed.action)) {
+          if (data.data_parsed.id !== undefined) {
+            window.location.href = 'https://challer.app/profile/' + data.data_parsed.id;
+          }
+        }
       }
     });
 
