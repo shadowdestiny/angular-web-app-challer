@@ -1,0 +1,86 @@
+<div  class="home">
+  <div [class]="'menu-left desktop'" style="margin-top: 1px">
+    <div>
+      <app-selector-site></app-selector-site>
+      <div class="menu-bottom mt-2" [ngClass]="{'float':!isScrollDownload}">
+        <div [ngClass]="{'center':isScrollDownload}" >
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}"  (click)="onAbout()">ABOUT US</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onMision()">OUR MISION</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onStory()">OUR STORY</div>
+          <div [class]="'font-style-7 click'" [ngClass]="{'forma-two':isScrollDownload}" (click)="onBusiness()">CHALLER FOR BUSINESS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <div class="row">
+      <div [ngClass]="{
+        'col-md-4': !isTable,
+        'col-md-6': isTable
+        }">
+      </div>
+      <div [ngClass]="{
+        'col-md-4': !isTable,
+        'col-md-6': isTable
+        }">
+        <div class="video-challer">
+          <app-profile-header [biography]=biography [stadistic]="optionsScore"></app-profile-header>
+          <div class="selector-section mt-2">
+            <div class="selector">
+              <app-slide-selector (selected)="onSelectSlide($event)" [isVisible]="slideIsVisible"></app-slide-selector>
+            </div>
+          </div>
+          <div class="mt-2 mosaic  ">
+            <div class="slide-profile" *ngIf="typeView === 'myChallenge'">
+              <app-mosaic
+                [isReverse]="isReverse"
+                [isReset]="isResetData"
+                [challenges]="challenges"
+                type="myChallenge"
+                [requestedUserId]="userid"
+                (isReadyDelay)="onReady($event)"
+                (pushUpdate)="pushUpdate()"
+                [isPushNotification] = isPushChallenges
+                [isMe]="itsMe"
+                [userId]="userid"
+                [isRequesting]="loading.myChallenge"
+                [allowSlides]="true"
+                (needMore)="onScroll(null, true)"
+              ></app-mosaic>
+            </div>
+
+            <div class="slide-profile " *ngIf="typeView === 'mosaicMyLikeChallenge'">
+              <app-mosaic
+                [isReverse]="isReverse"
+                [isReset]="isResetData"
+                [challenges]="challengesLike"
+                type="mosaicMyLikeChallenge"
+                [requestedUserId]="userid"
+                (isReadyDelay)="onReady($event)"
+                (pushUpdate)="pushUpdate()"
+                [isPushNotification] = isPushChallengesLike
+                [isMe]="itsMe"
+                [userId]="userid"
+                [isRequesting]="loading.myChallenge"
+                [allowSlides]="true"
+                (needMore)="onScroll(null, true)"
+              ></app-mosaic>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" *ngIf="!isTable">
+        <div class="banners-float-sections" [style]="'top:'+(top + 0)+'px' " >
+          <div class="section-right">
+            <app-slide-banners></app-slide-banners>
+          </div>
+          <div class="download mt-4">
+            <div class="download-now">
+              <app-donwload-buttoms [template]="'white'"></app-donwload-buttoms>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

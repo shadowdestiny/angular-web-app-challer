@@ -1,0 +1,50 @@
+<div class="position-relative">
+  <div class="x-shadow top"></div>
+  <div class="title-ranking">
+    <div class="x-title mt-4 x-table float-ranking text-format-1 fle">
+      <div class="title-top-ranking">{{title}}</div>
+      <!--<div>
+        <img [src]="head.up ? 'assets/images/ranking/top.svg' : 'assets/images/ranking/down.svg'" class="x-top-image">
+      </div>-->
+    </div>
+  </div>
+  <div class="x-ranking-section animated fadeIn" [ngClass]="{'position':type === 'POSITION'}" >
+    <div class="x-element-section-center">
+      <div class="x-center mt-5 click" (click)="toProfile(head.id)">
+        <app-image-radius [isFront]="true"
+                          [src]="head.userImg | fixImageUrl"
+                          [isPulse]="true"
+                          [type]="head.up ? 'mark-7' : 'mark-7-red'"
+                          class="click"
+        ></app-image-radius>
+      </div>
+    </div>
+
+    <div class="center-section-float">
+      <div class="x-two-image-section">
+        <div class="center left">
+          <div>
+            <div class="image-center">
+              <app-image-radius  [size]="80" [src]="head.sportImage | fixImageUrl" [type]="typeRadiusMin" [isFront]="true"></app-image-radius>
+            </div>
+            <div class="text-format-3" [ngClass]="{'position': type === 'POSITION'}" >
+            </div>
+          </div>
+        </div>
+        <div class="center right">
+          <div >
+            <div class="image-center">
+              <app-image-radius [size]="80" [src]="head.flagCountry | fixImageUrl" [type]="typeRadiusMin" [isFront]="true"></app-image-radius>
+            </div>
+            <div class="text-format-1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 text-format-1 float-center title-bottom-ranking">
+    {{head.name | titlecase}} {{head.lastName | titlecase}}
+  </div>
+  <div class="x-shadow bottom"></div>
+</div>

@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const AUTH_SERVICES_BASE_URL = 'https://apidev.challer.app';
+const AUTH_SERVICES_BASE_URL = 'https://apiqa.challer.app';
 export const environment = {
   production: false,
   CHALLENGE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:id/challer?mac=-1`,
@@ -16,6 +16,14 @@ export const environment = {
   AUTH_RANKING_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/positionlist?all=:all`,
   AUTH_RANKING_MVP_HEAD: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvphead?`,
   AUTH_RANKING_MVP_POSITION: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/mvpandpositionlist?`,
+  CHALLENGE_HOME:  `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengehome`,
+
+  /* mosaic */
+  CHALLENGE_MOSAIC: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengeperfil`,
+  CHALLENGE_LIKE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/challengelike?userprofileid=:userId2`,
+
+  /*profile*/
+  PROFILE: `${AUTH_SERVICES_BASE_URL}/businesscore/api/v1/user/:userId/biography?language=EN`,
 
   CDN_BUCKET: `https://storage.googleapis.com/challer-multimedia-bucket`,
   KEY_TAG_MANAGER: `GTM-T2G2TH8`,
@@ -27,7 +35,22 @@ export const environment = {
   // download app
   GOOGLE_APP: `https://play.google.com/store/apps/details?id=com.challer`,
   IOS_APP: `https://apps.apple.com/us/app/challer-challenge-the-world/id1507245154`,
-  RE_CAPTCHA_KEY: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq`
+  RE_CAPTCHA_KEY: `6LfJJnAaAAAAALN7A1YDZuOPFSx46IQBEvi2qwaq`,
+
+  GOOGLEAPIS_GEOLOCATION: 'https://www.googleapis.com/geolocation/v1/geolocate',
+  google_api_map_key: 'AIzaSyBMt5T0QaxHg4Y3NjFcWH_h344TlFVDxgs',
+
+  firebaseConfig: {
+    apiKey: 'AIzaSyBarnxw_wXF2sz8pquA3WZ4TjeIn8FJOVY',
+    authDomain: 'challer-f1de5.firebaseapp.com',
+    databaseURL: 'https://challer-f1de5.firebaseio.com',
+    projectId: 'challer-f1de5',
+    storageBucket: 'challer-f1de5.appspot.com',
+    messagingSenderId: '851447770310',
+    appId: '1:851447770310:web:e752f350c1df9d32c87bc7',
+    measurementId: 'G-1HSPCLSNYQ',
+    collection: `/prod`
+  },
 };
 
 /*

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <g id="Group_3681" data-name="Group 3681" transform="translate(-34 -522)">
+    <g id="Group_3753" data-name="Group 3753">
+      <g id="Ellipse_229" data-name="Ellipse 229" transform="translate(34 522)" fill="#fff" stroke="#707070" stroke-width="0.3">
+        <circle cx="11.5" cy="11.5" r="11.5" stroke="none"/>
+        <circle cx="11.5" cy="11.5" r="11.35" fill="none"/>
+      </g>
+      <path id="video" d="M12.582,9.08v-2.4A.684.684,0,0,0,11.9,6H3.684A.684.684,0,0,0,3,6.684v6.845a.684.684,0,0,0,.684.684H11.9a.684.684,0,0,0,.684-.684v-2.4l2.738,2.738V6.342Z" transform="translate(36.453 523.5)" fill="none" stroke="#1c1c1c" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>

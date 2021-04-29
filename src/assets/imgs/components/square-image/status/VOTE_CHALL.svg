@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__Group_3239" data-name="Group 3239" transform="translate(-208 -472)">
+        <g id="prefix__Group_3234" data-name="Group 3234" opacity="0.25" transform="translate(208.328 472.328)">
+            <circle id="prefix__Ellipse_159" cx="11.5" cy="11.5" r="11.5" class="prefix__cls-2" data-name="Ellipse 159" transform="translate(-.328 -.328)"/>
+        </g>
+        <path id="prefix__vote" d="M13 9.334h-.453l-1.333 1.333h1.273L13.668 12H4.333l1.187-1.333h1.367L5.554 9.334H5l-2 2V14a1.333 1.333 0 0 0 1.333 1.333h9.334A1.333 1.333 0 0 0 15 14v-2.666l-2-2m-.667-3.367l-3.3 3.3-2.366-2.36 3.307-3.3 2.36 2.36M9.507 2.193L5.26 6.44a.664.664 0 0 0 0 .94l3.3 3.287a.641.641 0 0 0 .94 0l4.24-4.227a.664.664 0 0 0 0-.94l-3.3-3.3a.65.65 0 0 0-.933-.007z" class="prefix__cls-2" transform="translate(210 475.001)"/>
+    </g>
+</svg>

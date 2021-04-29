@@ -1,0 +1,302 @@
+@import "../../../theme/_partial/variables";
+@import "../../../theme/globals/mixins/responsive.mixin";
+@import "../../../theme/globals/mixins/pulse.animation.mixin";
+
+.x-img{
+
+  @include pulseAnimation('default_pulse', 50px, 50px, $font-color-challenge-blue, 100px, 5px);
+  @include pulseAnimation('default-red_pulse', 50px, 50px, $font-color-remark-2, 100px, 5px);
+  @include pulseAnimation('mark_pulse', 40px, 40px, $gris-color);
+  @include pulseAnimation('mark-0_pulse', 50px, 50px, $yellow-color);
+  @include pulseAnimation('mark-0-2_pulse', 50px, 50px, $font-color-challenge-blue);
+  @include pulseAnimation('mark-2_pulse', 97px, 97px, $gris-color);
+  @include pulseAnimation('mark-3_pulse', 30px, 30px, $gris-color);
+  @include pulseAnimation('mark-4_pulse', 150px, 150px, $font-color-remark);
+  @include pulseAnimation('mark-5_pulse', 150px, 150px, $font-color-remark-2);
+  @include pulseAnimation('mark-6_pulse', 120px, 120px, $font-color-remark-2);
+  @include pulseAnimation('mark-7_pulse', 150px, 150px, $font-color-remark-3);
+  @include pulseAnimation('mark-7-red_pulse', 150px, 150px, $font-color-remark-2);
+  @include pulseAnimation('mark-7-2_pulse', 150px, 150px, $font-color-remark-0);
+  @include pulseAnimation('mark-0_pulse', 48px, 48px, $yellow-color);
+  @include pulseAnimation('header-radius-profile-window_pulse', 60px, 60px, $font-color-remark-3, 80px, 5px);
+
+  @include for-mobile-very-small-2(){
+    @include pulseAnimation('mark-4_pulse', 100px, 100px, $font-color-remark);
+    @include pulseAnimation('mark-5_pulse', 100px, 100px, $font-color-remark-2);
+    @include pulseAnimation('mark-6_pulse', 100px, 100px, $font-color-remark-2);
+    // @include pulseAnimation('mark-7_pulse', 100px, 100px, $font-color-remark-3);
+    @include pulseAnimation('mark-7-red_pulse', 100px, 100px, $font-color-remark-2);
+    @include pulseAnimation('mark-7-2_pulse', 100px, 100px, $font-color-remark-0);
+  }
+
+  .x-circle{
+    border: 2px solid #a39b9b;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    div.img{
+      position: relative;
+      float: left;
+      width: 100%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      border-radius: 50%;
+      &.front{
+        z-index: 10;
+      }
+    }
+    img{
+      /*width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      padding-top: 0;
+      display: inline;
+      margin-left: 0%;*/
+    }
+    &.default{
+
+    }
+    &.default-red{
+      border: 2px solid #a39b9b;
+      /*background: $font-color-remark-2;*/
+    }
+    &.default-gris{
+      border: 1px solid $font-color-remark-5;
+    }
+    &.default-black{
+      border: 1px solid $font-color-remark-6;
+    }
+    &.mark-0{
+      border: 2px solid white;
+    }
+    &.mark-0-2{
+      border: 2px solid $font-color-challenge-blue;
+    }
+    &.mark{
+      border: 1px solid $gris-color;
+      background: none;
+      padding: 3px;
+      img{
+        width: 40px !important;
+        height: 40px !important;
+        margin-left: 3%;
+        padding-top: 2px;
+      }
+    }
+    &.mark-2{
+      border: 0 solid $gris-color;
+      background: none;
+      padding: 5px;
+      background: white;
+      width: 97px;
+      height: 97px;
+      img{
+        width: 87px !important;
+        height: 87px !important;
+        margin-left: 0;
+      }
+    }
+    &.mark-3{
+      border: 0 solid $gris-color;
+      background: none;
+      padding: 2px;
+      background: white;
+      width: 30px;
+      height: 30px;
+      img{
+        width: 26px !important;
+        height: 26px !important;
+        margin-left: 0;
+      }
+    }
+    &.mark-4{
+      width: 150px;
+      height: 150px;
+      border: 3px solid $font-color-remark;
+      @include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.mark-5{
+      width: 150px;
+      height: 150px;
+      border: 3px solid $font-color-remark-2;
+      @include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.mark-6{
+      width: 120px;
+      height: 120px;
+      border: 3px solid $font-color-remark-2;
+      @include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.mark-7{
+      width: 150px;
+      height: 150px;
+      border: 3px solid $font-color-remark-3;
+      /*@include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }*/
+    }
+    &.mark-7-no-border{
+      width: 150px;
+      height: 150px;
+      border: none;
+      background: transparent;
+    }
+    &.mark-8-no-border{
+      width: 200px;
+      height: 200px;
+      border: none;
+      background: transparent;
+    }
+    &.mark-7-red{
+      width: 150px;
+      height: 150px;
+      border: 3px solid $font-color-remark-2;
+      @include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.mark-7-2{
+      width: 150px;
+      height: 150px;
+      border: 3px solid $font-color-remark-0;
+      @include for-mobile-very-small-2(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.mark-8{
+      width: 70px;
+      height: 70px;
+      border: 2px solid $font-color-remark-0;
+      @include for-mobile-very-small-2(){
+        width: 70px;
+        height: 70px;
+      }
+    }
+    &.mark-9{
+      width: 70px;
+      height: 70px;
+      border: 2px solid $font-color-remark-3;
+      @include for-mobile-very-small-2(){
+        width: 70px;
+        height: 70px;
+      }
+    }
+    &.profile-resume{
+      width: 100px;
+      height: 100px;
+      border: 0.5px solid $font-color-remark-7;
+      background: $font-color-remark-7;
+    }
+    &.profile-header{
+      width: 50px;
+      height: 50px;
+      border: 1px solid #02ffbb;
+      background: #103247;
+      padding: 8px;
+    }
+    &.header-radius-profile-window{
+      width: 60px;
+      height: 60px;
+      border: 2px solid $font-color-remark-3;
+    }
+    &.header-radius-profile{
+      width: 45px;
+      height: 45px;
+      border: 2px solid $font-color-remark-4;
+      border-bottom: 3px solid #91ff03;
+      @include for-mobile-very-small-2(){
+        width: 45px;
+        height: 45px;
+      }
+    }
+    &.header-radius-profile-grant{
+      width: 80px;
+      height: 80px;
+      border: 2px solid $font-color-remark-4;
+      border-bottom: 3px solid #91ff03;
+    }
+    &.profile-icon-video{
+      width: 45px;
+      height: 45px;
+      border: 2px solid $font-color-remark-8;
+      background: #FFFFFF;
+    }
+    &.profile-icon-video-challer {
+      width: 32px;
+      height: 32px;
+      border: 2px solid #103247;
+      background: #FFFFFF;
+    }
+    &.border-green{
+      border: 2px solid #02ffbb;
+    }
+    &.profile-icon-video-challer-mobile {
+      width: 39px;
+      height: 39px;
+      border: 2px solid #103247;
+      background: #FFFFFF;
+    }
+    &.profile-icon-video-challer-orange-mobile {
+      width: 45px;
+      height: 45px;
+      border: 2px solid #F99C00;
+      background: #FFFFFF;
+    }
+    &.profile-icon-video-challer-big {
+      width: 65px;
+      height: 65px;
+      border: 2px solid var(--medium-slate-blue);
+      background: #FFFFFF;
+    }
+    &.profile {
+      width: 175px;
+      height: 174px;
+      border: 3px solid #0b273b;
+      background: #FFFFFF;
+      @include for-table-long(){
+        width: 120px;
+        height: 120px;
+      }
+      @include for-mobile(){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &.invitation {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ffffff;
+      background: #FFFFFF;
+    }
+  }
+
+  .dark:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+  }
+  .opacity{
+    opacity: 0.5;
+  }
+}

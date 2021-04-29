@@ -1,0 +1,126 @@
+<div class="default-square" (click)="OnSelectChallenge(challenge)">
+  <div class="patter-responsive" [ngClass]="{'border':isVideoEmpty}" [style]="'height:'+height+'px'">
+    <div class="img" [ngStyle]="{'background-image':'url(' + (challenge.imagePreview | fixImageUrl) + ')'}"
+         *ngIf="!isVideoEmpty; else empty">
+    </div>
+
+    <ng-template #empty>
+      <div [ngSwitch]="type">
+        <div *ngSwitchCase="'default'">
+          <div class="img absolute"
+               [ngStyle]="{'background-image':'url(assets/imgs/components/square-image/empty.jpg)'}">
+          </div>
+          <div class="horizontal-center pt-40">
+            <div class="section-center">
+              <div class="horizontal-center">
+                <div class="section-center z-index">
+                  <img src="assets/imgs/components/square-image/no-video.svg" class="width-size">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'myChallengeCreated'">
+          <div class="horizontal-center pt-40">
+            <div class="section-center">
+              <div class="horizontal-center">
+                <div class="section-center z-index">
+                  <img src="assets/imgs/components/square-image/video.svg" class="width-size">
+                </div>
+              </div>
+              <div class="color-dark-gray text-center font-12 pt-6">
+                {{'VIDEO_UPLOAD_1' }}
+              </div>
+              <div class="color-dark-gray text-center font-12">
+                {{'VIDEO_UPLOAD_2' }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'myChallengeActive'">
+          <div class="horizontal-center pt-6-vw">
+            <div class="section-center">
+              <div class="horizontal-center">
+                <div class="section-center z-index">
+                  <img src="assets/imgs/components/square-image/video.svg" class="width-size">
+                </div>
+              </div>
+              <div class="color-dark-gray text-center font-12 pt-6">
+                {{'VIDEO_UPLOAD_1' }}
+              </div>
+              <div class="color-dark-gray text-center font-12">
+                {{'VIDEO_UPLOAD_2' }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'empty'">
+          <div class="horizontal-center pt-40">
+            <div class="section-center">
+              <div class="horizontal-center">
+                <div class="section-center z-index">
+                  <img src="assets/imgs/components/square-image/copplus.svg" class="width-size">
+                </div>
+              </div>
+              <div class="color-dark-gray text-center font-12 pt-6">
+                {{'CREATE_CHALLENGE_1' }}
+              </div>
+              <div class="color-dark-gray text-center font-12">
+                {{'CREATE_CHALLENGE_2' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div *ngIf="!!challenge">
+      <div class="timer-container" *ngIf="!isHideChronometer; else timeFormatted">
+        <div class="chronometer" *ngIf="isShowDate">
+          <app-timer-icon-type [template] = typeTemplateTimer>
+            <div class="delay-1s fadeIn animated">
+              <!--<app-timer-counter
+                [final]="timeEnd"
+                [challengeId]="challenge.id"
+                [challengeStatus]="challenge.estatus.code"
+                [run]="true"
+                [font]="'font-10 white text-bold ' + (isVideoEmpty ? 'empty-cronom' : '')"
+                [type]="'default'"
+                (timeOut)="refreshChallenge()"
+                [fontType]="isVideoEmpty || (from === 'mosaic' || from === 'vote_mosaic') ? 'mosaic' :'mosaic-invert'"
+              ></app-timer-counter>-->
+              <app-chronometer [startTime]="timeEnd"  [iClass]="'mosaic'" [type]="'mosaic'" ></app-chronometer>
+            </div>
+          </app-timer-icon-type>
+        </div>
+      </div>
+      <ng-template #timeFormatted>
+        <!--<div class="delay-1s fadeIn animated timer-container timer-format" [ngClass]="{'isEmpty':isVideoEmpty}"
+             *ngIf="!!timeEnd && isShowDate && type !== 'default'">
+            {{timeEnd | moment: 'monthNameDayYear'}}
+        </div>-->
+      </ng-template>
+      <div class="delay-1s fadeIn button-status animated" *ngIf="from === 'mosaic' || from === 'vote_mosaic'">
+        <div>
+          <app-icon-status [challenge]="challenge" [iconType]="icon" [userId]="userId"></app-icon-status>
+        </div>
+      </div>
+      <div class="delay-1s fadeIn icons-category animated" [ngClass]="{'right': isShowClose}"
+           *ngIf="from === 'carrousel-created'"
+      >
+        <div>
+          <!--<app-icon-server
+            [path]="challenge.category.sportImage"
+            [cssIcon]="'text-white ratio-17'"
+            [cssPhoto]="'ratio-25'"
+            imgPrefix="-white"
+          ></app-icon-server>-->
+        </div>
+      </div>
+      <div class="delay-1s fadeIn icon-close animated" *ngIf="isShowClose" (click)="deleteChaller($event)">
+        <div>
+          <!--<ion-icon class="custom-close color-dark-gray"></ion-icon>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

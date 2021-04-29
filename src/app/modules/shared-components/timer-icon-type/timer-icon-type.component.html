@@ -1,0 +1,16 @@
+<div [class]="'timer-section '+ template">
+  <div class="votes" *ngIf="template === 'votes'">
+    <img src="assets/imgs/components/timer-icon-type/vote.svg">
+  </div>
+  <div [class]="'content ' + template">
+    <ng-content></ng-content>
+  </div>
+  <div class="content-circle" *ngIf="template === 'votes' || template === 'time'">
+    <img src="assets/imgs/components/timer-icon-type/clock.svg">
+  </div>
+  <div class="reload" *ngIf="template === 'reload'">
+    <div class="circle">
+      <img src="assets/imgs/components/timer-icon-type/video-reload.svg">
+    </div>
+  </div>
+</div>

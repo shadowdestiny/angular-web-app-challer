@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="0 0 105 105">
+  <g id="Group_3895" data-name="Group 3895" transform="translate(-128 -405)">
+    <path id="heart_1_" data-name="heart (1)" d="M35.627,64.705l-4.876-4.439C13.433,44.563,2,34.172,2,21.495A18.294,18.294,0,0,1,20.495,3,20.222,20.222,0,0,1,35.627,9.994,20.222,20.222,0,0,1,50.759,3,18.294,18.294,0,0,1,69.254,21.495c0,12.677-11.433,23.068-28.751,38.772Z" transform="translate(144.746 430)" fill="none" stroke="#103146" stroke-width="2"/>
+    <g id="Ellipse_241" data-name="Ellipse 241" transform="translate(128 405)" fill="none" stroke="#103146" stroke-width="2">
+      <circle cx="52.5" cy="52.5" r="52.5" stroke="none"/>
+      <circle cx="52.5" cy="52.5" r="51.5" fill="none"/>
+    </g>
+  </g>
+</svg>

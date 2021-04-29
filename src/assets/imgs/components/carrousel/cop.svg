@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <g id="Group_3754" data-name="Group 3754" transform="translate(-8 -510)">
+    <g id="Group_3680" data-name="Group 3680" transform="translate(-62 -12)">
+      <g id="Ellipse_230" data-name="Ellipse 230" transform="translate(70 522)" fill="#fff" stroke="#707070" stroke-width="0.3">
+        <circle cx="11.5" cy="11.5" r="11.5" stroke="none"/>
+        <circle cx="11.5" cy="11.5" r="11.35" fill="none"/>
+      </g>
+      <g id="Group_3679" data-name="Group 3679" transform="translate(76.375 528.47)">
+        <g id="icono_reto" data-name="icono reto" transform="translate(0 0)">
+          <path id="Path_27" data-name="Path 27" d="M9.708.708H8.417V.292A.285.285,0,0,0,8.125,0H1.875a.285.285,0,0,0-.292.292V.708H.292A.285.285,0,0,0,0,1,6.376,6.376,0,0,0,.958,4.5,3.028,3.028,0,0,0,3.292,6a3.624,3.624,0,0,0,.625.542V7.833h-.5A1.1,1.1,0,0,0,2.333,8.917v.5h0a.292.292,0,0,0,0,.583H7.667a.292.292,0,1,0,0-.583h0v-.5A1.1,1.1,0,0,0,6.583,7.833h-.5V6.542A3.624,3.624,0,0,0,6.708,6,3.094,3.094,0,0,0,9.042,4.5,6.277,6.277,0,0,0,10,1,.285.285,0,0,0,9.708.708ZM1.458,4.167A5.842,5.842,0,0,1,.583,1.292h1A9.818,9.818,0,0,0,2.5,4.833c.083.167.167.292.25.458A2.7,2.7,0,0,1,1.458,4.167Zm7.083,0A2.943,2.943,0,0,1,7.25,5.292a4.545,4.545,0,0,0,.25-.458,10.052,10.052,0,0,0,.917-3.542h1A5.71,5.71,0,0,1,8.542,4.167Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="0.5"/>
+        </g>
+      </g>
+    </g>
+    <text id="_" data-name="+" transform="translate(18 522)" fill="#103247" font-size="6" font-family="Roboto-Light, Roboto" font-weight="300" letter-spacing="0.05em"><tspan x="0" y="0">+</tspan></text>
+  </g>
+</svg>
