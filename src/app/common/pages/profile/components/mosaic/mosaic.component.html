@@ -1,6 +1,6 @@
 <div class="mosaic">
   <div class="row-mosaic" #sectionMosaic >
-    <div class="col-mosaic fadeIn animated" *ngFor="let challenge of challengeDelay" [ngSwitch]="type" [id]="type + '-challer-' + challenge.id">
+    <div class="col-mosaic fadeInUp animated" *ngFor="let challenge of challengeDelay" [ngSwitch]="type" [id]="type + '-challer-' + challenge.id">
       <!-- class="animated" [ngClass]="{'zoomIn': isAnimation}" -->
       <div *ngSwitchCase="'myChallenge'">
         <app-square-image-responsive (selectChallenge)="onSelectedChallenge($event)" [challenge]="challenge"

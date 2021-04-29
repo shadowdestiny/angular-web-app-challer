@@ -15,7 +15,6 @@ import {Subscription} from 'rxjs';
 import {StoreService} from '../../../../../service/store.service';
 import {Router} from '@angular/router';
 import {ResizeConstants} from '../../../../../store/constants/resize.constants';
-import {VideoConstants} from '../../../../../store/constants/video.constants';
 
 @Component({
   selector: 'app-profile-section',
@@ -456,7 +455,9 @@ export class ProfileSectionComponent implements OnInit, OnDestroy{
   getScroll() {
     this.subscribes.push(this.store.getScrollStore().subscribe((data: any) => {
       if (data.status === ScrollConstants.ALL_SCROLLING) {
-        //
+        setTimeout(() => {
+          this.top = data.scroll.scroll.scrollTop;
+        }, 600);
       }
       if (data.status === ScrollConstants.SCROLLING_DOWN) {
         this.onScroll();

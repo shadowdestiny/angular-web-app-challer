@@ -40,6 +40,7 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
   @Output() isReadyDelay = new EventEmitter<boolean>();
   @Output() pushUpdate = new EventEmitter();
   @Output() needMore = new EventEmitter();
+  challengeToRender: Array<ChallengeProfileModel> = [];
   challengeDelay: Array<ChallengeProfileModel> = [];
   timeOut = null;
   dynamicChallengeUtil = new DynamicChallengeUtil();
@@ -52,9 +53,9 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
   widthDiv;
   height = 0;
   width = 0;
+  setTime;
 
   constructor(
-    // public navigation: NavigationLibrary,
     private renderer: Renderer2,
     private el: ElementRef,
     private store: StoreService,
@@ -76,24 +77,34 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
     }
     if (!!changes.challenges) {
       if (changes.challenges.currentValue.length === 0) {
-        // this.challengeDelay = [];
+        // this.challengeToRender = [];
       }
       this.init(changes.challenges.currentValue);
     }
     if (!!changes.isReset) {
       if (this.isReset !== changes.isReset.currentValue) {
         this.isReset = changes.isReset.currentValue;
-        this.challengeDelay = [];
+        this.challengeToRender = [];
         this.challenges = [];
+        this.challengeDelay = [];
       }
     }
   }
 
   init(challenges: Array<ChallengeProfileModel>) {
     this.isReadyDelay.emit(false);
-    this.dynamicChallengeUtil.changeState(challenges, this.challengeDelay, this.isReverse, this.isPushNotification);
+    this.dynamicChallengeUtil.changeState(challenges, this.challengeToRender, this.isReverse, this.isPushNotification);
+
+
+    this.challengeToRender.forEach((challenge: ChallengeProfileModel, i: number) => {
+      setTimeout(() => {
+        this.challengeDelay.push(challenge);
+        this.getSizeLayout();
+      }, 150 * i);
+    });
+
     if (this.challerFunction) {
-      this.challerFunction(this.challengeDelay);
+      this.challerFunction(this.challengeToRender);
     }
     this.getSizeLayout();
   }
@@ -102,8 +113,8 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
     /*let challersIds = [];
     let challerIndex = 0;
     if (this.allowSlides) {
-      challerIndex = this.challengeDelay.findIndex(({id}) => challenge.id === id);
-      challersIds = this.challengeDelay.map((challer) => challer.id);
+      challerIndex = this.challengeToRender.findIndex(({id}) => challenge.id === id);
+      challersIds = this.challengeToRender.map((challer) => challer.id);
     }
     this.navigation.goto(['challenge-detail', challenge.id], {
       scrollChaller: this.allowSlides,
@@ -167,7 +178,7 @@ export class MosaicComponent implements OnInit, OnChanges, OnDestroy, AfterViewI
         widthColumn = (this.widthDiv = this.sectionMosaic.nativeElement.offsetWidth) / 3;
         widthTemplate = data.resize.width;
         squares.forEach((element) => {
-          const newWidth = widthColumn - 0;
+          const newWidth = widthColumn - 2;
           element.style.width = `${this.width = newWidth}px`;
           element.style.height = `${this.height = newWidth + (newWidth / 12)}px`;
         });

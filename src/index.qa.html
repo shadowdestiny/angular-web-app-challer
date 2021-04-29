@@ -51,6 +51,11 @@
             window.location.href = 'https://qa.challer.app/challenge/' + data.data_parsed.id;
           }
         }
+        if (['profileShare'].includes(data.data_parsed.action)) {
+          if (data.data_parsed.id !== undefined) {
+            window.location.href = 'https://qa.challer.app/profile/' + data.data_parsed.id;
+          }
+        }
       }
     });
 
