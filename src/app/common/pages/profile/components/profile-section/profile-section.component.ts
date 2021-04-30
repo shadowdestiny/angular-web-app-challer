@@ -98,8 +98,23 @@ export class ProfileSectionComponent implements OnInit, OnDestroy{
       this.getProfile();
       this.currentSlide();
       this.getResize();
+      this.initFirestore();
     });
     this.getScroll();
+  }
+
+  initFirestore() {
+    /* firestore */
+    this.challengeAgainFirestore();
+  }
+
+  private challengeAgainFirestore() {
+
+    const profileReference = this.challengeService.getChallengePush(this.userid).subscribe((data: any) => {
+      this.currentSlide(this.isFirst, false);
+      this.isFirst = true;
+    });
+    this.subscribes.push(profileReference);
   }
 
   getProfile() {
