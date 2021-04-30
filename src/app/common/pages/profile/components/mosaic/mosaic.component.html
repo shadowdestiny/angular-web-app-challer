@@ -1,5 +1,56 @@
 <div class="mosaic">
   <div class="row-mosaic" #sectionMosaic >
+
+    <div *ngIf="type === 'mosaicMyLikeChallenge' && challengeDelay.length === 0 && !isRequesting" class="text-center title-mosaic animated fadeIn delay-1s">
+      <div class="not-found">
+        <img src="assets/imgs/components/challenges/heard.svg">
+        <div *ngIf="isMe">
+          <div class="mt-2">
+            No Likes Yet!
+          </div>
+          <div class="font-bold mt-2">
+            Show your magic!
+          </div>
+        </div>
+        <div *ngIf="!isMe">
+          <div class="font-bold mt-2">
+            No Likes Yet!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="type === 'myChallenge' && challengeDelay.length === 0 && !isRequesting" class="text-center title-mosaic animated fadeIn delay-1s">
+      <div class="not-found">
+        <img src="assets/imgs/components/challenges/cop.svg">
+        <div *ngIf="isMe">
+          <div class="ion-margin-top">
+            Your Challers will appear here. Create your first Challer.
+          </div>
+          <div class="font-bold ion-margin-top">
+            Show your magic!
+          </div>
+        </div>
+        <div *ngIf="!isMe">
+          <div class="font-bold ion-margin-top">
+            No Challers Yet!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="type === 'myVotesChaller' && challengeDelay.length === 0 && !isRequesting" class="text-center title-mosaic animated fadeIn delay-1s">
+      <div class="not-found">
+        <img src="assets/imgs/components/challenges/vote.svg">
+        <div *ngIf="isMe">
+          <div class="font-bold ion-margin-top">
+            No Votes Yet!
+          </div>
+          <div class="ion-margin-top">
+            Start voting for your favourite performance.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="col-mosaic fadeInUp animated" *ngFor="let challenge of challengeDelay" [ngSwitch]="type" [id]="type + '-challer-' + challenge.id">
       <!-- class="animated" [ngClass]="{'zoomIn': isAnimation}" -->
       <div *ngSwitchCase="'myChallenge'">
